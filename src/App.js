@@ -9,7 +9,6 @@ import { Projects } from "./components/projects";
 import { Purpose } from "./components/purpose";
 import { Mission } from "./components/mission";
 import { Vision } from "./components/vision";
-import { About } from "./components/about";
 // import { Services } from "./components/services";
 //import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
