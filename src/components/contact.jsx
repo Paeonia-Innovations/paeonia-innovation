@@ -8,7 +8,7 @@ const initialState = {
   message: "",
 };
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
+  const [, setState] = useState(initialState);
   const [successMessage, setSuccessMessage] = useState(""); //state for success message
   const [formInView, setFormInView] = useState(false); // state to track if form is in view
   const formRef = useRef(null);
