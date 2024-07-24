@@ -1,0 +1,136 @@
+{
+  "Header": {
+    "title": "Leading Innovation Globally: Solving Measurement Challenges",
+    "paragraph": "At Paeonia Innovations, we are creating the world’s most compact solutions to enable accurate, repeatable, robust and real-time chemical analysis, leaving time for customers to focus on getting their job done."
+  },
+  "About": {
+    "paragraph": [
+      "At Paeonia Innovations, we're more than colleagues—we're a dedicated team bonded by innovation and a passion for excellence. Together, we strive to redefine industry standards and deliver cutting-edge solutions that empower our clients worldwide. With a collaborative spirit and diverse expertise, we tackle challenges head-on, turning ideas into impactful realities. ",
+      "Join us on our journey to drive forward, supported by a team committed to making a difference in every project we undertake."
+    ],
+    "Why": [
+      "Exceptional Quality",
+      "Customer-Centric Approach",
+      "Innovation and Expertise"
+    ],
+    "Why2": [
+      "Transparent and Honest",
+      "Proven Track Record",
+      "Join Our Commpunity"
+    ]
+  },
+  "ValueProposition": [
+    {
+      "icon": "img/value-proposition.png",
+      "title": "Value Proposition",
+      "text": "At Paeonia Innovations, we are creating the world’s most compact solutions to enable accurate, repeatable, robust and real-time chemical analysis, leaving time for customers to focus on getting their job done."
+    }
+  ],
+  "CuttingEdge": [
+    {
+      "title": "Cutting-Edge Technology",
+      "text": "At Paeonia Innovations, we are creating the world’s most compact solutions to enable accurate, repeatable, robust and real-time chemical analysis, leaving time for customers to focus on getting their job done."
+    }
+  ],
+  "Culture": [
+    {
+      "title": "Culture",
+      "subtitles": [
+        {
+          "subtitle": "Respect & Meritocracy",
+          "subText": "We believe in being respectful to each other where the best idea prevails and processes serve the purpose."
+        },
+        {
+          "subtitle": "Diverse Expert Team",
+          "subText": "Our team is international, diverse and consists of leading PhDs from Stanford University and other top institutions."
+        },
+        {
+          "subtitle": "Join Our Mission",
+          "subText": "If interested, please contact us, we are always looking to expand our team with the most passionate individuals who share our mission."
+        }
+      ]
+    }
+  ],
+  "Challenges": [
+    {
+      "title": "Challenges and Opportunities"
+    }
+  ],
+  "Projects": [
+    {
+      "title": "Projects and Impact"
+    }
+  ],
+  "Purpose": [
+    {
+      "title": "Our Purpose"
+    }
+  ],
+  "Mission": [
+    {
+      "title": "Our Mission: From Ideas to Products"
+    }
+  ],
+  "Vision": [
+    {
+      "title": "Our Vision"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-wordpress",
+      "name": "Compact Analytical Solutions",
+      "text": "Our compact solutions enable accurate, repeatable, robust, and real-time chemical analysis, empowering our clients to focus on their core tasks without the complexities typically associated with chemical analysis."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Customized Technology Integration",
+      "text": "We specialize in integrating semiconductor and AI technologies to create customized solutions that meet the specific needs of our clients. Whether you require a standalone device or a fully integrated system, we have the expertise to deliver."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Consulting and Advisory Services",
+      "text": "Our team of experts is available to provide consulting and advisory services to help you navigate the complexities of chemical analysis. From feasibility studies to implementation strategies, we're here to support you every step of the way."
+    },
+    {
+      "icon": "fa fa-language",
+      "name": "Training and Education Programs",
+      "text": "We offer comprehensive training and education programs designed to empower our clients with the knowledge and skills they need to maximize the value of our solutions. From basic operation to advanced troubleshooting, we've got you covered."
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "Ongoing Support and Maintenance",
+      "text": "Our commitment to customer satisfaction doesn't end with the sale. We provide ongoing support and maintenance services to ensure that your equipment continues to perform at its best, year after year."
+    },
+    {
+      "icon": "fa fa-pie-chart",
+      "name": "Custom Development Projects",
+      "text": "Have a unique challenge that requires a custom solution? Our team of experts is ready to take on custom development projects to address your specific needs. From concept to commercialization, we'll work with you to bring your vision to life."
+    }
+  ],
+  "Gallery": [
+    {
+      "title": "Monthly Team Bonding Walk",
+      "largeImage": "img/portfolio/PIGroupPhoto.jpeg",
+      "smallImage": "img/portfolio/PIGroupPhoto-small.png"
+    },
+    {
+      "title": "Monthly Team Bonding Walk",
+      "largeImage": "img/portfolio/TeamBonding2.jpeg",
+      "smallImage": "img/portfolio/TeamBonding2-small.png"
+    },
+    {
+      "title": "Monthly Team Bonding Walk",
+      "largeImage": "img/portfolio/TeamBonding3.jpeg",
+      "smallImage": "img/portfolio/TeamBonding3-small.png"
+    }
+  ],
+  "Contact": {
+    "address": "159 Kampong Ampat, #01-02, 368328 - (Paeonia Place)",
+    "phone": "+65 69702110",
+    "email": "ops@paeoniatech.com",
+    "facebook": "fb.com",
+    "linedin": "linkedin.com",
+    "youtube": "youtube.com"
+  }
+}
