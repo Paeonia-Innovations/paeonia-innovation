@@ -17,6 +17,7 @@ export const Header = (props) => {
                   <p>
                     At{" "}
                     <span className="highlight-bold">Paeonia Innovations</span>,{" "}
+                    we are
                     <span className="highlight-bold">pioneering</span>{" "}
                     ultra-compact solutions for{" "}
                     <span className="highlight-bold">precise</span> chemical
