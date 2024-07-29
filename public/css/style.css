@@ -214,8 +214,8 @@ hr {
   font-family: "Poster", sans-serif;
   text-transform: uppercase;
   color: #fff;
-  background-color: #1b7a76;
-  background-image: linear-gradient(to right, #1b7a76 0%, #24a49e 100%);
+  background-color: #a80216;
+  background-image: linear-gradient(to right, #df2d42 0%, #a80216 100%);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -234,7 +234,7 @@ hr {
   font-size: 15px;
   font-weight: 500;
   background-image: none;
-  background-color: #03dac0;
+  background-color: #a80216;
 }
 .btn:active,
 .btn.active {
@@ -396,11 +396,9 @@ header .intro-text .intro-paragraph p {
   animation-delay: 2.5s; /* Wait for h1 to finish and add a little extra delay */
   font-size: 20px;
   font-family: "Poster", sans-serif;
-  height: 5%;
   padding-right: 20px;
-  padding-bottom: 200px;
   position: relative;
-  text-align: justify;
+  text-align: center;
   transform: translateY(40px);
 }
 
@@ -622,7 +620,7 @@ header .intro-text .intro-paragraph p {
 .challenges-item p {
   color: #fff; /* Text color for feature title and text */
   text-align: justify;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .left-side {
@@ -633,11 +631,11 @@ header .intro-text .intro-paragraph p {
 .right-side {
   flex: 1;
   padding: 1px;
-  margin-top: 190px;
+  margin-top: 110px;
 }
 
 .vertical-line {
-  height: 430px;
+  height: 300px;
   width: 1px;
   background-color: #ccc;
   margin-left: 20px;
@@ -1190,6 +1188,7 @@ label {
 .address-link,
 .phone-link,
 .email-link,
+.paeonia-group-link,
 .contact-container a {
   color: #ffffff;
   text-decoration: none;
@@ -1198,6 +1197,7 @@ label {
 .address-link:hover,
 .phone-link:hover,
 .email-link:hover,
+.paeonia-group-link:hover,
 .contact-container a:hover {
   color: #ffffff;
   text-decoration: underline;
@@ -1315,7 +1315,7 @@ label {
     padding: 10px;
   }
   .challenges-item .content-wrapper .right-side {
-    margin-top: 240px;
+    margin-top: 180px;
   }
   #projects {
     padding: 10px;

@@ -12,8 +12,8 @@ export const Header = (props) => {
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
                 </h1>
-                <div className="col-md-6 intro-paragraph">
-                  <div className="separator"></div>
+                <div className="intro-paragraph">
+                  {/* <div className="separator"></div> */}
                   <p>
                     At{" "}
                     <span className="highlight-bold">Paeonia Innovations</span>,{" "}

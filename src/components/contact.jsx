@@ -52,16 +52,16 @@ export const Contact = (props) => {
 
     emailjs
       .sendForm(
-        "service_d1t8kdn", //service ID from EmailJS
-        "template_7svcypd", //template ID from EmailJS
+        "service_glye7pm", //service ID from EmailJS
+        "template_dgm8t1d", //template ID from EmailJS
         e.target,
-        "FY-fVWo5OeAZ2Kts6" //public key from EmailJS
+        "Q0syV6H_5pAHvwxU9" //public key from EmailJS
       )
       .then(
         (result) => {
           console.log(result.text);
           clearState();
-          setSuccessMessage("Email sent to the paeonia team successfully!");
+          setSuccessMessage("Email sent to the Paeonia Team successfully!");
           setTimeout(() => {
             setSuccessMessage("");
           }, 5000);
@@ -189,6 +189,20 @@ export const Contact = (props) => {
                 </a>
               </p>
             </div>
+
+            <div className="contact-item">
+              <p>
+                Link to{" "}
+                <a
+                  href="https://www.paeonia.com.sg/"
+                  className="paeonia-group-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Paeonia Group
+                </a>
+              </p>
+            </div>
           </div>
           {/* <div className="col-md-12">
             <div className="row">
@@ -223,7 +237,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2024 Design by Paeonia Innovation
+            &copy; 2024 Design by Paeonia Innovations
             {/* {" "} */}
             {/* <a href="http://www.templatewire.com" rel="nofollow">
               TemplateWire
