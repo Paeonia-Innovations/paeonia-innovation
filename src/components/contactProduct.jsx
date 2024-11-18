@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import emailjs from "emailjs-com";
+//import emailjs from "emailjs-com";
 import React from "react";
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
 };
 export const ContactProduct = (props) => {
   const [, setState] = useState(initialState);
-  const [successMessage, setSuccessMessage] = useState(""); //state for success message
+  //const [successMessage, setSuccessMessage] = useState(""); //state for success message
   const [formInView, setFormInView] = useState(false); // state to track if form is in view
   const formRef = useRef(null);
 
@@ -32,10 +32,10 @@ export const ContactProduct = (props) => {
     };
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setState((prevState) => ({ ...prevState, [name]: value }));
+  // };
 
   return (
     <div>
