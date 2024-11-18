@@ -21,10 +21,10 @@ h4 {
   font-family: "Poster", sans-serif;
 }
 h2 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin: 0 0 20px;
-  font-weight: 800;
-  font-size: 36px;
+  /* font-weight: 800; */
+  /* font-size: 36px; */
   color: #333;
 }
 h3 {
@@ -121,17 +121,16 @@ hr {
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
-#menu a.navbar-brand {
+/* #menu a.navbar-brand {
   font-family: "Poster", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #333;
   text-transform: uppercase;
-}
+} */
 #menu.navbar-default .navbar-nav > li > a {
   font-family: "Poster", sans-serif;
   text-transform: uppercase;
-  color: #555;
   font-size: 15px;
   font-weight: 400;
   padding: 8px 2px;
@@ -278,6 +277,95 @@ body {
   scrollbar-color: #7a1b1f #f1f1f1;
 }
 
+/* Navigation - Top */
+/* .navbar-header .spectrometer-link {
+  color: #1a1a1a; 
+  font-size: 20px;
+  padding-left: 250px;
+  margin-top: 15px;
+}
+.navbar-header .spectrometer-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+} */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure vertical alignment */
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+  padding: 10px 20px;
+}
+
+.navbar-left {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Center vertically */
+}
+
+/* .pi-logo {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+} */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.navbar-right .contact-icon {
+  margin-top: 15px;
+  width: 30px;
+  height: 30px;
+}
+/* Dropdown container */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+/* Toggle button */
+.custom-toggle {
+  background-color: #7a1b1f; /* Custom blue color */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.custom-toggle:hover {
+  background-color: #a80216;
+}
+
+/* Dropdown menu */
+.custom-menu {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  margin-top: 0px;
+  border-radius: 5px;
+  min-width: 250px;
+  padding: 5px 0;
+}
+
+/* Dropdown items */
+.custom-item {
+  /* padding: 12px 20px; */
+  font-size: 18px;
+  color: #1a1a1a;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
 /* Header Section */
 header {
   position: fixed; /* Fixed positioning to keep header in place */
@@ -371,7 +459,7 @@ header .intro-text {
 
 header .intro-text h1 {
   animation: moveUp 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  font-size: 70px;
+  font-size: 50px;
   font-family: "Poster", sans-serif;
 }
 
@@ -381,13 +469,6 @@ header .intro-text a {
   animation-delay: 5s; /* Wait for h1 to finish and add a little extra delay */
   text-align: center;
   margin-top: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .intro-text h1 {
-    font-size: 40px; /* Adjust font size for smaller screens */
-  }
 }
 
 header .intro-text .intro-paragraph p {
@@ -417,12 +498,6 @@ header .intro-text .intro-paragraph p {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.pi-logo {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
 .Apppi-logo {
   height: 40vmin;
   pointer-events: none;
@@ -439,7 +514,10 @@ header .intro-text .intro-paragraph p {
   background: #110022;
   z-index: 2;
   position: relative;
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
 }
 
 .valueproposition-item {
@@ -452,16 +530,16 @@ header .intro-text .intro-paragraph p {
 .valueproposition-item h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .valueproposition-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .valueproposition-item p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .valueproposition-item .highlight {
@@ -474,7 +552,10 @@ header .intro-text .intro-paragraph p {
   background: #ecece7;
   z-index: 2;
   position: relative;
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
 }
 
 .cuttingEdge-item {
@@ -487,17 +568,17 @@ header .intro-text .intro-paragraph p {
 .cuttingEdge-item h3 {
   color: #1a1a1a; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .cuttingEdge-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .cuttingEdge-item p {
   color: #1a1a1a; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .cuttingEdge-item .highlight {
@@ -510,7 +591,10 @@ header .intro-text .intro-paragraph p {
   background: #7a1b1f;
   z-index: 2;
   position: relative;
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
 }
 
 .culture-item {
@@ -523,34 +607,35 @@ header .intro-text .intro-paragraph p {
 .culture-item h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .culture-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .culture-item .row {
   align-items: center;
   margin-right: 0;
   margin-left: 0;
+  margin-top: 0;
 }
 
 .culture-item .row h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 30px;
+  font-size: 22px;
   padding-right: 30px;
 }
 
 .culture-item .row p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 23px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .culture-item .img-responsive {
-  margin-top: 50px;
+  margin-top: 0px;
   height: auto;
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -566,7 +651,6 @@ header .intro-text .intro-paragraph p {
 .subtitle-container .arrow-line {
   display: flex;
   align-items: center;
-  margin: 10px 0;
 }
 
 .subtitle-container .arrow-line::before {
@@ -579,14 +663,17 @@ header .intro-text .intro-paragraph p {
 
 .subtitle-container p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
   padding-right: 30px;
 }
 
 /* Challenges Section */
 #challenges {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
   background: #110022;
   z-index: 2;
   position: relative;
@@ -604,11 +691,11 @@ header .intro-text .intro-paragraph p {
 .challenges-item h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .challenges-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .challenges-item .content-wrapper {
@@ -619,23 +706,23 @@ header .intro-text .intro-paragraph p {
 
 .challenges-item p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
-.left-side {
+.challenges-item .left-side {
   flex: 1;
   padding: 1px;
 }
 
-.right-side {
+.challenges-item .right-side {
   flex: 1;
   padding: 1px;
-  margin-top: 110px;
+  margin-top: 60px;
 }
 
-.vertical-line {
-  height: 300px;
+.challenges-item .vertical-line {
+  height: 150px;
   width: 1px;
   background-color: #ccc;
   margin-left: 20px;
@@ -649,7 +736,10 @@ header .intro-text .intro-paragraph p {
 
 /* Projects And Impact Section */
 #projects {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
   background: #7a1b1f;
   z-index: 2;
   position: relative;
@@ -666,16 +756,16 @@ header .intro-text .intro-paragraph p {
 .projects-item h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .projects-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .projects-item p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .projects-item .highlight {
@@ -685,7 +775,10 @@ header .intro-text .intro-paragraph p {
 
 /* Purpose Section */
 #purpose {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
   background: #ecece7;
   z-index: 2;
   position: relative;
@@ -702,16 +795,16 @@ header .intro-text .intro-paragraph p {
 .purpose-item h3 {
   color: #1a1a1a; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .purpose-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .purpose-item p {
   color: #1a1a1a; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .purpose-item .highlight {
@@ -721,7 +814,10 @@ header .intro-text .intro-paragraph p {
 
 /* Mission Section */
 #mission {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
   background: #110022;
   z-index: 2;
   position: relative;
@@ -738,16 +834,16 @@ header .intro-text .intro-paragraph p {
 .mission-item h3 {
   color: #fff; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .mission-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .mission-item p {
   color: #fff; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .mission-item .highlight {
@@ -757,7 +853,10 @@ header .intro-text .intro-paragraph p {
 
 /* Vision Section */
 #vision {
-  padding: 100px 0;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
   background: #ecece7;
   z-index: 2;
   position: relative;
@@ -774,16 +873,16 @@ header .intro-text .intro-paragraph p {
 .vision-item h3 {
   color: #1a1a1a; /* Text color for feature title and text */
   text-align: left;
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .vision-item .spacer {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .vision-item p {
   color: #1a1a1a; /* Text color for feature title and text */
-  text-align: justify;
-  font-size: 25px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .vision-item .highlight {
@@ -825,7 +924,7 @@ header .intro-text .intro-paragraph p {
 #about .about-text p {
   font-family: "Poster", sans-serif;
   font-size: 18px;
-  text-align: justify;
+  text-align: left;
   color: #1a1a1a;
 }
 #about .about-text li {
@@ -1015,7 +1114,10 @@ header .intro-text .intro-paragraph p {
 }
 /* Contact Section */
 #contact {
-  padding: 100px 0 60px;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
   background-color: #1a1a1a;
   color: rgba(255, 255, 255, 0.75);
   z-index: 2;
@@ -1025,7 +1127,7 @@ header .intro-text .intro-paragraph p {
   margin-bottom: 40px;
 }
 #contact .section-title p {
-  font-size: 16px;
+  font-size: 18px;
 }
 #contact h2 {
   color: #fff;
@@ -1111,7 +1213,7 @@ label {
 }
 
 #contact .section-title h2 {
-  font-size: 38px;
+  font-size: 30px;
 }
 
 #contact .contact-item span {
@@ -1147,6 +1249,50 @@ label {
   color: #608dfd;
   background: #fff;
 }
+
+/* ContactProduct Section */
+#contactProduct {
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.75);
+  z-index: 2;
+  position: relative;
+}
+#contactProduct .section-title {
+  margin-bottom: 40px;
+}
+#contactProduct .section-title p {
+  font-size: 18px;
+}
+#contactProduct h2 {
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 30px;
+}
+#contactProduct .section-title h2::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  left: 30px;
+}
+#contactProduct .email-link {
+  font-weight: bold;
+}
+/* #contactProduct h3 {
+  color: #fff;
+  margin-top: 80px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  font-weight: 400;
+} */
 /* Footer Section*/
 #footer {
   background: #1a1a1a;
@@ -1158,12 +1304,12 @@ label {
   color: #fff;
   font-size: 14px;
 }
-#footer a {
+/* #footer a {
   color: #608dfd;
 }
 #footer a:hover {
   border-bottom: 2px solid #608dfd;
-}
+} */
 
 @media (max-width: 768px) {
   #about img {
@@ -1171,27 +1317,12 @@ label {
   }
 }
 
-.contact-icon {
-  margin-top: 15px;
-  width: 30px;
-  height: 30px;
-}
-
-@media (max-width: 768px) {
-  .contact-icon {
-    margin-top: 15px;
-    width: 30px;
-    height: 30px;
-    float: right !important;
-  }
-}
 .address-link,
 .phone-link,
 .email-link,
 .paeonia-group-link,
 .contact-container a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #fff;
 }
 
 .address-link:hover,
@@ -1290,11 +1421,351 @@ label {
   opacity: 0.8; /* Optional: adjust opacity for better blending */
 }
 
+#novelMidIRSpectrometer {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 150px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.spectrometer {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.spectrometer h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.spectrometer h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+}
+
+.spectrometer .spacer {
+  margin-bottom: 40px;
+}
+.spectrometer p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
+.spectrometer .highlight {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+/* .spectrometer .img-responsive {
+  height: auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: auto;
+} */
+
+.spectrometer .img-responsive {
+  height: auto;
+  max-width: 60%; /* Ensure the image does not overflow its container */
+  display: block; /* Remove flex if you only need the image to center itself */
+  margin: 0 auto; /* Center horizontally within its container */
+}
+
+.spectrometer .img-container {
+  width: 100%; /* Full container width */
+  max-width: 500px; /* Set a maximum width for the image container */
+  height: auto; /* Adjust based on content */
+  overflow: hidden; /* Prevent overflow if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PI ModelP Section */
+
+/* Overall container */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Vertically center image */
+  justify-content: center; /* Horizontally center image */
+  overflow: hidden;
+}
+
+/* Top background */
+.gallery-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Top half of the page */
+  background-color: #7a1b1f; /* Top background color (black) */
+  z-index: -1; /* Push behind content */
+}
+
+/* Bottom background */
+.gallery-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Bottom half of the page */
+  background-color: #ecece7; /* Bottom background color (dark gray) */
+  z-index: -1; /* Push behind content */
+}
+
+#piModelGallery {
+  display: flex; /* Make sure the gallery itself is a flex container */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+#piModelGallery .img-responsive {
+  max-height: 70%; /* Set the maximum height for the image */
+  max-width: 30%; /* Set the maximum width for the image */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  margin-left: 30%;
+}
+
+/* Simple */
+#simple {
+  background: #110022;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 60px;
+  padding-left: 0;
+}
+/* #simple .col-md-12 {
+  display: flex;
+  gap: 30px;
+} */
+
+.simple-item {
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.simple-item h3 {
+  color: #fff; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+.simple-item .spacer {
+  margin-bottom: 40px;
+  color: #7a1b1f;
+}
+
+.simple-item p {
+  color: #fff; /* Text color for feature title and text */
+  text-align: justify;
+  font-size: 18px;
+}
+
+.simple-item .img-responsive {
+  margin-top: 50px;
+  margin-bottom: 0px;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: auto;
+  height: 65%;
+}
+
+/* Product Specification */
+#productSpecification {
+  background: #7a1b1f;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.productTitle {
+  margin-bottom: 20px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.productTitle h3 {
+  color: #fff; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+#productSpecification .spacer {
+  margin-bottom: 50px;
+  color: #7a1b1f;
+}
+
+.productInfo {
+  flex: 2;
+}
+
+.productTable {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Clean borders */
+}
+
+.productTable th,
+.productTable td {
+  border: 1px solid #fff;
+  padding: 8px;
+  text-align: left;
+  width: 50%;
+}
+
+.productTable th {
+  background-color: #7a1b1f;
+  font-weight: bold;
+  color: #fff;
+  font-size: 23px;
+}
+
+.productTable td {
+  background-color: #7a1b1f;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* About Spectrometer Section */
+#aboutSpectrometer {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+.spectrometer-item {
+  margin-bottom: 0px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+  display: flex;
+}
+
+.spectrometer-item .content-wrapper {
+  display: flex;
+  align-items: top;
+  /* margin-top: 60px; */
+}
+
+.spectrometer-item .left-side {
+  flex: 1;
+  padding: 1px;
+}
+
+.spectrometer-item .right-side {
+  flex: 1;
+  padding: 1px;
+  margin-top: 0px;
+}
+
+.spectrometer-item .vertical-line {
+  height: 230px;
+  width: 1px;
+  background-color: #ccc;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.spectrometer-item h3 {
+  color: #7a1b1f; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+.spectrometer-item p {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: justify;
+  font-size: 18px;
+}
+
+#inlineMonitoring {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+.inline-item {
+  margin-bottom: 20px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+  display: flex;
+}
+
+.inline-item .content-wrapper {
+  display: flex;
+  align-items: top;
+  margin-top: 60px;
+}
+
+.inline-item .left-side {
+  flex: 1;
+  padding: 1px;
+}
+
+.inline-item .right-side {
+  flex: 1;
+  padding: 1px;
+  margin-top: 0px;
+}
+
+.inline-item .vertical-line {
+  height: 230px;
+  width: 1px;
+  background-color: #ccc;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.inline-item h3 {
+  color: #7a1b1f; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+.inline-item p {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: justify;
+  font-size: 18px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   #header .intro-text h1 {
     animation: moveUp 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Poster", sans-serif;
   }
   #valueproposition {
@@ -1302,6 +1773,22 @@ label {
     padding: 10px;
     overflow-y: hidden;
   }
+  .navbar-header .spectrometer-link {
+    font-size: 12px;
+    padding-left: 220px;
+  }
+
+  .navbar-right .contact-icon {
+    margin-top: 0px;
+    float: right !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .custom-item {
+    font-size: 16px;
+  }
+
   #cuttingEdge {
     padding: 10px;
   }
@@ -1315,7 +1802,10 @@ label {
     padding: 10px;
   }
   .challenges-item .content-wrapper .right-side {
-    margin-top: 180px;
+    margin-top: 140px;
+  }
+  .challenges-item .vertical-line {
+    height: 250px;
   }
   #projects {
     padding: 10px;
@@ -1338,91 +1828,303 @@ label {
     overflow-y: hidden;
   }
   .valueproposition-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .valueproposition-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .valueproposition-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .cuttingEdge-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .cuttingEdge-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .cuttingEdge-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .culture-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .culture-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .culture-item .subtitle-container h3 {
     color: #fff; /* Text color for feature title and text */
-    text-align: justify;
-    font-size: 22px;
+    text-align: left;
+    font-size: 18px;
   }
   .culture-item .subtitle-container p {
     color: #fff; /* Text color for feature title and text */
-    text-align: justify;
-    font-size: 18px;
+    text-align: left;
+    font-size: 16px;
   }
 
   .challenges-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .challenges-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .challenges-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .projects-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .projects-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .projects-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .purpose-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .purpose-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .purpose-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .mission-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .mission-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .mission-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .vision-item h3 {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 22px; /* Adjust font size for smaller screens */
   }
   .vision-item p {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Adjust font size for smaller screens */
   }
   .vision-item .spacer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   #contact .section-title h2 {
-    font-size: 25px;
+    font-size: 22px;
   }
+  #contact .section-title p {
+    font-size: 16px;
+  }
+
+  #contactProduct .section-title h2 {
+    font-size: 22px;
+  }
+
+  #contactProduct .section-title p {
+    font-size: 16px;
+  }
+
+  .spectrometer h3 {
+    font-size: 22px; /* Adjust font size for smaller screens */
+  }
+  .spectrometer h4 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+  .spectrometer p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+  .spectrometer .spacer {
+    margin-bottom: 20px;
+  }
+
+  #aboutSpectrometer {
+    padding: 10px;
+  }
+  .spectrometer-item .content-wrapper {
+    padding: 10px;
+  }
+  /* .spectrometer-item .content-wrapper .right-side {
+    margin-top: 180px;
+  } */
+
+  .spectrometer-item h3 {
+    font-size: 22px; /* Adjust font size for smaller screens */
+  }
+  .spectrometer-item p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+  .spectrometer-item .spacer {
+    margin-bottom: 20px;
+  }
+  .spectrometer-item .vertical-line {
+    height: 400px;
+  }
+
+  #inlineMonitoring {
+    padding: 10px;
+  }
+  .inline-item .content-wrapper {
+    padding: 10px;
+  }
+  .inline-item .content-wrapper .right-side {
+    padding-right: 10px;
+  }
+
+  .inline-item h3 {
+    font-size: 22px; /* Adjust font size for smaller screens */
+  }
+  .inline-item p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+  .inline-item .spacer {
+    margin-bottom: 20px;
+  }
+  .inline-item .vertical-line {
+    height: 400px;
+  }
+  .simple-item .img-responsive {
+    padding-bottom: 50px;
+  }
+  .simple-item h3 {
+    font-size: 22px; /* Adjust font size for smaller screens */
+  }
+  .simple-item p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+  .simple-item .spacer {
+    margin-bottom: 30px;
+  }
+
+  .productTitle h3 {
+    font-size: 22px;
+  }
+
+  #productSpecification .spacer {
+    margin-bottom: 20px;
+  }
+
+  .productTable th {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .productTable td {
+    font-size: 16px;
+  }
+}
+
+/* Mid IR Spectroscopy*/
+#midIRSpectroscopy {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding: 100px 0;
+}
+
+.spectroscopy {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.spectroscopy h3 {
+  color: #7a1b1f;
+  text-align: left;
+  font-size: 38px;
+}
+
+.spectroscopy h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.spectroscopy .spacer {
+  margin-bottom: 60px;
+}
+.spectroscopy p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 23px;
+}
+
+/* Kinetics Thermo Molecular*/
+#kineticsThermoMolecular {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding: 100px 0;
+}
+
+.kinetics {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.kinetics h3 {
+  color: #7a1b1f;
+  text-align: left;
+  font-size: 38px;
+}
+
+.kinetics h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.kinetics .spacer {
+  margin-bottom: 60px;
+}
+.kinetics p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 23px;
+}
+
+/* Robustness And Compactness Section */
+#robustAndCompact {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding: 100px 0;
+}
+
+.robust-item {
+  margin-bottom: 20px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.robust-item h3 {
+  color: #7a1b1f; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 38px;
+}
+
+.robust-item .spacer {
+  margin-bottom: 60px;
+  color: #7a1b1f;
+}
+
+.robust-item p {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 23px;
+}
+
+.robust-item .img-responsive {
+  margin-top: 50px;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
 }

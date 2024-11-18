@@ -141,6 +141,7 @@ export const Contact = (props) => {
               )}
             </div>
           </div>
+
           <div
             className={`col-md-3 col-md-offset-1 contact-info ${
               formInView ? "fade-in-up animated" : ""
@@ -152,7 +153,7 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-map-marker"></i> Address
                 </span>
-                {/* {props.data ? props.data.address : "loading"} */}
+
                 <a
                   href={googleMapUrl}
                   target="_blank"
@@ -168,7 +169,6 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-phone"></i> Phone
                 </span>{" "}
-                {/* {props.data ? props.data.phone : "loading"} */}
                 {isMobile() ? (
                   <a href={`tel:${props.data.phone}`} className="phone-link">
                     {props.data.phone}
@@ -183,7 +183,6 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
-                {/* {props.data ? props.data.email : "loading"} */}
                 <a href={`mailto:${props.data.email}`} className="email-link">
                   {props.data.email}
                 </a>
@@ -204,6 +203,7 @@ export const Contact = (props) => {
               </p>
             </div>
           </div>
+
           {/* <div className="col-md-12">
             <div className="row">
               <div className="social">
@@ -236,6 +236,18 @@ export const Contact = (props) => {
       </div>
       <div id="footer">
         <div className="container text-center">
+          {/* <p>
+            Link to{" "}
+            <a
+              href="https://www.paeonia.com.sg/"
+              className="paeonia-group-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Paeonia Group
+            </a>
+          </p> */}
+
           <p>
             &copy; 2024 Design by Paeonia Innovations
             {/* {" "} */}
@@ -243,6 +255,7 @@ export const Contact = (props) => {
               TemplateWire
             </a> */}
           </p>
+
           {/* <object
             className="Apppi-logo1"
             type="image/svg+xml"
