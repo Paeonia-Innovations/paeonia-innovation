@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 //import emailjs from "emailjs-com";
 import React from "react";
 
-const initialState = {
-  name: "",
-  email: "",
-  message: "",
-};
+// const initialState = {
+//   name: "",
+//   email: "",
+//   message: "",
+// };
 export const ContactProduct = (props) => {
-  const [, setState] = useState(initialState);
+  //const [, setState] = useState(initialState);
   //const [successMessage, setSuccessMessage] = useState(""); //state for success message
   const [formInView, setFormInView] = useState(false); // state to track if form is in view
   const formRef = useRef(null);

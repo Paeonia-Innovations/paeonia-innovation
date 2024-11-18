@@ -75,7 +75,7 @@ const App = () => {
         scrollToContact();
       }
     }
-  }, [showSpectrometerProductPage]);
+  }, [showSpectrometerProductPage, targetSection]);
 
   const handleNavigationClick = (section) => {
     setTargetSection(section); // Update target section
