@@ -57,7 +57,7 @@ export const Navigation = (props) => {
             onClick={() => props.onNavClick("homePage")}
           >
             <img
-              className="pi-logo"
+              className="img-responsive"
               src={`${process.env.PUBLIC_URL}/PI logo nows.svg`}
               alt="Logo"
               aria-label="logo"
