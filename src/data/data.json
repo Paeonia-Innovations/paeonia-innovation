@@ -1,6 +1,7 @@
 {
   "Header": {
-    "title": "Leading Innovation Globally: Solving Measurement Challenges",
+    "title": "Leading Innovation Globally:",
+    "title2": "Solving Measurement Challenges",
     "paragraph": "At Paeonia Innovations, we are creating the world’s most compact solutions to enable accurate, repeatable, robust and real-time chemical analysis, leaving time for customers to focus on getting their job done."
   },
   "About": {
@@ -132,5 +133,38 @@
     "facebook": "fb.com",
     "linedin": "linkedin.com",
     "youtube": "youtube.com"
-  }
+  },
+  "PIModelGallery": [
+    {
+      "title": "PI Novel Mid-IR Spectromter",
+      "largeImage": "img/portfolio/DSC00402.jpeg",
+      "smallImage": "img/portfolio/DSC00402_small.png"
+    }
+  ],
+  "ContactProduct": {
+    "email": "cs@paeoniatech.com"
+  },
+  "AboutSpectrometer": [
+    {
+      "title": "Spectrometer",
+      "subtitles": [
+        {
+          "subtitle": "MID-IR SPECTROSCOPY",
+          "subText": "Dipole moments in molecular bonds can vibrate with energies that correspond to the mid-infrared region of light such that light passing through can be absorbed by the bonds that match in energy. As the dipole moments are affected by the bond and the surroundings, Mid-IR spectroscopy can be used to identify molecules and combined with measurement of the intensity to also quantify the concentration."
+        },
+        {
+          "subtitle": "KINETICS, MOLECULAR STRUCTURE AND THERMODYNAMIC STUDIES",
+          "subText": "Researchers may use our spectrometer to expound the different molecular structures of the reaction species with potential kinetic and thermodynamic pathways, enabling green synthesis, new catalysts, molecules and reactions."
+        },
+        {
+          "subtitle": "INLINE PROCESS MONITORING",
+          "subText": "Process industries such as (pharmaceutical, specialty chemicals, petrochemicals, chemicals, food and beverage) industries using liquid chemicals in their processes, can use our spectrometer to monitor reactions, reduce cycle times, maximize yield, reduce wastes, improve sustainability, control quality and scale up reactions."
+        },
+        {
+          "subtitle": "ROBUST AND COMPACT",
+          "subText": "At a size of 5 * 5.5 * 6 cm, the Novel Mid-IR Spectrometer is a fraction of the size of all traditional spectrometers. It does not use any moving components or fragile optical fibers, allowing you the freedom to decide where and how you want to use the spectrometer."
+        }
+      ]
+    }
+  ]
 }

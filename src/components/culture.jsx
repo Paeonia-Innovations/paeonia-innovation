@@ -59,7 +59,7 @@ export const Culture = (props) => {
                               }`}
                             >
                               <h3>{sub.subtitle}</h3>
-                              <div className="arrow-line"></div>
+                              {/* <div className="arrow-line"></div> */}
                               <p>{sub.subText}</p>
                             </div>
                           ))

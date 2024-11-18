@@ -72,6 +72,20 @@
     padding: 10px;
   }
 
+  #aboutSpectrometer {
+    padding: 10px;
+  }
+  .spectrometer-item .content-wrapper {
+    padding: 10px;
+  }
+
+  #inlineMonitoring {
+    padding: 10px;
+  }
+  .inline-item .content-wrapper {
+    padding: 10px;
+  }
+
   #portfolio {
     width: 110%;
   }

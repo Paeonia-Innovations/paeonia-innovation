@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export const Navigation = (props) => {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
@@ -29,8 +30,8 @@ export const Navigation = (props) => {
         visible ? "" : "--is-hidden"
       }`}
     >
-      <div className="container">
-        <div className="navbar-header">
+      <div className="container navbar-container">
+        <div className="navbar-left">
           {/* <a href="#contact" className="page-scroll contact-icon-all-screens">
             <img
               src="img/email.png"
@@ -50,7 +51,11 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button> */}
-          <a className="navbar-brand page-scroll" href="#page-top">
+          <a
+            className="navbar-brand page-scroll"
+            href="#page-top"
+            onClick={() => props.onNavClick("homePage")}
+          >
             <img
               className="pi-logo"
               src={`${process.env.PUBLIC_URL}/PI logo nows.svg`}
@@ -67,7 +72,15 @@ export const Navigation = (props) => {
               }}
             />
           </a>{" "}
+          {/* <a
+            className="navbar-brand spectrometer-link"
+            href="#novelMidIRSpectrometer"
+            onClick={() => props.onNavClick("productPage")}
+          >
+            Novel Mid-IR Spectrometer
+          </a> */}
         </div>
+
         {/* <div
           className="collapse navbar-collapse navbar-right"
           id="bs-example-navbar-collapse-1"
@@ -75,7 +88,27 @@ export const Navigation = (props) => {
         <div className="navbar-right">
           {/* <ul className="nav navbar-nav navbar-right">
             <li> */}
-          <a href="#contact" className="page-scroll">
+          <Dropdown className="custom-dropdown">
+            <Dropdown.Toggle id="dropdown-basic" className="custom-toggle">
+              Products
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className="custom-menu">
+              <Dropdown.Item
+                href="#novelMidIRSpectrometer"
+                className="custom-item"
+                onClick={() => props.onNavClick("productPage")}
+              >
+                Novel Mid-IR Spectrometer
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <a
+            href="#contact"
+            className="page-scroll"
+            onClick={() => props.onNavClick("contactPage")}
+          >
             <img
               src="img/email.png"
               alt="Contact Icon"

@@ -38,9 +38,8 @@ export const Projects = (props) => {
                         className={`${inView ? "fadeInLeft" : ""}`}
                         style={{ animationDelay: `${i * 0.5}s` }}
                       >
-                        &bull; In less than{" "}
-                        <span class="highlight">6 months</span>, our lean but
-                        extremely
+                        In less than <span class="highlight">6 months</span>,
+                        our lean but extremely
                         <span class="highlight"> ‘mean’</span> team{" "}
                         <span class="highlight">completed </span>
                         our{" "}
@@ -52,22 +51,24 @@ export const Projects = (props) => {
                         <span class="highlight">hardware + software</span>{" "}
                         product prototype.
                       </li>
+                      <div style={{ height: "0.5em" }}></div>
                       <li
                         className={`${inView ? "fadeInRight" : ""}`}
                         style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
                       >
-                        &bull; We are already{" "}
+                        We are already{" "}
                         <span class="highlight">getting ready</span> to start
                         work on the <span class="highlight">next product</span>{" "}
                         in the <span class="highlight">product line</span>.
                       </li>
+                      <div style={{ height: "0.5em" }}></div>
                       <li
                         className={`${inView ? "fadeInLeft" : ""}`}
                         style={{ animationDelay: `${i * 0.5 + 1}s` }}
                       >
-                        &bull; <span class="highlight">Stay tuned</span> for our
-                        launch with <span class="highlight">our partners</span>{" "}
-                        at <span class="highlight">top conferences</span>.
+                        <span class="highlight">Stay tuned</span> for our launch
+                        with <span class="highlight">our partners</span> at{" "}
+                        <span class="highlight">top conferences</span>.
                       </li>
                     </ul>
                   </p>
