@@ -1788,9 +1788,9 @@ label {
     justify-content: center;
   }
   .custom-toggle {
-    padding: 12px 15px;
+    padding: 8px 10px;
     font-size: 18px;
-    margin-top: 8px;
+    margin-top: 0px;
   }
   .custom-item {
     font-size: 16px;
