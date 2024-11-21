@@ -57,7 +57,7 @@ export const ProductSpecification = (props) => {
                     },
                     {
                       specification: "Tube Fiting",
-                      detail: "1/4\"'- 28 flat-bottom",
+                      detail: '1/4"- 28 flat-bottom',
                     },
                     {
                       specification: "Wetted Materials",

@@ -99,7 +99,7 @@ export const Navigation = (props) => {
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
               >
-                Novel Mid-IR Spectrometer
+                &nbsp;&nbsp;&nbsp;Novel Mid-IR Spectrometer
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
