@@ -128,6 +128,7 @@ hr {
   color: #333;
   text-transform: uppercase;
 } */
+
 #menu.navbar-default .navbar-nav > li > a {
   font-family: "Poster", sans-serif;
   text-transform: uppercase;
@@ -1581,12 +1582,10 @@ label {
 .simple-item .img-responsive {
   margin-top: 50px;
   margin-bottom: 0px;
-  height: auto;
-  display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   width: auto;
-  height: 65%;
+  max-height: 65%;
 }
 
 /* Product Specification */
@@ -1776,6 +1775,10 @@ label {
   .navbar-header .spectrometer-link {
     font-size: 12px;
     padding-left: 220px;
+  }
+
+  .navbar-right {
+    gap: 10px;
   }
 
   .navbar-right .contact-icon {
@@ -1990,7 +1993,7 @@ label {
     height: 400px;
   }
   .simple-item .img-responsive {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
   .simple-item h3 {
     font-size: 22px; /* Adjust font size for smaller screens */
