@@ -21,7 +21,8 @@ import { AboutSpectrometer } from "./components/aboutSpectrometer";
 // import { KineticsThermoMolecular } from "./components/kineticsThermoMolecular";
 import { InlineMonitoring } from "./components/inlineMonitoring";
 // import { RobustAndCompact } from "./components/robustAndCompact";
-import { Simple } from "./components/simple";
+//import { Simple } from "./components/simple";
+import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
 import { ContactProduct } from "./components/contactProduct";
 
@@ -119,7 +120,11 @@ const App = () => {
               id="novelMidIRSpectrometer"
               data={landingPageData.NovelMidIRSpectrometer}
             />
-            <Simple id="simple" data={landingPageData.Simple} />
+            {/* <Simple id="simple" data={landingPageData.Simple} /> */}
+            <ProductIntroVideo
+              id="productIntroVideo"
+              data={landingPageData.ProductIntroVideo}
+            />
             {/* <PIModelGallery
               id="pimodelgallery"
               data={landingPageData.PIModelGallery}
