@@ -95,7 +95,6 @@ export const Navigation = (props) => {
 
             <Dropdown.Menu className="custom-menu">
               <Dropdown.Item
-                href="#novelMidIRSpectrometer"
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
               >

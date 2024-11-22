@@ -81,6 +81,7 @@ const App = () => {
   const handleNavigationClick = (section) => {
     setTargetSection(section); // Update target section
     if (section === "productPage") {
+      window.history.pushState({}, "", "/novelMidIRSpectrometer"); // Clear the hash (e.g., #home-page)
       setShowSpectrometerProductPage(true);
     } else {
       setShowSpectrometerProductPage(false);

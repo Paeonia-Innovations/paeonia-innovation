@@ -41,6 +41,13 @@ export const NovelMidIRSpectrometer = (props) => {
                   palm of your hands for your real-time, chemical composition
                   measurements.
                 </p>
+                <div className="spacer"></div>
+                <h4>Simple</h4>
+                <p>
+                  {" "}
+                  Just plug in the module via USB to a computer with the
+                  software installed and you are good to go even in the field.
+                </p>
               </div>
               <div
                 className={`col-12 col-md-6 fade-in-up ${
