@@ -1,0 +1,40 @@
+/* Ensure the video container has a fixed size */
+#productIntroVideo {
+  background: #110022;
+  z-index: 2;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.product-video {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down; /* Adjust to fill the entire container */
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: To ensure aspect ratio is consistent */
+#productIntroVideo {
+  position: relative;
+  width: 100%; /* Adjust to 100% width */
+}
+
+/* Ensure the video container has a fixed size */
+/* #productIntroVideo {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+} */
+
+/* .product-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+   display: block;
+} */
