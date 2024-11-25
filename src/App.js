@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 import { ValueProposition } from "./components/valueproposition";
@@ -29,6 +35,7 @@ import { ContactProduct } from "./components/contactProduct";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+//import { Router } from "express";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -38,9 +45,10 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [showSpectrometerProductPage, setShowSpectrometerProductPage] =
-    useState(false);
+  //const [showSpectrometerProductPage, setShowSpectrometerProductPage] = useState(false);
   const [targetSection, setTargetSection] = useState("homePage");
+
+  //const navigate = useNavigate();
 
   useEffect(() => {
     setLandingPageData(JsonData);
@@ -69,24 +77,51 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (!showSpectrometerProductPage) {
-      if (targetSection === "homePage") {
-        scrollToTop();
-      } else if (targetSection === "contactPage") {
-        scrollToContact();
-      }
+    if (targetSection === "homePage") {
+      scrollToTop();
+    } else if (targetSection === "contactPage") {
+      scrollToContact();
     }
-  }, [showSpectrometerProductPage, targetSection]);
+  }, [targetSection]);
 
   const handleNavigationClick = (section) => {
-    setTargetSection(section); // Update target section
-    if (section === "productPage") {
-      window.history.pushState({}, "", "/novelMidIRSpectrometer"); // Clear the hash (e.g., #home-page)
-      setShowSpectrometerProductPage(true);
-    } else {
-      setShowSpectrometerProductPage(false);
-    }
+    setTargetSection(section);
   };
+
+  // useEffect(() => {
+  //   if (!showSpectrometerProductPage) {
+  //     if (targetSection === "homePage") {
+  //       scrollToTop();
+  //     } else if (targetSection === "contactPage") {
+  //       scrollToContact();
+  //     }
+  //   }
+  // }, [showSpectrometerProductPage, targetSection]);
+
+  const location = useLocation(); // To track the current route
+
+  useEffect(() => {
+    const hash = window.location.hash; // Get the current hash (e.g., #contact)
+
+    if (hash) {
+      const element = document.querySelector(hash); // Find the element with that ID
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to that element
+      }
+    }
+  }, [location]);
+
+  // const handleNavigationClick = (section) => {
+  //   setTargetSection(section); // Update target section
+  //   if (section === "productPage") {
+  //     window.history.pushState({}, "", "/novelMidIRSpectrometer"); // Clear the hash (e.g., #home-page)
+  //     setShowSpectrometerProductPage(true);
+  //     //navigate("/novelMidIRSpectrometer");
+  //   } else {
+  //     setShowSpectrometerProductPage(false);
+  //     //navigate("/");
+  //   }
+  // };
 
   //Function to handle navigation
   // const handleNavigationClick = (section) => {
@@ -111,85 +146,147 @@ const App = () => {
   // };
 
   return (
+    // <Router>
     <div>
-      {/* {!showSpectrometerProductPage && <BackgroundVideo />} */}
+      <Navigation onNavClick={handleNavigationClick} />
       <div className="content">
-        <Navigation onNavClick={handleNavigationClick} />
-        {showSpectrometerProductPage ? (
-          <>
-            <NovelMidIRSpectrometer
-              id="novelMidIRSpectrometer"
-              data={landingPageData.NovelMidIRSpectrometer}
-            />
-            {/* <Simple id="simple" data={landingPageData.Simple} /> */}
-            <ProductIntroVideo
-              id="productIntroVideo"
-              data={landingPageData.ProductIntroVideo}
-            />
-            {/* <PIModelGallery
-              id="pimodelgallery"
-              data={landingPageData.PIModelGallery}
-            /> */}
-            <AboutSpectrometer
-              id="aboutSpectrometer"
-              data={landingPageData.AboutSpectrometer}
-            />
-            <InlineMonitoring
-              id="inlineMonitoring"
-              data={landingPageData.InlineMonitoring}
-            />
-            {/* <MidIRSpectroscopy
-              id="midIRSpectroscopy"
-              data={landingPageData.MidIRSpectroscopy}
-            />
-            <KineticsThermoMolecular
-              id="kineticsThermoMolecular"
-              data={landingPageData.KineticsThermoMolecular}
-            />
-            
-            <RobustAndCompact
-              id="robustAndCompact"
-              data={landingPageData.RobustAndCompact}
-            /> */}
-
-            <ProductSpecification
-              id="productSpecification"
-              data={landingPageData.ProductSpecification}
-            />
-            <ContactProduct
-              id="contactProduct"
-              data={landingPageData.ContactProduct}
-            />
-          </>
-        ) : (
-          <>
-            <BackgroundVideo />
-            {videoLoaded && (
+        <Routes>
+          {/* Home Page Route */}
+          <Route
+            path="/"
+            element={
               <>
-                {/* <Navigation onNavClick={handleNavigationClick} /> */}
-                <Header data={landingPageData.Header} />
-                <ValueProposition
-                  id="valueproposition"
-                  data={landingPageData.ValueProposition}
-                />
-                <CuttingEdge
-                  id="cuttingEdge"
-                  data={landingPageData.CuttingEdge}
-                />
-                <Culture id="culture" data={landingPageData.Culture} />
-                <Challenges id="challenges" data={landingPageData.Challenges} />
-                <Projects id="projects" data={landingPageData.Projects} />
-                <Purpose id="purpose" data={landingPageData.Purpose} />
-                <Mission id="mission" data={landingPageData.Mission} />
-                <Vision id="vision" data={landingPageData.Vision} />
-                <Contact id="contact" data={landingPageData.Contact} />
+                <BackgroundVideo />
+                {videoLoaded && (
+                  <>
+                    <Header data={landingPageData.Header} />
+                    <ValueProposition
+                      id="valueproposition"
+                      data={landingPageData.ValueProposition}
+                    />
+                    <CuttingEdge
+                      id="cuttingEdge"
+                      data={landingPageData.CuttingEdge}
+                    />
+                    <Culture id="culture" data={landingPageData.Culture} />
+                    <Challenges
+                      id="challenges"
+                      data={landingPageData.Challenges}
+                    />
+                    <Projects id="projects" data={landingPageData.Projects} />
+                    <Purpose id="purpose" data={landingPageData.Purpose} />
+                    <Mission id="mission" data={landingPageData.Mission} />
+                    <Vision id="vision" data={landingPageData.Vision} />
+                    <Contact id="contact" data={landingPageData.Contact} />
+                  </>
+                )}
               </>
-            )}
-          </>
-        )}
+            }
+          />
+
+          {/* Product Page Route */}
+          <Route
+            path="/novelMidIRSpectrometer"
+            element={
+              <>
+                <NovelMidIRSpectrometer
+                  id="novelMidIRSpectrometer"
+                  data={landingPageData.NovelMidIRSpectrometer}
+                />
+                <ProductIntroVideo
+                  id="productIntroVideo"
+                  data={landingPageData.ProductIntroVideo}
+                />
+                <AboutSpectrometer
+                  id="aboutSpectrometer"
+                  data={landingPageData.AboutSpectrometer}
+                />
+                <InlineMonitoring
+                  id="inlineMonitoring"
+                  data={landingPageData.InlineMonitoring}
+                />
+                <ProductSpecification
+                  id="productSpecification"
+                  data={landingPageData.ProductSpecification}
+                />
+                <ContactProduct
+                  id="contactProduct"
+                  data={landingPageData.ContactProduct}
+                />
+              </>
+            }
+          />
+        </Routes>
       </div>
     </div>
+    //</Router>
+
+    // <div>
+    //   <div className="content">
+    //     <Navigation onNavClick={handleNavigationClick} />
+    //     {showSpectrometerProductPage ? (
+    //       <>
+    //         <NovelMidIRSpectrometer
+    //           id="novelMidIRSpectrometer"
+    //           data={landingPageData.NovelMidIRSpectrometer}
+    //         />
+    //         <ProductIntroVideo
+    //           id="productIntroVideo"
+    //           data={landingPageData.ProductIntroVideo}
+    //         />
+    //         <AboutSpectrometer
+    //           id="aboutSpectrometer"
+    //           data={landingPageData.AboutSpectrometer}
+    //         />
+    //         <InlineMonitoring
+    //           id="inlineMonitoring"
+    //           data={landingPageData.InlineMonitoring}
+    //         />
+    //         <ProductSpecification
+    //           id="productSpecification"
+    //           data={landingPageData.ProductSpecification}
+    //         />
+    //         <ContactProduct
+    //           id="contactProduct"
+    //           data={landingPageData.ContactProduct}
+    //         />
+    //       </>
+    //     ) : (
+    //       <>
+    //         <BackgroundVideo />
+    //         {videoLoaded && (
+    //           <>
+    //             <Header data={landingPageData.Header} />
+    //             <ValueProposition
+    //               id="valueproposition"
+    //               data={landingPageData.ValueProposition}
+    //             />
+    //             <CuttingEdge
+    //               id="cuttingEdge"
+    //               data={landingPageData.CuttingEdge}
+    //             />
+    //             <Culture id="culture" data={landingPageData.Culture} />
+    //             <Challenges id="challenges" data={landingPageData.Challenges} />
+    //             <Projects id="projects" data={landingPageData.Projects} />
+    //             <Purpose id="purpose" data={landingPageData.Purpose} />
+    //             <Mission id="mission" data={landingPageData.Mission} />
+    //             <Vision id="vision" data={landingPageData.Vision} />
+    //             <Contact id="contact" data={landingPageData.Contact} />
+    //           </>
+    //         )}
+    //       </>
+    //     )}
+    //   </div>
+    // </div>
   );
 };
 
-export default App;
+//export default App;
+
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

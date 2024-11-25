@@ -294,9 +294,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; /* Ensure vertical alignment */
-  flex-wrap: wrap; /* Allow wrapping for small screens */
-  /* padding: 10px 20px; */
-  padding: 0;
+  /* flex-wrap: wrap; Allow wrapping for small screens */
+  padding: 10px 20px;
 }
 
 .navbar-left {
@@ -304,8 +303,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center; /* Center vertically */
-  padding-right: 0; /* Remove padding */
-  margin-right: 0;
 }
 
 /* .pi-logo {
@@ -320,9 +317,6 @@ body {
   align-items: center;
   gap: 20px;
   justify-content: flex-end;
-  flex: 1;
-  padding-right: 0; /* Remove padding */
-  margin-right: 0;
 }
 
 .navbar-right .contact-icon {
@@ -342,7 +336,7 @@ body {
   background-color: #7a1b1f; /* Custom blue color */
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 10px 10px;
   margin-top: 5px;
   border-radius: 5px;
   font-size: 20px;
@@ -1772,6 +1766,15 @@ label {
     font-size: 40px;
     font-family: "Poster", sans-serif;
   }
+  .navbar-container {
+    padding: 0; /* Remove padding for small screens */
+  }
+  .navbar-left {
+    justify-content: flex-start; /* Center vertically */
+    padding-left: 0px;
+    flex-wrap: wrap;
+  }
+
   #valueproposition {
     overflow-x: hidden;
     padding: 10px;
@@ -1784,6 +1787,9 @@ label {
 
   .navbar-right {
     gap: 10px;
+    justify-content: flex-end; /* Align items to the right */
+    padding-right: 0; /* Remove right padding */
+    margin-right: 0;
   }
 
   .navbar-right .contact-icon {

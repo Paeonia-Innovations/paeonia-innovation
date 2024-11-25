@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export const Navigation = (props) => {
@@ -51,7 +52,28 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
             <span className="icon-bar"></span>{" "}
           </button> */}
-          <a
+          <Link
+            to="/"
+            className="navbar-brand page-scroll"
+            onClick={() => props.onNavClick("homePage")}
+          >
+            <img
+              className="img-responsive"
+              src={`${process.env.PUBLIC_URL}/PI logo nows.svg`}
+              alt="Logo"
+              aria-label="logo"
+              style={{
+                width: "200px",
+                height: "auto",
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: "0px",
+                cursor: "pointer",
+              }}
+            />
+          </Link>
+          {/* <a
             className="navbar-brand page-scroll"
             href="#page-top"
             onClick={() => props.onNavClick("homePage")}
@@ -71,7 +93,7 @@ export const Navigation = (props) => {
                 cursor: "pointer", // Ensure cursor changes to pointer on hover
               }}
             />
-          </a>{" "}
+          </a>{" "} */}
           {/* <a
             className="navbar-brand spectrometer-link"
             href="#novelMidIRSpectrometer"
@@ -94,17 +116,21 @@ export const Navigation = (props) => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="custom-menu">
-              <Dropdown.Item
+              <Dropdown.Item className="custom-item">
+                <Link to="/novelMidIRSpectrometer" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;Novel Mid-IR Spectrometer
+                </Link>
+              </Dropdown.Item>
+              {/* <Dropdown.Item
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
               >
                 &nbsp;&nbsp;&nbsp;Novel Mid-IR Spectrometer
-              </Dropdown.Item>
+              </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
-
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             className="page-scroll"
             onClick={() => props.onNavClick("contactPage")}
           >
@@ -113,7 +139,14 @@ export const Navigation = (props) => {
               alt="Contact Icon"
               className="contact-icon"
             />
-          </a>
+          </Link>
+          {/* <a href="#contact" className="page-scroll">
+            <img
+              src="img/email.png"
+              alt="Contact Icon"
+              className="contact-icon"
+            />
+          </a> */}
           {/* </li>
           </ul> */}
         </div>

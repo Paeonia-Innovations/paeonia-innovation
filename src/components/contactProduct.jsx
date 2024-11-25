@@ -51,8 +51,11 @@ export const ContactProduct = (props) => {
                 <h2>Get In Touch</h2>
                 <p>
                   Reach out to us at{" "}
-                  <a href={`mailto:${props.data.email}`} className="email-link">
-                    {props.data.email}
+                  {/* <a href={`mailto:${props.data.email}`} className="email-link">
+                    {props.data?.email || "Email not available"}
+                  </a>{" "} */}
+                  <a href="mailto:cs@paeoniatech.com" className="email-link">
+                    cs@paeoniatech.com
                   </a>{" "}
                   to get a quotation, learn more about our offerings or have
                   more detailed information.
