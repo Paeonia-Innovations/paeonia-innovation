@@ -35,7 +35,7 @@ export const ProductIntroVideo = (props) => {
               <div className="video-placeholder">
                 <video className="product-video" controls autoPlay>
                   <source
-                    src={`${process.env.PUBLIC_URL}/SpectrometerProductVideo.mp4`}
+                    src={`${process.env.PUBLIC_URL}/SpectrometerIntroVideo.mp4`}
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.
