@@ -69,7 +69,7 @@ export const ProductSpecification = (props) => {
                     },
                     {
                       specification: "Software Operating System",
-                      detail: "Microsoft Windows 11",
+                      detail: "Microsoft Windows 10 & 11",
                     },
                   ].map((row, i) => (
                     <tr key={i}>
