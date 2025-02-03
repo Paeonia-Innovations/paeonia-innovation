@@ -56,7 +56,7 @@ export const ProductSpecification = (props) => {
                       detail: "0 to 5 bar absolute",
                     },
                     {
-                      specification: "Tube Fiting",
+                      specification: "Tube Fitting",
                       detail: '1/4"- 28 flat-bottom',
                     },
                     {
