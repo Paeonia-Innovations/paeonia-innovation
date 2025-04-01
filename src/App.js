@@ -32,6 +32,8 @@ import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
 import { ContactProduct } from "./components/contactProduct";
 
+import { EventRegistration } from "./components/event_Registration";
+
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
@@ -212,6 +214,18 @@ const App = () => {
                 <ContactProduct
                   id="contactProduct"
                   data={landingPageData.ContactProduct}
+                />
+              </>
+            }
+          />
+          {/*Event Registration */}
+          <Route
+            path="/eventRegistration"
+            element={
+              <>
+                <EventRegistration
+                  id="eventRegistration"
+                  data={landingPageData.EventRegistration}
                 />
               </>
             }

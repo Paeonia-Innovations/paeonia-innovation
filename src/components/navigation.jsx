@@ -112,6 +112,26 @@ export const Navigation = (props) => {
             <li> */}
           <Dropdown className="custom-dropdown">
             <Dropdown.Toggle id="dropdown-basic" className="custom-toggle">
+              Events
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className="custom-menu">
+              <Dropdown.Item className="custom-item">
+                <Link to="/eventRegistration" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;Register for Our Seminar!
+                </Link>
+              </Dropdown.Item>
+              {/* <Dropdown.Item
+                className="custom-item"
+                onClick={() => props.onNavClick("productPage")}
+              >
+                &nbsp;&nbsp;&nbsp;Novel Mid-IR Spectrometer
+              </Dropdown.Item> */}
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <Dropdown className="custom-dropdown">
+            <Dropdown.Toggle id="dropdown-basic" className="custom-toggle">
               Products
             </Dropdown.Toggle>
 
