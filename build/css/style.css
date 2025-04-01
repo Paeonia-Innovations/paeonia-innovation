@@ -1489,6 +1489,50 @@ label {
   align-items: center;
 }
 
+/* Event Registration */
+#eventRegistration {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 150px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.spectrometer {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.spectrometer h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.spectrometer h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+}
+
+.spectrometer .spacer {
+  margin-bottom: 40px;
+}
+.spectrometer p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
+.spectrometer .highlight {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
 /* PI ModelP Section */
 
 /* Overall container */
