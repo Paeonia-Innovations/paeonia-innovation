@@ -170,7 +170,11 @@ function EventRegistration() {
           formData.name &&
           formData.companyName &&
           formData.jobPosition &&
-          formData.email
+          formData.email &&
+          formData.productInterests &&
+          formData.productInterests.length > 0 &&
+          formData.productAppInterests &&
+          formData.productAppInterests.length > 0
         );
       case 1:
         return formData.privacy;
@@ -204,7 +208,7 @@ function EventRegistration() {
 
   return (
     <div className="event-registration-wrapper">
-      <div className="min-h-screen bg-gray-50 flex justify-center items-center">
+      <div className="min-h-screen flex justify-center items-center">
         <LanguageToggle
           className="absolute top-6 right-6"
           currentLocale={locale}
@@ -218,11 +222,11 @@ function EventRegistration() {
             <div className="flex justify-center items-center gap-4 mb-6">
               <Atom className="w-16 h-16 text-red-800" flex-none />{" "}
               {/* Bigger Icon */}
-              <h1 className="text-4xl font-bold text-gray-900 whitespace-nowrap">
+              <h1 className="text-4xl font-bold text-gray-900 whitespace-normal">
                 {t.welcome}
               </h1>
             </div>
-            <p className="text-3xl text-gray-600 w-full mx-auto text-left">
+            <p className="text-3xl text-gray-600 w-full mx-auto text-center">
               {t.companyIntro}
             </p>
           </div>
