@@ -1489,50 +1489,6 @@ label {
   align-items: center;
 }
 
-/* Event Registration */
-#eventRegistration {
-  background: #ecece7;
-  z-index: 2;
-  position: relative;
-  padding-top: 150px;
-  padding-right: 0;
-  padding-bottom: 50px;
-  padding-left: 0;
-}
-
-.spectrometer {
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-  font-family: "Poster", sans-serif;
-  position: relative;
-}
-
-.spectrometer h3 {
-  color: #1a1a1a;
-  text-align: left;
-  font-size: 30px;
-}
-
-.spectrometer h4 {
-  color: #1a1a1a;
-  text-align: left;
-  font-size: 22px;
-}
-
-.spectrometer .spacer {
-  margin-bottom: 40px;
-}
-.spectrometer p {
-  color: #1a1a1a;
-  text-align: left;
-  font-size: 18px;
-}
-
-.spectrometer .highlight {
-  color: #1a1a1a;
-  font-weight: bold;
-}
-
 /* PI ModelP Section */
 
 /* Overall container */
@@ -1801,6 +1757,152 @@ label {
   color: #1a1a1a; /* Text color for feature title and text */
   text-align: justify;
   font-size: 18px;
+}
+
+/*Event Registration */
+#eventRegistration {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 150px;
+  padding-right: 0;
+  padding-bottom: 50px;
+}
+
+.registration {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.registration h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+  text-align: center;
+}
+
+.registration h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+}
+
+.registration .spacer {
+  margin-bottom: 40px;
+}
+.registration p {
+  color: #1a1a1a;
+  text-align: center;
+  font-size: 18px;
+}
+
+.registration .highlight {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+/* Add this to your CSS file */
+.event-registration-wrapper {
+  padding-top: 100px;
+  padding-right: 0;
+  padding-bottom: 0px;
+  padding-left: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Registration form Section */
+
+.form-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  background-color: #f5f5f5;
+}
+
+.form-container fieldset h2 {
+  text-align: left;
+}
+
+.registration fieldset {
+  display: flex;
+  width: 480px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-direction: column;
+}
+
+.registration label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.registration sup {
+  color: red;
+  top: -2px;
+  font-size: 95%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.registration input,
+.registration select {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 32px;
+  padding: 0 8px;
+}
+
+.registration .Field {
+  position: relative;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration .FieldError {
+  position: absolute;
+  bottom: -6px;
+  color: red;
+  font-size: 12px;
+}
+
+.registration .Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.registration button {
+  padding: 12px;
+  width: 240px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: darkblue;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.registration button:disabled,
+.registration button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.form-check-input {
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+  float: left !important;
 }
 
 /* Responsive adjustments */
