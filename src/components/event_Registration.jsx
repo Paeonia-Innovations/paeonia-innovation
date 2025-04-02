@@ -19,6 +19,8 @@ const initialFormData = {
   productInterests: [],
   productAppInterests: [],
   others: "",
+  chemometricsModel: "",
+  softwareUsed: "",
   timelines: "",
 };
 
@@ -58,6 +60,8 @@ function EventRegistration() {
         requirements: formData.requirements,
         appcategory: formData.productAppInterests.join(", "), // Convert array to string
         others: formData.others,
+        chemometricsModel: formData.chemometricsModel,
+        softwareUsed: formData.softwareUsed,
         timelines: formData.timelines,
       };
 
@@ -190,6 +194,7 @@ function EventRegistration() {
           <CombinedForm
             formData={formData}
             onChange={handleFormChange}
+            setFormData={setFormData}
             locale={locale}
           />
         );

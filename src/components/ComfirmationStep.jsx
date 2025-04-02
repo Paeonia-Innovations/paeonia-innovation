@@ -46,6 +46,26 @@ export const ConfirmationStep = ({ formData, onChange, locale }) => {
                 : ""}
             </dd>
           </div>
+
+          <div>
+            <dt className="text-2xl font-medium text-gray-500">
+              {t.chemometricsModel}
+            </dt>
+            <dd className="text-2xl text-gray-900">
+              {formData.chemometricsModel === "Yes" ? t.answerYes : t.answerNo}
+            </dd>
+          </div>
+
+          {formData.chemometricsModel === "Yes" && (
+            <div>
+              <dt className="text-2xl font-medium text-gray-500">
+                {t.softwareChemometricsModel}
+              </dt>
+              <dd className="text-2xl text-gray-900">
+                {formData.softwareUsed || "N/A"}
+              </dd>
+            </div>
+          )}
         </dl>
       </div>
 
