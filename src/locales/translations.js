@@ -176,7 +176,8 @@ export const translations = {
     success: "提交成功！",
     next: "下一步",
     previous: "上一步",
-    visitBooth: "欢迎莅临新*科研企业合作中心(A*PC).",
+    visitBooth:
+      "欢迎莅临 苏州工业园区 新平街388号 腾飞创新园15幢 新科研企业合作中心5楼.",
     contactSoon: "我们将在3个工作日内与您联系!",
     required: "请选择",
     invalidEmail: "请输入有效的电子邮箱地址",
