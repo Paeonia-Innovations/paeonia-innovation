@@ -5,7 +5,7 @@ export const ConfirmationStep = ({ formData, onChange, locale }) => {
   const t = translations[locale];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-left">
       <div className="bg-white p-6 rounded-lg border border-gray-200">
         <h3 className="text-3xl font-medium text-gray-900 mb-4">
           {locale === "en" ? "Review Your Information" : "确认您的信息"}
@@ -49,7 +49,7 @@ export const ConfirmationStep = ({ formData, onChange, locale }) => {
         </dl>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 text-left">
         <label className="flex items-start space-x-3 pl-0">
           <input
             type="checkbox"
@@ -60,14 +60,16 @@ export const ConfirmationStep = ({ formData, onChange, locale }) => {
           <span className="text-2xl text-gray-600">{t.privacy}</span>
         </label>
         <br />
-        <label className="flex items-start space-x-3 pl-0">
+        <label className="flex items-center space-x-3  w-full text-left">
           <input
             type="checkbox"
             checked={formData.newsletter}
             onChange={(e) => onChange({ newsletter: e.target.checked })}
             className="mt-1 rounded text-blue-500 focus:ring-blue-500"
           />
-          <span className="text-2xl text-gray-600">{t.newsletter}</span>
+          <span className="text-2xl text-left text-gray-600">
+            {t.newsletter}
+          </span>
         </label>
         <br />
         <br />

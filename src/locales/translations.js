@@ -2,7 +2,7 @@ export const translations = {
   en: {
     welcome: "Welcome to Paeonia Innovations' Seminar on Mid-IR Spectrometer!",
     companyIntro:
-      "Paeonia Innovations specializes in compact Mid-IR spectrometer solutions for chemical analysis and industrial applications. We are committed to delivering high-performance analytical tools that enhance accuracy, efficiency, and scientific advancement.",
+      "Paeonia Innovations specializes in compact, online Mid-IR spectrometer for monitoring reactions and industrial applications. We deliver high-performance, online analytical tools that enhance efficiency and scientific advancements.",
     basicInfo: "Basic Information",
     productInterest: "Product and Application Interests",
     confirmation: "Confirmation",
@@ -96,7 +96,7 @@ export const translations = {
   zh: {
     welcome: "欢迎莅临 Paeonia Innovations 中红外光谱仪研讨会！",
     companyIntro:
-      "Paeonia Innovations 专注于先进的中红外光谱仪解决方案，应用于化学分析和工业领域。我们致力于提供高性能的分析工具，以提升精准度、效率，并推动科学进步。",
+      "Paeonia Innovations 专注于先进的中红外光谱仪解决方案，应用于在线化学分析和工业。我们提供高性能的在线分析，以提升精准度、效率，并推动科学进步。",
     basicInfo: "基本信息",
     productInterest: "产品和应用兴趣",
     confirmation: "确认",

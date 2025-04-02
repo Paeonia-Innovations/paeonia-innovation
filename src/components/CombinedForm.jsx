@@ -178,7 +178,7 @@ export const CombinedForm = ({ formData, onChange, locale }) => {
             <br />
             <br />
             <div className="space-y-3 pl-0">
-              {productCategories.map((category, index) => (
+              {productCategories.map((category) => (
                 <div
                   key={category}
                   className="flex items-center space-x-3 pl-0 p-2 cursor-pointer hover:bg-gray-50"

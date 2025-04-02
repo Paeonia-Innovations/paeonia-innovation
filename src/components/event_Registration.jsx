@@ -77,7 +77,7 @@ function EventRegistration() {
       // Redirect back to the event registration page after 3 seconds
       setTimeout(() => {
         setSuccessMessage(""); // Clear message
-        window.location.href = "/eventregistration"; // Redirect to event registration page
+        window.location.replace("/eventregistration"); // Redirect to event registration page
       }, 3000);
     } catch (error) {
       console.error("Error sending email to admin:", error);
@@ -208,7 +208,7 @@ function EventRegistration() {
 
   return (
     <div className="event-registration-wrapper">
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-screen flex">
         <LanguageToggle
           className="absolute top-6 right-6"
           currentLocale={locale}
