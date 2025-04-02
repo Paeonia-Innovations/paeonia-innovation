@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { translations } from "../locales/translations";
 
-export const CombinedForm = ({ formData, onChange, locale }) => {
+export const CombinedForm = ({ formData, onChange, setFormData, locale }) => {
   const t = translations[locale];
 
   const companySizes = ["1-50", "51-200", "201-500", "501-1000", "1000+"];
@@ -9,6 +9,8 @@ export const CombinedForm = ({ formData, onChange, locale }) => {
   const productCategories = t.productCategoriesList;
   const productAppCategories = t.productAppCategoriesList;
   const timelines = t.timelinesList;
+  const [selectedOption, setSelectedOption] = useState("");
+  // const [software, setSoftware] = useState("");
 
   const handleProductInterestChange = (category) => {
     const currentInterests = formData.productInterests || [];
@@ -24,6 +26,22 @@ export const CombinedForm = ({ formData, onChange, locale }) => {
       ? currentAppInterests.filter((c) => c !== appcategory)
       : [...currentAppInterests, appcategory];
     onChange({ productAppInterests: newAppInterests });
+  };
+
+  const handleOptionChange = (option) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      chemometricsModel: option, // Store Yes/No answer
+      softwareUsed: option === "Yes" ? prevData.softwareUsed : "", // Clear software if "No"
+    }));
+    setSelectedOption(option);
+  };
+
+  const handleSoftwareChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      softwareUsed: e.target.value, // Store entered software
+    }));
   };
 
   return (
@@ -200,7 +218,7 @@ export const CombinedForm = ({ formData, onChange, locale }) => {
           <br />
           {/* Requirements */}
           <div>
-            <label className="block text-3xl font-medium text-gray-700">
+            <label className="block text-2xl font-medium text-gray-700">
               {t.requirements}
             </label>
             <textarea
@@ -257,6 +275,58 @@ export const CombinedForm = ({ formData, onChange, locale }) => {
               onChange={(e) => onChange({ others: e.target.value })}
               className="mt-2 block w-full px-4 py-3 text-2xl rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
             />
+          </div>
+
+          <br />
+          {/* Chemometrics model from raw IR spectra (yes/no) */}
+          <div>
+            <label className="block text-2xl font-medium text-gray-700 mb-4">
+              {t.chemometricsModel}
+            </label>
+            <br />
+            <br />
+            <div className="space-y-3">
+              <label className="flex items-center space-x-2 text-2xl">
+                <input
+                  type="radio"
+                  name="chemometricsModel"
+                  value="Yes"
+                  checked={formData.chemometricsModel === "Yes"}
+                  onChange={() => handleOptionChange("Yes")}
+                  className="form-radio h-5 w-5 text-blue-600"
+                />
+                <span>{t.answerYes}</span>
+              </label>
+              <br />
+              <label className="flex items-center space-x-2 w-full text-left text-2xl">
+                <input
+                  type="radio"
+                  name="chemometricsModel"
+                  value="No"
+                  checked={formData.chemometricsModel === "No"}
+                  onChange={() => handleOptionChange("No")}
+                  className="form-radio h-5 w-5 text-blue-600"
+                />
+                <span>{t.answerNo}</span>
+              </label>
+            </div>
+            <br />
+            <br />
+
+            {selectedOption === "Yes" && (
+              <div className="mt-4">
+                <label className="block text-2xl font-medium text-gray-700 mb-4">
+                  {t.softwareChemometricsModel}
+                </label>
+                <input
+                  type="text"
+                  value={formData.softwareUsed}
+                  onChange={handleSoftwareChange}
+                  className="mt-2 block w-full px-4 py-2 text-2xl rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Enter software name..."
+                />
+              </div>
+            )}
           </div>
 
           <br />

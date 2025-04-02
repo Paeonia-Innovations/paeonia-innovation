@@ -92,6 +92,12 @@ export const translations = {
     required: "Please choose",
     invalidEmail: "Please enter a valid email address",
     invalidPhone: "Please enter a valid phone number",
+    chemometricsModel:
+      "Can you create a chemometrics model from raw IR spectra?",
+    answerYes: "Yes",
+    answerNo: "No",
+    softwareChemometricsModel:
+      "If 'Yes', what software do you use to create the chemometrics model?",
   },
   zh: {
     welcome: "欢迎莅临 Paeonia Innovations 中红外光谱仪研讨会！",
@@ -177,10 +183,15 @@ export const translations = {
     next: "下一步",
     previous: "上一步",
     visitBooth:
-      "欢迎莅临 苏州工业园区 新平街388号 腾飞创新园15幢 新科研企业合作中心5楼.",
+      "欢迎莅临 苏州工业园区 新平街388号 腾飞创新园15幢 新科研企业合作中心.5楼.",
     contactSoon: "我们将在3个工作日内与您联系!",
     required: "请选择",
     invalidEmail: "请输入有效的电子邮箱地址",
     invalidPhone: "请输入有效的电话号码",
+    chemometricsModel: "您是否能够从原始 IR 光谱创建化学计量学模型?",
+    answerYes: "是",
+    answerNo: "否",
+    softwareChemometricsModel:
+      "如果选择 '是', 您使用哪种软件来创建化学计量学模型?",
   },
 };
