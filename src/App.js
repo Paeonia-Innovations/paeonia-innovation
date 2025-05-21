@@ -32,7 +32,8 @@ import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
 import { ContactProduct } from "./components/contactProduct";
 
-import { EventRegistration } from "./components/event_Registration";
+//import { EventRegistration } from "./components/event_Registration";
+import { Form } from "./components/form";
 
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
@@ -219,7 +220,7 @@ const App = () => {
             }
           />
           {/*Event Registration */}
-          <Route
+          {/* <Route
             path="/eventRegistration"
             element={
               <>
@@ -227,6 +228,16 @@ const App = () => {
                   id="eventRegistration"
                   data={landingPageData.EventRegistration}
                 />
+              </>
+            }
+          /> */}
+
+          {/*Form */}
+          <Route
+            path="/form"
+            element={
+              <>
+                <Form id="form" data={landingPageData.Form} />
               </>
             }
           />
