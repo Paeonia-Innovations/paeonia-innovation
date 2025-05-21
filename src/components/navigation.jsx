@@ -116,9 +116,21 @@ export const Navigation = (props) => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="custom-menu">
-              <Dropdown.Item className="custom-item">
+              {/* <Dropdown.Item className="custom-item">
                 <Link to="/eventRegistration" className="dropdown-link">
                   &nbsp;&nbsp;&nbsp;Register for Our Seminar!
+                </Link>
+              </Dropdown.Item> */}
+              {/* <hr
+                style={{
+                  margin: "4px 0",
+                  borderTop: "1px solid #ccc",
+                  width: "100%",
+                }}
+              /> */}
+              <Dropdown.Item className="custom-item">
+                <Link to="/form" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;Form
                 </Link>
               </Dropdown.Item>
               {/* <Dropdown.Item
