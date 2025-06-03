@@ -44,28 +44,81 @@ export const ProductSpecification = (props) => {
                   {[
                     {
                       specification: "Wavenumber Range",
-                      detail: "900 cm⁻¹ to 1800 cm⁻¹",
+                      detail: "900 cm⁻¹ to 3500 cm⁻¹",
+                    },
+                    // {
+                    //   specification: "Dimension (L x W x H) mm / Weight",
+                    //   detail: "(50 x 55 x 60) mm / 450g",
+                    // },
+                    {
+                      specification: "Size",
+                      detail: "5 cm x 5.5 cm x 6cm",
                     },
                     {
-                      specification: "Dimension (L x W x H) mm / Weight",
-                      detail: "(50 x 55 x 60) mm / 450g",
+                      specification: "Weight",
+                      detail: "450 g",
                     },
                     { specification: "Response Time", detail: "0.3s" },
                     {
+                      specification: "Power Consumption",
+                      detail: "600 mW (5V DC via USB-C)",
+                    },
+                    {
+                      specification: "Electrical Connection",
+                      detail: "Single USB-C to power device and transmit data",
+                    },
+                    {
+                      specification: "Void Volume",
+                      detail: "0.1 mL",
+                    },
+                    {
+                      specification: "Back Pressure",
+                      detail: "0.3 bar at 30 mL.min⁻¹ water flow",
+                    },
+                    {
                       specification: "Pressure Rating",
-                      detail: "0 to 5 bar absolute",
+                      detail: "0 to 50 bar absolute",
                     },
                     {
                       specification: "Tube Fitting",
                       detail: '1/4"- 28 flat-bottom',
                     },
                     {
+                      specification: "Tube Size",
+                      detail: 'OD of 1/8" or 1/16"',
+                    },
+                    {
+                      specification: "Chemicals Temperature",
+                      detail: "-15°C to 60°C",
+                    },
+                    {
+                      specification: "Ambient Temperature and Humidity",
+                      detail: "0°C to 60°C; 0% RH to 90% RH",
+                    },
+                    {
                       specification: "Wetted Materials",
                       detail: "SS316L, FFKM, Si, Ge, Au",
                     },
                     {
-                      specification: "Power Consumption",
-                      detail: "600 mW (5V DC via USB-C)",
+                      specification: "Pathlength Options",
+                      detail: "20 μm, 100 μm or 200 μm",
+                    },
+                    {
+                      specification: "Residence Time Distribution",
+                      detail:
+                        "Build-in function to do residence time distribution and live concentration measurement",
+                    },
+                    {
+                      specification: "Historical Information",
+                      detail: "Immutable records of past measurements and data",
+                    },
+                    {
+                      specification: "Self Test Function",
+                      detail: "Auto test instrument signal-to-noise ratio",
+                    },
+                    {
+                      specification: "Data Format",
+                      detail: "SPC or CSV files",
                     },
                     {
                       specification: "Software Operating System",
