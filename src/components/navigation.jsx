@@ -110,6 +110,20 @@ export const Navigation = (props) => {
         <div className="navbar-right">
           {/* <ul className="nav navbar-nav navbar-right">
             <li> */}
+
+          <Dropdown className="custom-dropdown">
+            <Dropdown.Toggle id="dropdown-usecases" className="custom-toggle">
+              Use Cases
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="custom-menu">
+              <Dropdown.Item className="custom-item">
+                <Link to="/reaction-monitoring" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;Reaction Monitoring
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
           <Dropdown className="custom-dropdown">
             <Dropdown.Toggle id="dropdown-basic" className="custom-toggle">
               Events

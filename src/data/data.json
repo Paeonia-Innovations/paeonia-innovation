@@ -166,5 +166,24 @@
         }
       ]
     }
+  ],
+  "ReactionMonitoringP5": [
+    {
+      "title": "KEY EXPERIMENT FINDING",
+      "subtitles": [
+        {
+          "subtitle": "1. Real-Time Insights",
+          "subText": "Integrated IR sensors deliver continuous, live data-enabling instant adjustments to reaction conditions for better control and faster optimization."
+        },
+        {
+          "subtitle": "2. Non-Destructive Analysis",
+          "subText": "IR spectroscopy is completely non-invasive, allowing for sample integrity to be maintained for further testing or downstream analysis."
+        },
+        {
+          "subtitle": "3. High Sensitivity",
+          "subText": "Detects even low concentrations of reactants and products, ensuring accurate, reliable tracking of reaction progress."
+        }
+      ]
+    }
   ]
 }
