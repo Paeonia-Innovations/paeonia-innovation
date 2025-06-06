@@ -17,7 +17,10 @@ export const Form = () => {
     "Professor",
     "Scientist",
     "Engineer",
-    "Post Grad",
+    "Procurement",
+    "Manufacturing",
+    "Operations",
+    "Head of Department",
     "Graduate Student",
   ];
 
@@ -87,8 +90,14 @@ export const Form = () => {
         "Your form has been successfully sent to the PI admin team! Thank you so much"
       );
       setTimeout(() => {
-        setSuccessMessage("");
-        window.location.replace("/form");
+        setFormData({
+          role: "",
+          appcategory: [],
+          name: "",
+          email: "",
+        });
+        // setSuccessMessage("");
+        // window.location.replace("/form");
       }, 3000);
     } catch (error) {
       console.error("EmailJS error:", error);
@@ -184,10 +193,25 @@ export const Form = () => {
 
           {/* Success Message */}
           {successMessage && (
+            <div className="text-center mt-10">
+              <div className="text-green-700 font-semibold text-2xl mb-6">
+                {successMessage}
+              </div>
+              <a
+                href="/pdf/application-note.pdf"
+                download
+                className="inline-block px-8 py-4 bg-[#7a1b1f] text-white text-[18px] font-medium rounded-lg hover:bg-[#5e1418]"
+              >
+                📄 Download Application Note
+              </a>
+            </div>
+          )}
+
+          {/* {successMessage && (
             <div className="text-center text-green-700 font-semibold text-2xl">
               {successMessage}
             </div>
-          )}
+          )} */}
 
           {/* Submit */}
           <div className="pt-6 text-right">

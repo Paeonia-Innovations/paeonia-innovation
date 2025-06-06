@@ -26,6 +26,14 @@ import { AboutSpectrometer } from "./components/aboutSpectrometer";
 // import { MidIRSpectroscopy } from "./components/midIRSpectroscopy";
 // import { KineticsThermoMolecular } from "./components/kineticsThermoMolecular";
 import { InlineMonitoring } from "./components/inlineMonitoring";
+import { ProductFeature } from "./components/productFeature";
+import { ReactionMonitoringP1 } from "./components/reactionMonitoringP1";
+import { ReactionMonitoringP2 } from "./components/reactionMonitoringP2";
+import { ReactionMonitoringP3 } from "./components/reactionMonitoringP3";
+import { ReactionMonitoringP4 } from "./components/reactionMonitoringP4";
+import { ReactionMonitoringP5 } from "./components/reactionMonitoringP5";
+import { ReactionMonitoringP5Image } from "./components/reactionMonitoringP5Image";
+import { ReactionMonitoringP6 } from "./components/reactionMonitoringP6";
 // import { RobustAndCompact } from "./components/robustAndCompact";
 //import { Simple } from "./components/simple";
 import { ProductIntroVideo } from "./components/productIntroVideo";
@@ -208,6 +216,10 @@ const App = () => {
                   id="inlineMonitoring"
                   data={landingPageData.InlineMonitoring}
                 />
+                <ProductFeature
+                  id="productFeature"
+                  data={landingPageData.ProductFeature}
+                />
                 <ProductSpecification
                   id="productSpecification"
                   data={landingPageData.ProductSpecification}
@@ -219,6 +231,50 @@ const App = () => {
               </>
             }
           />
+
+          {/* Reaction Monitoring Pages */}
+          <Route
+            path="/reaction-monitoring"
+            element={
+              <>
+                <ReactionMonitoringP1
+                  id="reactionMonitoringP1"
+                  data={landingPageData.ReactionMonitoringP1}
+                />
+
+                <ReactionMonitoringP2
+                  id="reactionMonitoringP2"
+                  data={landingPageData.ReactionMonitoringP2}
+                />
+
+                <ReactionMonitoringP3
+                  id="reactionMonitoringP3"
+                  data={landingPageData.ReactionMonitoringP3}
+                />
+
+                <ReactionMonitoringP4
+                  id="reactionMonitoringP4"
+                  data={landingPageData.ReactionMonitoringP4}
+                />
+
+                <ReactionMonitoringP5
+                  id="reactionMonitoringP5"
+                  data={landingPageData.ReactionMonitoringP5}
+                />
+
+                <ReactionMonitoringP5Image
+                  id="reactionMonitoringP5Image"
+                  data={landingPageData.ReactionMonitoringP5Image}
+                />
+
+                <ReactionMonitoringP6
+                  id="reactionMonitoringP6"
+                  data={landingPageData.ReactionMonitoringP6}
+                />
+              </>
+            }
+          />
+
           {/*Event Registration */}
           {/* <Route
             path="/eventRegistration"
