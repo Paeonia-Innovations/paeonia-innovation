@@ -1759,6 +1759,403 @@ label {
   font-size: 18px;
 }
 
+/*Reaction Monitoring*/
+
+#productFeature {
+  background: #1a1a1a;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.products {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.products h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 30px;
+}
+
+.products h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+}
+
+.products .spacer {
+  margin-bottom: 40px;
+}
+.products p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
+.products .highlight {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.products .img-responsive {
+  height: auto;
+  max-width: 60%; /* Ensure the image does not overflow its container */
+  display: block; /* Remove flex if you only need the image to center itself */
+  margin: 0 auto; /* Center horizontally within its container */
+}
+
+.products .img-container {
+  width: 100%; /* Full container width */
+  max-width: 500px; /* Set a maximum width for the image container */
+  height: auto; /* Adjust based on content */
+  overflow: hidden; /* Prevent overflow if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Reaction Monitoring Page 1*/
+
+#reactionMonitoringP1 {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 150px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.rmPage1 {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage1 h3 {
+  color: #7a1b1f;
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage1 h4 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+}
+
+.rmPage1 .spacer {
+  margin-bottom: 40px;
+}
+.rmPage1 p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
+.rmPage1 .highlight {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.rmPage1 .img-responsive {
+  height: auto;
+  width: 100%; /* Ensure the image does not overflow its container */
+  display: flex; /* Remove flex if you only need the image to center itself */
+}
+
+.rmPage1 .img-container {
+  margin-top: 0;
+  width: 100%; /* Full container width */
+  max-width: 500px; /* Set a maximum width for the image container */
+  height: auto; /* Adjust based on content */
+  overflow: hidden; /* Prevent overflow if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Reaction Monitoring Page 2*/
+
+#reactionMonitoringP2 {
+  background: #7a1b1f;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.rmPage2 {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage2 .spacer {
+  margin-bottom: 40px;
+}
+.rmPage2 p {
+  color: #fff;
+  text-align: left;
+  font-size: 18px;
+}
+
+.rmPage2 .img-responsive {
+  height: auto;
+  display: flex; /* Remove flex if you only need the image to center itself */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 100%;
+}
+
+.rmPage2 .img-container {
+  width: 100%; /* Full container width */
+  height: auto; /* Adjust based on content */
+  overflow: hidden; /* Prevent overflow if needed */
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+/*Reaction Monitoring Page 3*/
+
+#reactionMonitoringP3 {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.rmPage3 {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage3 h3 {
+  color: #7a1b1f;
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage3 .spacer {
+  margin-bottom: 40px;
+}
+.rmPage3 p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
+/*Reaction Monitoring Page 4*/
+
+#reactionMonitoringP4 {
+  background: #1a1a1a;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.rmPage4 {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage4 h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage4 .spacer {
+  margin-bottom: 40px;
+}
+.rmPage4 p {
+  color: #fff;
+  text-align: left;
+  font-size: 18px;
+}
+
+/*Reaction Monitoring Page 5*/
+#reactionMonitoringP5 {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 0px;
+  padding-left: 0;
+}
+
+.rmPage5 {
+  margin-bottom: 20px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage5 h3 {
+  color: #7a1b1f; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage5 .spacer {
+  margin-bottom: 40px;
+}
+
+.rmPage5 .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.rmPage5 .row h3 {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 18px;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.rmPage5 .row p {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 18px;
+}
+
+.rmPage5 .img-responsive {
+  margin-top: 0px;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 90%;
+}
+
+#rmPage5 .highlight {
+  color: #fff; /* Change this to the color you want for highlighting */
+  font-weight: bold; /* Optional: make the highlighted text bold */
+}
+
+/*Reaction Monitoring Page 5 Image*/
+#reactionMonitoringP5Image {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 0px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.rmPage5_Img {
+  margin-bottom: 20px; /* Adjust spacing between items as needed */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage5_Img h3 {
+  color: #7a1b1f; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage5_Img .spacer {
+  margin-bottom: 40px;
+}
+
+.rmPage5_Img .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.rmPage5_Img .row h3 {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 18px;
+  padding-right: 30px;
+  font-weight: bold;
+}
+
+.rmPage5_Img .row p {
+  color: #1a1a1a; /* Text color for feature title and text */
+  text-align: left;
+  font-size: 18px;
+}
+
+.rmPage5_Img .img-responsive {
+  margin-top: 0px;
+  height: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+}
+
+#rmPage5_Img .highlight {
+  color: #fff; /* Change this to the color you want for highlighting */
+  font-weight: bold; /* Optional: make the highlighted text bold */
+}
+
+/*Reaction Monitoring Page 6*/
+
+#reactionMonitoringP6 {
+  background: #ecece7;
+  z-index: 2;
+  position: relative;
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.rmPage6 {
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  font-family: "Poster", sans-serif;
+  position: relative;
+}
+
+.rmPage6 h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 30px;
+}
+
+.rmPage6 .spacer {
+  margin-bottom: 40px;
+}
+.rmPage6 p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+}
+
 /*Event Registration */
 #eventRegistration {
   background: #ecece7;

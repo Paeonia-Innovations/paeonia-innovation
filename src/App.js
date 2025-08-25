@@ -34,10 +34,19 @@ import { ReactionMonitoringP4 } from "./components/reactionMonitoringP4";
 import { ReactionMonitoringP5 } from "./components/reactionMonitoringP5";
 import { ReactionMonitoringP5Image } from "./components/reactionMonitoringP5Image";
 import { ReactionMonitoringP6 } from "./components/reactionMonitoringP6";
+
+import { RTDP1 } from "./components/rtdP1";
+import { RTDP2 } from "./components/rtdP2";
+import { RTDP3 } from "./components/rtdP3";
+import { RTDP4 } from "./components/rtdP4";
+import { RTDP5 } from "./components/rtdP5";
+import { RTDP5Image } from "./components/rtdP5Image";
+import { RTDP6 } from "./components/rtdP6";
 // import { RobustAndCompact } from "./components/robustAndCompact";
 //import { Simple } from "./components/simple";
 import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
+import { WatchAndLearn } from "./components/watchAndLearn";
 import { ContactProduct } from "./components/contactProduct";
 
 //import { EventRegistration } from "./components/event_Registration";
@@ -224,6 +233,10 @@ const App = () => {
                   id="productSpecification"
                   data={landingPageData.ProductSpecification}
                 />
+                <WatchAndLearn
+                  id="watchAndLearn"
+                  data={landingPageData.WatchAndLearn}
+                />
                 <ContactProduct
                   id="contactProduct"
                   data={landingPageData.ContactProduct}
@@ -271,6 +284,28 @@ const App = () => {
                   id="reactionMonitoringP6"
                   data={landingPageData.ReactionMonitoringP6}
                 />
+              </>
+            }
+          />
+
+          {/* RTD Pages */}
+          <Route
+            path="/rtd"
+            element={
+              <>
+                <RTDP1 id="rtdP1" data={landingPageData.RTDP1} />
+
+                <RTDP2 id="rtdP2" data={landingPageData.RTDP2} />
+
+                <RTDP3 id="rtdP3" data={landingPageData.RTDP3} />
+
+                <RTDP4 id="rtdP4" data={landingPageData.RTDP4} />
+
+                <RTDP5 id="rtdP5" data={landingPageData.RTDP5} />
+
+                <RTDP5Image id="rtdP5Image" data={landingPageData.RTDP5Image} />
+
+                <RTDP6 id="rtdP6" data={landingPageData.RTDP6} />
               </>
             }
           />

@@ -29,36 +29,76 @@ export const ProductFeature = () => {
     navigate("/reaction-monitoring");
   };
 
+  // const goToRTD = () => {
+  //   navigate("/rtd");
+  // }; comment out for now RTD
+
   return (
     <div id="productFeature" className="text-center">
       <div className="container">
-        <div className={`col-12 col-md-6`} ref={ref}>
-          <div className="products">
-            <h3>Featured Products</h3>
+        {/* Title for Featured Products */}
+        <h3>Featured Products</h3>
 
-            <div className={`feature-box ${inView ? "fadeInUp" : ""}`}>
-              <div className="img-container mb-3">
-                <img
-                  src="img/portfolio/ReactionMonitoring.png"
-                  className="img-responsive"
-                  alt="Reaction Monitoring"
-                  style={{ cursor: "pointer", maxWidth: "100%" }}
-                  onClick={goToReactionMonitoring}
-                />
+        <div className="row">
+          {/* Reaction Monitoring Product */}
+          <div className="col-12 col-md-4">
+            <div className="products">
+              <div className={`feature-box ${inView ? "fadeInUp" : ""}`}>
+                <div className="product-item">
+                  <div className="img-container mb-3">
+                    <img
+                      src="img/portfolio/ReactionMonitoring.png"
+                      className="img-responsive"
+                      alt="Reaction Monitoring"
+                      onClick={goToReactionMonitoring}
+                    />
+                  </div>
+                  <div className="text-container">
+                    <h4
+                      style={{
+                        cursor: "pointer",
+                        color: "#fff",
+                        textDecoration: "underline",
+                      }}
+                      onClick={goToReactionMonitoring}
+                    >
+                      Reaction Monitoring
+                    </h4>
+                  </div>
+                </div>
               </div>
-
-              <h4
-                style={{
-                  cursor: "pointer",
-                  color: "#fff",
-                  textDecoration: "underline",
-                }}
-                onClick={goToReactionMonitoring}
-              >
-                Reaction Monitoring
-              </h4>
             </div>
           </div>
+
+          {/* RTD Product */}
+          {/* <div className="col-12 col-md-4">
+            <div className="products">
+              <div className={`feature-box ${inView ? "fadeInUp" : ""}`}>
+                <div className="product-item">
+                  <div className="img-container mb-3">
+                    <img
+                      src="img/portfolio/RTD.png"
+                      className="img-responsive"
+                      alt="RTD"
+                      onClick={goToRTD}
+                    />
+                  </div>
+                  <div className="text-container">
+                    <h4
+                      style={{
+                        cursor: "pointer",
+                        color: "#fff",
+                        textDecoration: "underline",
+                      }}
+                      onClick={goToRTD}
+                    >
+                      Residence Time Distribution (RTD)
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
       </div>
     </div>
