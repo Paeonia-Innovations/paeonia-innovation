@@ -66,6 +66,26 @@ export const NovelMidIRSpectrometer = (props) => {
           </div>
         </div>
       </div>
+
+      {/* {showFullImage && (
+        <div
+          className="fullscreen-overlay"
+          onClick={() => setShowFullImage(false)}
+        >
+          <span
+            className="close-button"
+            onClick={() => setShowFullImage(false)}
+          >
+            &times;
+          </span>
+          <img
+            src="img/portfolio/DSC00402.png"
+            alt="Full size"
+            className="fullscreen-image"
+            onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+          />
+        </div>
+      )} */}
     </div>
   );
 };

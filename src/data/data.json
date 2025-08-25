@@ -185,5 +185,24 @@
         }
       ]
     }
+  ],
+  "RTDP5": [
+    {
+      "title": "KEY EXPERIMENT FINDING",
+      "subtitles": [
+        {
+          "subtitle": "1. Accurate Residence Time Prediction",
+          "subText": "The measured peak residence times closely aligned with theoretical expectations, validating the reliability of the system's flow characterization capabilities."
+        },
+        {
+          "subtitle": "2. Highly Reproducible RTD Profiles",
+          "subText": "RTD curves consistently captured both primary flow behavior and subtle secondary features."
+        },
+        {
+          "subtitle": "3. Compact & Accessible Setup",
+          "subText": "All measurements were performed using a single, USB-pwered device, demonstrating the simplicity, portability, and accessibility of the RTD system-no complex instrumentation or setup required."
+        }
+      ]
+    }
   ]
 }

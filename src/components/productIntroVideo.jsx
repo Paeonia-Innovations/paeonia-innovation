@@ -12,7 +12,7 @@ export const ProductIntroVideo = (props) => {
     <div id="productIntroVideo">
       <div className="container">
         <div className="col-md-12">
-          <h2 className="video-header">Production Introduction Video</h2>
+          <h2 className="video-header">Product Introduction Video</h2>
           {/* <div className="video-container"> */}
 
           <div className="video-wrapper">
