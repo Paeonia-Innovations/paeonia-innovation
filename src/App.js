@@ -48,6 +48,7 @@ import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
 import { WatchAndLearn } from "./components/watchAndLearn";
 import { ContactProduct } from "./components/contactProduct";
+import ChatWidget from "./components/ChatWidget";
 
 //import { EventRegistration } from "./components/event_Registration";
 import { Form } from "./components/form";
@@ -334,6 +335,9 @@ const App = () => {
           />
         </Routes>
       </div>
+
+      {/* AI Chatbot Widget - Persistent across all pages */}
+      <ChatWidget />
     </div>
     //</Router>
 
