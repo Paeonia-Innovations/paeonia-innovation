@@ -1,10 +1,11 @@
 // Chat API Service for Paeonia Chatbot
-// Backend API Documentation: https://your-railway-app.railway.app
+// Connects to Railway-hosted Flask backend
 
 // Configuration
 const API_CONFIG = {
-  // TODO: Replace with actual Railway API URL when deployed
-  BASE_URL: 'https://your-railway-app.railway.app', // UPDATE THIS URL
+  // IMPORTANT: Set REACT_APP_API_URL in Netlify environment variables
+  // Example: https://your-app-name.up.railway.app
+  BASE_URL: process.env.REACT_APP_API_URL || 'http://localhost:8000',
   ENDPOINTS: {
     CHAT: '/api/chat',          // Main chat endpoint
     HEALTH: '/api/health',      // Health check
@@ -58,8 +59,9 @@ class ChatApiService {
 
   async sendMessage(message, retryCount = 0) {
     try {
-      // TODO: Remove this mock response when Railway backend is ready
-      if (API_CONFIG.BASE_URL.includes('your-railway-app')) {
+      // Use mock responses only in development without REACT_APP_API_URL set
+      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
+        console.warn('⚠️ Using mock responses. Set REACT_APP_API_URL to connect to Railway backend.');
         return this.getMockResponse(message);
       }
 
@@ -78,7 +80,8 @@ class ChatApiService {
 
       const response = await this.makeRequest(url, {
         method: 'POST',
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        credentials: 'include' // Important for CORS with sessions
       });
 
       // Add assistant response to conversation history
@@ -112,7 +115,7 @@ class ChatApiService {
     }
   }
 
-  // TODO: Remove this mock function when Railway backend is ready
+  // Mock function for local development only
   getMockResponse(message) {
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -138,8 +141,8 @@ class ChatApiService {
 
   async checkHealth() {
     try {
-      // TODO: Remove this mock when Railway backend is ready
-      if (API_CONFIG.BASE_URL.includes('your-railway-app')) {
+      // Use mock in development without API URL
+      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
         return {
           ok: true,
           status: 'mock',
@@ -159,8 +162,8 @@ class ChatApiService {
 
   async getStatus() {
     try {
-      // TODO: Remove this mock when Railway backend is ready
-      if (API_CONFIG.BASE_URL.includes('your-railway-app')) {
+      // Use mock in development without API URL
+      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
         return {
           ok: true,
           enhanced: true,
@@ -221,16 +224,19 @@ INTEGRATION CHECKLIST FOR RAILWAY BACKEND:
 ✅ Updated API format to match backend expectations (messages array)
 ✅ Implemented conversation history management
 ✅ Added health and status check endpoints
-✅ Configured for CORS-enabled backend
+✅ Configured for CORS-enabled backend with credentials
 ✅ Added proper error handling for backend response format
+✅ Using REACT_APP_API_URL environment variable for Railway URL
+✅ Mock responses only used in local development
 
-REMAINING TODO ITEMS:
-1. [ ] Update API_CONFIG.BASE_URL with actual Railway deployment URL
-2. [ ] Remove mock response functions when backend is deployed
-3. [ ] Test with real backend and verify response handling
-4. [ ] Optional: Add request logging for debugging
+NETLIFY DEPLOYMENT SETUP:
+1. Set environment variable in Netlify dashboard:
+   - Key: REACT_APP_API_URL
+   - Value: https://your-railway-app.up.railway.app (no trailing slash)
+2. Redeploy Netlify site after setting environment variable
+3. Test chat widget connects to Railway backend
 
-BACKEND API ENDPOINTS IMPLEMENTED:
+BACKEND API ENDPOINTS:
 - POST /api/chat (messages array format)
 - GET /api/health (health check)
 - GET /api/status (detailed system status)
@@ -242,4 +248,8 @@ EXPECTED BACKEND RESPONSE FORMAT:
   "source": "groq_rag",
   "status": "success"
 }
+
+CURRENT CONFIGURATION:
+- API URL: ${process.env.REACT_APP_API_URL || 'localhost (dev mode)'}
+- Fallback: http://localhost:8000 (for local testing)
 */
