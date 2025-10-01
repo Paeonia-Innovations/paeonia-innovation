@@ -771,6 +771,7 @@ header .intro-text .intro-paragraph p {
 .projects-item .highlight {
   color: #fff; /* Change this to the color you want for highlighting */
   font-weight: bold; /* Optional: make the highlighted text bold */
+  font-size: 20px;
 }
 
 /* Purpose Section */
@@ -1318,6 +1319,7 @@ label {
 }
 
 .address-link,
+.company-link,
 .phone-link,
 .email-link,
 .paeonia-group-link,
@@ -1326,6 +1328,7 @@ label {
 }
 
 .address-link:hover,
+.company-link:hover,
 .phone-link:hover,
 .email-link:hover,
 .paeonia-group-link:hover,

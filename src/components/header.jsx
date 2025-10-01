@@ -21,7 +21,7 @@ export const Header = (props) => {
                     <span className="highlight-bold">Paeonia Innovations</span>,{" "}
                     we are <span className="highlight-bold">pioneering</span>{" "}
                     ultra-compact solutions for{" "}
-                    <span className="highlight-bold">precise</span> chemical
+                    <span className="highlight-bold">precise </span>
                     analysis.
                   </p>
                 </div>

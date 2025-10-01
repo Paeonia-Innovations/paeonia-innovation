@@ -38,37 +38,72 @@ export const Projects = (props) => {
                         className={`${inView ? "fadeInLeft" : ""}`}
                         style={{ animationDelay: `${i * 0.5}s` }}
                       >
-                        In less than <span class="highlight">6 months</span>,
-                        our lean but extremely
-                        <span class="highlight"> ‘mean’</span> team{" "}
-                        <span class="highlight">completed </span>
-                        our{" "}
-                        <span class="highlight">
-                          first product prototype from chips
-                        </span>{" "}
-                        and <span class="highlight">AI code</span> all the way
-                        to a working{" "}
-                        <span class="highlight">hardware + software</span>{" "}
-                        product prototype.
+                        In under six months, our lean but highly skilled team
+                        developed a fully functional prototype—from chip design
+                        and AI algorithms to integrated hardware and software.
+                        The product has been commercially launched with an OEM
+                        partner company with highly accurate composition
+                        analysis.
                       </li>
                       <div style={{ height: "0.5em" }}></div>
                       <li
                         className={`${inView ? "fadeInRight" : ""}`}
                         style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
                       >
-                        We are already{" "}
-                        <span class="highlight">getting ready</span> to start
-                        work on the <span class="highlight">next product</span>{" "}
-                        in the <span class="highlight">product line</span>.
+                        In a year, we soft-launched our next product, OrionIR™
+                        Novel Mid-IR Spectrometer, which has been successfully
+                        deployed in laboratories.
                       </li>
                       <div style={{ height: "0.5em" }}></div>
                       <li
                         className={`${inView ? "fadeInLeft" : ""}`}
                         style={{ animationDelay: `${i * 0.5 + 1}s` }}
                       >
-                        <span class="highlight">Stay tuned</span> for our launch
-                        with <span class="highlight">our partners</span> at{" "}
-                        <span class="highlight">top conferences</span>.
+                        Building on our momentum, we created additional
+                        functionalities for OrionIR™ Mid-IR Spectrometer,
+                        enabling users.
+                      </li>
+                      <div style={{ height: "0.5em" }}></div>
+                      <li
+                        className={`${inView ? "fadeInRight" : ""}`}
+                        style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
+                      >
+                        Recently, we partnered with{" "}
+                        <span class="highlight">
+                          <a
+                            href="https://kax.group/kax-group-and-paeonia-innovations-announce-partnership-meetings-for-september-2025/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="company-link"
+                          >
+                            KAX Group
+                          </a>
+                        </span>{" "}
+                        to enable industrial standard chemometric capabilities,
+                        process controls and monitoring along with the necessary
+                        security standards for our industrial customers to
+                        deploy our solutions in their plants.
+                      </li>
+                      <div style={{ height: "0.5em" }}></div>
+                      <li
+                        className={`${inView ? "fadeInRight" : ""}`}
+                        style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
+                      >
+                        Currently, we have entered into a partnership with{" "}
+                        <span class="highlight">
+                          <a
+                            href="https://k2photonics.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="company-link"
+                          >
+                            K2 Photonics
+                          </a>
+                        </span>{" "}
+                        , which has leading ultrafast lasers developed at ETH
+                        Zurich Keller’s Group to solve complex measurement
+                        challenges using their compact and powerful femtosecond
+                        lasers with dual-comb.
                       </li>
                     </ul>
                   </p>
