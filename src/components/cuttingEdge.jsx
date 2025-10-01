@@ -51,7 +51,7 @@ export const CuttingEdge = (props) => {
                       <span class="highlight">high signal-to-noise data</span>{" "}
                       to extract <span class="highlight">accurately</span> the{" "}
                       <span class="highlight">important parameters</span> in{" "}
-                      <span class="highlight">chemical analysis</span>.
+                      <span class="highlight"> analysis</span>.
                     </p>
                     {/* </div> */}
                   </div>

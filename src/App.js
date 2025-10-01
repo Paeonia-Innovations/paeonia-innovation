@@ -180,6 +180,7 @@ const App = () => {
                 {videoLoaded && (
                   <>
                     <Header data={landingPageData.Header} />
+                    <Projects id="projects" data={landingPageData.Projects} />
                     <ValueProposition
                       id="valueproposition"
                       data={landingPageData.ValueProposition}
@@ -193,7 +194,7 @@ const App = () => {
                       id="challenges"
                       data={landingPageData.Challenges}
                     />
-                    <Projects id="projects" data={landingPageData.Projects} />
+
                     <Purpose id="purpose" data={landingPageData.Purpose} />
                     <Mission id="mission" data={landingPageData.Mission} />
                     <Vision id="vision" data={landingPageData.Vision} />

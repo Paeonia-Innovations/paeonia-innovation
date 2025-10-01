@@ -47,9 +47,8 @@ export const ValueProposition = (props) => {
                       <span class="highlight">accurate</span>,{" "}
                       <span class="highlight">repeatable</span>,{" "}
                       <span class="highlight">robust</span> and{" "}
-                      <span class="highlight">real-time chemical analysis</span>
-                      , leaving time for customers to focus on getting their job
-                      done.
+                      <span class="highlight">real-time analysis</span>, leaving
+                      time for customers to focus on getting their job done.
                     </p>
                     {/* </div> */}
                   </div>
