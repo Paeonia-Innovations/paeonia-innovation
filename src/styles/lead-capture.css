@@ -124,7 +124,7 @@
   bottom: 0;
   background: var(--ai-chat-overlay-bg);
   backdrop-filter: blur(4px);
-  z-index: 10000;
+  z-index: 9998; /* Below chat widget button (9999) but above page content */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,13 +135,35 @@
 .ai-chat-lead-form-container {
   background: #fff;
   border-radius: 16px;
-  max-width: 480px;
+  max-width: 520px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 85vh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: ai-chat-slideUp 0.3s ease-out;
   font-family: var(--ai-chat-font-main);
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for modal */
+.ai-chat-lead-form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ai-chat-lead-form-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 16px 16px 0;
+}
+
+.ai-chat-lead-form-container::-webkit-scrollbar-thumb {
+  background: var(--ai-chat-primary);
+  border-radius: 4px;
+}
+
+.ai-chat-lead-form-container::-webkit-scrollbar-thumb:hover {
+  background: var(--ai-chat-primary-hover);
 }
 
 .ai-chat-lead-form-header {
@@ -243,10 +265,16 @@
   box-shadow: 0 4px 12px rgba(168, 2, 22, 0.25);
 }
 
-.ai-chat-lead-submit-btn:hover {
+.ai-chat-lead-submit-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, var(--ai-chat-primary-hover) 0%, var(--ai-chat-primary) 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(168, 2, 22, 0.35);
+}
+
+.ai-chat-lead-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .ai-chat-lead-cancel-btn {
@@ -261,9 +289,14 @@
   transition: all 0.2s ease;
 }
 
-.ai-chat-lead-cancel-btn:hover {
+.ai-chat-lead-cancel-btn:hover:not(:disabled) {
   border-color: var(--ai-chat-text-muted);
   color: var(--ai-chat-text);
+}
+
+.ai-chat-lead-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ==========================================
@@ -296,14 +329,14 @@
    ========================================== */
 .ai-chat-toast {
   position: fixed;
-  bottom: 24px;
+  bottom: 100px; /* Above chat button */
   right: 24px;
-  background: var(--ai-chat-dark-light);
-  border: 1px solid var(--ai-chat-success);
+  background: #fff;
+  border: 2px solid var(--ai-chat-success);
   border-radius: 12px;
   padding: 16px 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  z-index: 10001;
+  z-index: 9999; /* Same level as chat widget */
   animation: ai-chat-slideInRight 0.3s ease-out;
   max-width: 400px;
 }
@@ -392,15 +425,14 @@
    ========================================== */
 @media (max-width: 640px) {
   .ai-chat-lead-form-overlay {
-    padding: 0;
-    align-items: flex-end;
+    padding: 16px;
+    align-items: center; /* Center modal on mobile */
   }
 
   .ai-chat-lead-form-container {
     max-width: 100%;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    max-height: 85vh;
+    border-radius: 16px; /* Keep rounded corners on mobile */
+    max-height: 80vh;
   }
 
   .ai-chat-email-input-group {
@@ -415,11 +447,23 @@
     flex-direction: column;
   }
 
+  .ai-chat-form-actions button {
+    width: 100%;
+  }
+
   .ai-chat-toast {
-    bottom: 12px;
+    bottom: 90px; /* Above mobile chat button */
     right: 12px;
     left: 12px;
     max-width: calc(100% - 24px);
+  }
+
+  .ai-chat-lead-form-header h3 {
+    font-size: 18px;
+  }
+
+  .ai-chat-lead-form {
+    padding: 20px;
   }
 }
 

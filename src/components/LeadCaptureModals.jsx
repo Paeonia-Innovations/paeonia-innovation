@@ -7,6 +7,7 @@ const LeadCaptureModals = () => {
   const [toastVisible, setToastVisible] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('success');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,10 +17,29 @@ const LeadCaptureModals = () => {
     interest: ''
   });
 
+  // Handle escape key to close modals
+  React.useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        if (leadFormVisible) {
+          setLeadFormVisible(false);
+        }
+        if (emailCaptureVisible) {
+          setEmailCaptureVisible(false);
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [leadFormVisible, emailCaptureVisible]);
+
   // Expose functions to window for ChatWidget to call
   React.useEffect(() => {
     window.AIChatbotWidget = {
       showEmailCapture: (message) => {
+        // Close lead form if open to prevent overlap
+        setLeadFormVisible(false);
         setEmailCaptureVisible(true);
       },
       hideEmailCapture: () => {
@@ -29,10 +49,13 @@ const LeadCaptureModals = () => {
         setEmailCaptureVisible(false);
       },
       showLeadForm: () => {
+        // Close email capture if open to prevent overlap
+        setEmailCaptureVisible(false);
         setLeadFormVisible(true);
       },
       closeLeadForm: () => {
         setLeadFormVisible(false);
+        setIsSubmitting(false);
       },
       showToast: (message, type = 'success') => {
         setToastMessage(message);
@@ -95,10 +118,15 @@ const LeadCaptureModals = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    // Prevent double submission
+    if (isSubmitting) return;
+
     if (!formData.email) {
       window.AIChatbotWidget.showToast('Email is required', 'error');
       return;
     }
+
+    setIsSubmitting(true);
 
     try {
       const apiURL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
@@ -110,15 +138,20 @@ const LeadCaptureModals = () => {
       });
 
       const data = await response.json();
-      if (response.ok && data.success) {
+      if (response.ok && data.status === 'success') {
+        // Close modal and reset form
         setLeadFormVisible(false);
         setFormData({ name: '', email: '', company: '', phone: '', interest: '' });
+        setIsSubmitting(false);
+
+        // Show success toast
         window.AIChatbotWidget.showToast('✓ Thank you! Our team will be in touch soon.', 'success');
       } else {
         throw new Error(data.message || 'Failed to submit form');
       }
     } catch (error) {
       console.error('Lead form error:', error);
+      setIsSubmitting(false);
       window.AIChatbotWidget.showToast('Failed to submit form. Please try again.', 'error');
     }
   };
@@ -155,7 +188,7 @@ const LeadCaptureModals = () => {
         <div className="ai-chat-lead-form-overlay" onClick={(e) => e.target === e.currentTarget && setLeadFormVisible(false)}>
           <div className="ai-chat-lead-form-container">
             <div className="ai-chat-lead-form-header">
-              <h3>🎯 Let's Connect!</h3>
+              <h3>Let's Connect!</h3>
               <button onClick={() => setLeadFormVisible(false)} className="ai-chat-close-btn">
                 &times;
               </button>
@@ -218,10 +251,22 @@ const LeadCaptureModals = () => {
                 </select>
               </div>
               <div className="ai-chat-form-actions">
-                <button type="submit" className="ai-chat-lead-submit-btn">
-                  Connect with Sales
+                <button
+                  type="submit"
+                  className="ai-chat-lead-submit-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Connect with Sales'}
                 </button>
-                <button type="button" onClick={() => setLeadFormVisible(false)} className="ai-chat-lead-cancel-btn">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setLeadFormVisible(false);
+                    setIsSubmitting(false);
+                  }}
+                  className="ai-chat-lead-cancel-btn"
+                  disabled={isSubmitting}
+                >
                   Maybe Later
                 </button>
               </div>
