@@ -96,7 +96,11 @@ class ChatApiService {
         message: response.content,
         source: response.source || 'groq_rag',
         status: response.status || 'success',
-        role: response.role || 'assistant'
+        role: response.role || 'assistant',
+        // ✅ NEW: Lead capture data from backend
+        lead_capture_prompt: response.lead_capture_prompt || null,
+        conversation_stage: response.conversation_stage || null,
+        lead_info: response.lead_info || null
       };
 
     } catch (error) {

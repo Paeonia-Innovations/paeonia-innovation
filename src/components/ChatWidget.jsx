@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatWidget.css';
 import { chatApi } from '../services/chatApi';
+import LeadCaptureModals from './LeadCaptureModals';
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +65,23 @@ const ChatWidget = () => {
       };
 
       setMessages(prev => [...prev, botMessage]);
+
+      // ✅ NEW: Handle lead capture prompts from backend
+      if (response.lead_capture_prompt && window.AIChatbotWidget) {
+        // Wait a moment before showing the prompt so user can read the bot response
+        setTimeout(() => {
+          window.AIChatbotWidget.handleLeadCapturePrompt(response.lead_capture_prompt);
+        }, 1000);
+      }
+
+      // ✅ NEW: Update conversation stage
+      if (response.conversation_stage && window.AIChatbotWidget) {
+        window.AIChatbotWidget.updateConversationStage(
+          response.conversation_stage.stage,
+          response.lead_info
+        );
+      }
+
     } catch (err) {
       console.error('Chat API error:', err);
       setError('Sorry, I\'m having trouble connecting right now. Please try again in a moment.');
@@ -211,13 +229,24 @@ const ChatWidget = () => {
 
         {/* Input */}
         <form className="chat-input-form" onSubmit={handleSendMessage}>
+          {/* Contact Us Button */}
+          <div style={{ textAlign: 'center', padding: '8px 0' }}>
+            <button
+              type="button"
+              className="ai-chat-contact-us-btn"
+              onClick={() => window.AIChatbotWidget && window.AIChatbotWidget.showLeadForm()}
+            >
+              💬 Contact Us
+            </button>
+          </div>
+
           <div className="chat-input-container">
             <textarea
               ref={inputRef}
               className="chat-input"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               placeholder="Ask me about Paeonia's products..."
               disabled={isLoading}
               rows="1"
@@ -240,6 +269,9 @@ const ChatWidget = () => {
           </div>
         </form>
       </div>
+
+      {/* Lead Capture Modals Component */}
+      <LeadCaptureModals />
     </div>
   );
 };
