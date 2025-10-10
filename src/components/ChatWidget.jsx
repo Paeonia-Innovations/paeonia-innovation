@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './ChatWidget.css';
-import { chatApi } from '../services/chatApi';
+import React, { useState, useRef, useEffect } from "react";
+import "./ChatWidget.css";
+import { chatApi } from "../services/chatApi";
+import LeadCaptureModals from "./LeadCaptureModals";
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,18 +9,18 @@ const ChatWidget = () => {
     {
       id: 1,
       text: "Hi! I'm here to help you learn more about Paeonia's innovative spectroscopy solutions. How can I assist you today?",
-      sender: 'bot',
-      timestamp: new Date()
-    }
+      sender: "bot",
+      timestamp: new Date(),
+    },
   ]);
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -44,12 +45,12 @@ const ChatWidget = () => {
     const userMessage = {
       id: Date.now(),
       text: inputText.trim(),
-      sender: 'user',
-      timestamp: new Date()
+      sender: "user",
+      timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInputText('');
+    setMessages((prev) => [...prev, userMessage]);
+    setInputText("");
     setIsLoading(true);
     setError(null);
 
@@ -58,31 +59,54 @@ const ChatWidget = () => {
 
       const botMessage = {
         id: Date.now() + 1,
-        text: response.message || response.content || 'I apologize, but I encountered an issue processing your request. Please try again.',
-        sender: 'bot',
-        timestamp: new Date()
+        text:
+          response.message ||
+          response.content ||
+          "I apologize, but I encountered an issue processing your request. Please try again.",
+        sender: "bot",
+        timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, botMessage]);
+      setMessages((prev) => [...prev, botMessage]);
+
+      // ✅ NEW: Handle lead capture prompts from backend
+      if (response.lead_capture_prompt && window.AIChatbotWidget) {
+        // Wait a moment before showing the prompt so user can read the bot response
+        setTimeout(() => {
+          window.AIChatbotWidget.handleLeadCapturePrompt(
+            response.lead_capture_prompt
+          );
+        }, 1000);
+      }
+
+      // ✅ NEW: Update conversation stage
+      if (response.conversation_stage && window.AIChatbotWidget) {
+        window.AIChatbotWidget.updateConversationStage(
+          response.conversation_stage.stage,
+          response.lead_info
+        );
+      }
     } catch (err) {
-      console.error('Chat API error:', err);
-      setError('Sorry, I\'m having trouble connecting right now. Please try again in a moment.');
+      console.error("Chat API error:", err);
+      setError(
+        "Sorry, I'm having trouble connecting right now. Please try again in a moment."
+      );
 
       const errorMessage = {
         id: Date.now() + 1,
-        text: 'I apologize, but I\'m experiencing technical difficulties. Please try again later or contact our support team directly.',
-        sender: 'bot',
-        timestamp: new Date()
+        text: "I apologize, but I'm experiencing technical difficulties. Please try again later or contact our support team directly.",
+        sender: "bot",
+        timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage(e);
     }
@@ -93,9 +117,9 @@ const ChatWidget = () => {
       {
         id: 1,
         text: "Hi! I'm here to help you learn more about Paeonia's innovative spectroscopy solutions. How can I assist you today?",
-        sender: 'bot',
-        timestamp: new Date()
-      }
+        sender: "bot",
+        timestamp: new Date(),
+      },
     ]);
     setError(null);
     // Clear conversation history in API service
@@ -104,8 +128,8 @@ const ChatWidget = () => {
 
   const formatTime = (timestamp) => {
     return new Date(timestamp).toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
+      hour: "2-digit",
+      minute: "2-digit",
     });
   };
 
@@ -113,24 +137,38 @@ const ChatWidget = () => {
     <div className="chat-widget">
       {/* Chat Toggle Button */}
       <button
-        className={`chat-toggle-btn ${isOpen ? 'open' : ''}`}
+        className={`chat-toggle-btn ${isOpen ? "open" : ""}`}
         onClick={toggleChat}
-        aria-label={isOpen ? 'Close chat' : 'Open chat'}
+        aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
           </svg>
         )}
       </button>
 
       {/* Chat Window */}
-      <div className={`chat-window ${isOpen ? 'open' : ''}`}>
+      <div className={`chat-window ${isOpen ? "open" : ""}`}>
         {/* Header */}
         <div className="chat-header">
           <div className="chat-header-info">
@@ -144,7 +182,14 @@ const ChatWidget = () => {
               title="Clear chat"
               aria-label="Clear chat history"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <path d="M3 6h18"></path>
                 <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
                 <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
@@ -155,7 +200,14 @@ const ChatWidget = () => {
               onClick={toggleChat}
               aria-label="Close chat"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
@@ -168,11 +220,11 @@ const ChatWidget = () => {
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`message ${message.sender === 'user' ? 'user' : 'bot'}`}
+              className={`message ${
+                message.sender === "user" ? "user" : "bot"
+              }`}
             >
-              <div className="message-content">
-                {message.text}
-              </div>
+              <div className="message-content">{message.text}</div>
               <div className="message-time">
                 {formatTime(message.timestamp)}
               </div>
@@ -211,13 +263,26 @@ const ChatWidget = () => {
 
         {/* Input */}
         <form className="chat-input-form" onSubmit={handleSendMessage}>
+          {/* Contact Us Button */}
+          <div style={{ textAlign: "center", padding: "8px 0" }}>
+            <button
+              type="button"
+              className="ai-chat-contact-us-btn"
+              onClick={() =>
+                window.AIChatbotWidget && window.AIChatbotWidget.showLeadForm()
+              }
+            >
+              💬 Contact Us
+            </button>
+          </div>
+
           <div className="chat-input-container">
             <textarea
               ref={inputRef}
               className="chat-input"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               placeholder="Ask me about Paeonia's products..."
               disabled={isLoading}
               rows="1"
@@ -229,7 +294,14 @@ const ChatWidget = () => {
               disabled={!inputText.trim() || isLoading}
               aria-label="Send message"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
               </svg>
@@ -240,6 +312,9 @@ const ChatWidget = () => {
           </div>
         </form>
       </div>
+
+      {/* Lead Capture Modals Component */}
+      <LeadCaptureModals />
     </div>
   );
 };

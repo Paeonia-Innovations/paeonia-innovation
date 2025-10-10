@@ -5,18 +5,18 @@
 const API_CONFIG = {
   // IMPORTANT: Set REACT_APP_API_URL in Netlify environment variables
   // Example: https://your-app-name.up.railway.app
-  BASE_URL: process.env.REACT_APP_API_URL || 'http://localhost:8000',
+  BASE_URL: process.env.REACT_APP_API_URL || "http://localhost:8000",
   ENDPOINTS: {
-    CHAT: '/api/chat',          // Main chat endpoint
-    HEALTH: '/api/health',      // Health check
-    STATUS: '/api/status'       // Detailed system status
+    CHAT: "/api/chat", // Main chat endpoint
+    HEALTH: "/api/health", // Health check
+    STATUS: "/api/status", // Detailed system status
   },
   HEADERS: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json",
     // No authentication required for chat endpoints
   },
   TIMEOUT: 30000, // 30 seconds
-  RETRY_ATTEMPTS: 2
+  RETRY_ATTEMPTS: 2,
 };
 
 class ChatApiService {
@@ -33,9 +33,9 @@ class ChatApiService {
         ...options,
         headers: {
           ...API_CONFIG.HEADERS,
-          ...options.headers
+          ...options.headers,
         },
-        signal: controller.signal
+        signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
@@ -49,8 +49,8 @@ class ChatApiService {
     } catch (error) {
       clearTimeout(timeoutId);
 
-      if (error.name === 'AbortError') {
-        throw new Error('Request timeout - please try again');
+      if (error.name === "AbortError") {
+        throw new Error("Request timeout - please try again");
       }
 
       throw error;
@@ -60,57 +60,68 @@ class ChatApiService {
   async sendMessage(message, retryCount = 0) {
     try {
       // Use mock responses only in development without REACT_APP_API_URL set
-      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
-        console.warn('⚠️ Using mock responses. Set REACT_APP_API_URL to connect to Railway backend.');
+      if (
+        !process.env.REACT_APP_API_URL &&
+        process.env.NODE_ENV === "development"
+      ) {
+        console.warn(
+          "⚠️ Using mock responses. Set REACT_APP_API_URL to connect to Railway backend."
+        );
         return this.getMockResponse(message);
       }
 
       // Add user message to conversation history
       this.conversationHistory.push({
-        role: 'user',
-        content: message
+        role: "user",
+        content: message,
       });
 
       const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CHAT}`;
 
       // Backend expects messages array format
       const payload = {
-        messages: [...this.conversationHistory]
+        messages: [...this.conversationHistory],
       };
 
       const response = await this.makeRequest(url, {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(payload),
-        credentials: 'include' // Important for CORS with sessions
+        credentials: "include", // Important for CORS with sessions
       });
 
       // Add assistant response to conversation history
-      if (response.role === 'assistant' && response.content) {
+      if (response.role === "assistant" && response.content) {
         this.conversationHistory.push({
-          role: 'assistant',
-          content: response.content
+          role: "assistant",
+          content: response.content,
         });
       }
 
       return {
         message: response.content,
-        source: response.source || 'groq_rag',
-        status: response.status || 'success',
-        role: response.role || 'assistant'
+        source: response.source || "groq_rag",
+        status: response.status || "success",
+        role: response.role || "assistant",
+        // ✅ NEW: Lead capture data from backend
+        lead_capture_prompt: response.lead_capture_prompt || null,
+        conversation_stage: response.conversation_stage || null,
+        lead_info: response.lead_info || null,
       };
-
     } catch (error) {
-      console.error('Chat API Error:', error);
+      console.error("Chat API Error:", error);
 
       // Retry logic
       if (retryCount < API_CONFIG.RETRY_ATTEMPTS) {
-        console.log(`Retrying request (${retryCount + 1}/${API_CONFIG.RETRY_ATTEMPTS})...`);
+        console.log(
+          `Retrying request (${retryCount + 1}/${API_CONFIG.RETRY_ATTEMPTS})...`
+        );
         await this.delay(1000 * (retryCount + 1)); // Progressive delay
         return this.sendMessage(message, retryCount + 1);
       }
 
       throw new Error(
-        error.message || 'Failed to send message. Please check your connection and try again.'
+        error.message ||
+          "Failed to send message. Please check your connection and try again."
       );
     }
   }
@@ -124,16 +135,17 @@ class ChatApiService {
           "Paeonia's cutting-edge technology enables inline monitoring of chemical processes, helping researchers and industry professionals optimize their workflows.",
           "Our spectrometers are designed for robustness and ease of use, making advanced spectroscopy accessible for various applications in research and industry.",
           "I'd be happy to help you learn more about our products. You can explore our Novel Mid-IR Spectrometer features or contact our team for detailed specifications.",
-          "Paeonia Innovation is at the forefront of spectroscopic technology, providing solutions that bridge the gap between research and practical application."
+          "Paeonia Innovation is at the forefront of spectroscopic technology, providing solutions that bridge the gap between research and practical application.",
         ];
 
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        const randomResponse =
+          responses[Math.floor(Math.random() * responses.length)];
 
         resolve({
           message: randomResponse,
-          source: 'mock',
-          status: 'success',
-          role: 'assistant'
+          source: "mock",
+          status: "success",
+          role: "assistant",
         });
       }, 1500); // Simulate network delay
     });
@@ -142,46 +154,52 @@ class ChatApiService {
   async checkHealth() {
     try {
       // Use mock in development without API URL
-      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
+      if (
+        !process.env.REACT_APP_API_URL &&
+        process.env.NODE_ENV === "development"
+      ) {
         return {
           ok: true,
-          status: 'mock',
+          status: "mock",
           timestamp: new Date().toISOString(),
-          message: 'Using mock responses until backend is deployed'
+          message: "Using mock responses until backend is deployed",
         };
       }
 
       const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.HEALTH}`;
-      const response = await this.makeRequest(url, { method: 'GET' });
+      const response = await this.makeRequest(url, { method: "GET" });
       return response;
     } catch (error) {
-      console.error('Health check failed:', error);
-      return { ok: false, status: 'error', message: error.message };
+      console.error("Health check failed:", error);
+      return { ok: false, status: "error", message: error.message };
     }
   }
 
   async getStatus() {
     try {
       // Use mock in development without API URL
-      if (!process.env.REACT_APP_API_URL && process.env.NODE_ENV === 'development') {
+      if (
+        !process.env.REACT_APP_API_URL &&
+        process.env.NODE_ENV === "development"
+      ) {
         return {
           ok: true,
           enhanced: true,
           chunks: 0,
           vector_db_loaded: false,
           embedder_loaded: false,
-          llm_provider: 'mock',
+          llm_provider: "mock",
           llm_configured: true,
-          status: 'mock'
+          status: "mock",
         };
       }
 
       const url = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.STATUS}`;
-      const response = await this.makeRequest(url, { method: 'GET' });
+      const response = await this.makeRequest(url, { method: "GET" });
       return response;
     } catch (error) {
-      console.error('Status check failed:', error);
-      return { ok: false, status: 'error', message: error.message };
+      console.error("Status check failed:", error);
+      return { ok: false, status: "error", message: error.message };
     }
   }
 
@@ -194,7 +212,7 @@ class ChatApiService {
   }
 
   delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   // Utility method to update API configuration
