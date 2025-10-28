@@ -197,13 +197,28 @@ export const Form = () => {
               <div className="text-green-700 font-semibold text-2xl mb-6">
                 {successMessage}
               </div>
-              <a
-                href="/pdf/application-note.pdf"
-                download
-                className="inline-block px-8 py-4 bg-[#7a1b1f] text-white text-[18px] font-medium rounded-lg hover:bg-[#5e1418]"
-              >
-                📄 Download Application Note
-              </a>
+              {/* Buttons Wrapper with spacing */}
+              <div className="flex flex-col items-center justify-center gap-5">
+                {/* Download button */}
+                <a
+                  href="/pdf/application-note.pdf"
+                  download
+                  className="inline-block px-8 py-4 bg-[#7a1b1f] text-white text-[18px] font-medium rounded-lg hover:bg-[#5e1418]"
+                >
+                  📄 Download Application Note
+                </a>
+
+                {/* LinkedIn follow/visit button */}
+                <a
+                  href="https://www.linkedin.com/company/paeonia-innovations/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-4 border border-[#0a66c2] text-[#0a66c2] text-[18px] font-medium rounded-lg hover:bg-[#0a66c2] hover:text-white"
+                  aria-label="Open PAEONIA Innovations on LinkedIn in a new tab"
+                >
+                  🔗 Connect on LinkedIn
+                </a>
+              </div>
             </div>
           )}
 
