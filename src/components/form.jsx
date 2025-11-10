@@ -7,6 +7,7 @@ export const Form = () => {
     role: "",
     appcategory: [],
     name: "",
+    companyname: "",
     email: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,6 +53,7 @@ export const Form = () => {
     formData.role &&
     formData.appcategory.length > 0 &&
     formData.name &&
+    formData.companyname &&
     formData.email;
 
   const handleSubmit = async (e) => {
@@ -65,6 +67,7 @@ export const Form = () => {
       role: formData.role,
       appcategory: formData.appcategory.join(", "),
       name: formData.name,
+      companyname: formData.companyname,
       email: formData.email,
     };
 
@@ -94,6 +97,7 @@ export const Form = () => {
           role: "",
           appcategory: [],
           name: "",
+          companyname: "",
           email: "",
         });
         // setSuccessMessage("");
@@ -166,7 +170,7 @@ export const Form = () => {
           {/* Name and Email */}
           <div>
             <label className="block text-2xl font-medium text-gray-800 mb-8">
-              What is your name and official email address?{" "}
+              What is your name, company name and official email address?{" "}
               <span className="text-red-600">*</span>
             </label>
             <input
@@ -174,6 +178,15 @@ export const Form = () => {
               name="name"
               placeholder="Your full name"
               value={formData.name}
+              onChange={handleChange}
+              className="w-full mb-4 border border-gray-300 rounded-xl p-4 text-2xl font-normal text-gray-900 placeholder:text-gray-500 tracking-tight"
+              required
+            />
+            <input
+              type="text"
+              name="companyname"
+              placeholder="Your company name"
+              value={formData.companyname}
               onChange={handleChange}
               className="w-full mb-4 border border-gray-300 rounded-xl p-4 text-2xl font-normal text-gray-900 placeholder:text-gray-500 tracking-tight"
               required
@@ -201,11 +214,11 @@ export const Form = () => {
               <div className="flex flex-col items-center justify-center gap-5">
                 {/* Download button */}
                 <a
-                  href="/pdf/application-note.pdf"
+                  href="/pdf/Paeonia Novel Mid-IR Spectrometer.pdf"
                   download
                   className="inline-block px-8 py-4 bg-[#7a1b1f] text-white text-[18px] font-medium rounded-lg hover:bg-[#5e1418]"
                 >
-                  📄 Download Application Note
+                  📄 Download Brochure
                 </a>
 
                 {/* LinkedIn follow/visit button */}
