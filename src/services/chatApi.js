@@ -203,6 +203,70 @@ class ChatApiService {
     }
   }
 
+  /**
+   * Submit lead capture data to Railway backend
+   * @param {Object} leadData - Lead information
+   * @param {string} leadData.name - Contact name
+   * @param {string} leadData.email - Contact email (required)
+   * @param {string} leadData.company - Company name
+   * @param {string} leadData.phone - Phone number (optional)
+   * @param {string} leadData.interest - Interest area or application category
+   * @param {string} leadData.source - Lead source identifier (e.g., 'event_form', 'website_chat')
+   * @returns {Promise<Object>} Response from backend
+   */
+  async submitLeadCapture(leadData) {
+    try {
+      // Use mock in development without API URL
+      if (
+        !process.env.REACT_APP_API_URL &&
+        process.env.NODE_ENV === "development"
+      ) {
+        console.warn(
+          "⚠️ Using mock lead capture. Set REACT_APP_API_URL to connect to Railway backend."
+        );
+        return {
+          success: true,
+          message: "Lead captured (mock mode)",
+          lead_id: "mock_lead_" + Date.now(),
+        };
+      }
+
+      const url = `${API_CONFIG.BASE_URL}/api/lead-capture`;
+
+      // Backend expects: { name, email, company, phone, interest, source }
+      const payload = {
+        name: leadData.name || "",
+        email: leadData.email || "",
+        company: leadData.company || "",
+        phone: leadData.phone || "",
+        interest: leadData.interest || "",
+        source: leadData.source || "website_chat",
+      };
+
+      // Validate required field
+      if (!payload.email) {
+        throw new Error("Email is required for lead capture");
+      }
+
+      const response = await this.makeRequest(url, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        credentials: "include", // Important for CORS with sessions
+      });
+
+      return {
+        success: true,
+        message: response.message || "Lead captured successfully",
+        ...response,
+      };
+    } catch (error) {
+      console.error("Lead capture API error:", error);
+      throw new Error(
+        error.message || "Failed to submit lead. Please try again."
+      );
+    }
+  }
+
   clearConversation() {
     this.conversationHistory = [];
   }
