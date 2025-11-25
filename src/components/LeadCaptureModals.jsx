@@ -92,7 +92,7 @@ const LeadCaptureModals = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
-            body: JSON.stringify({ email, source: 'inline_email_capture' })
+            body: JSON.stringify({ email, source: 'website_chat' })
           });
 
           const data = await response.json();
@@ -134,7 +134,7 @@ const LeadCaptureModals = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ ...formData, source: 'full_lead_form' })
+        body: JSON.stringify({ ...formData, source: 'website_chat' })
       });
 
       const data = await response.json();
