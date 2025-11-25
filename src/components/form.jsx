@@ -1,6 +1,7 @@
 // src/components/Form.jsx
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { chatApi } from "../services/chatApi";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -71,41 +72,81 @@ export const Form = () => {
       email: formData.email,
     };
 
+    // Track submission results
+    let backendSuccess = false;
+    let emailSuccess = false;
+
     try {
-      //   await emailjs.send(
-      //     "service_glye7pm",
-      //     "template_79hve7b",
-      //     formDataToSend,
-      //     "Q0syV6H_5pAHvwxU9"
-      //   );
-      if (SEND_EMAIL) {
-        await emailjs.send(
-          "service_glye7pm",
-          "template_79hve7b",
-          formDataToSend,
-          "Q0syV6H_5pAHvwxU9"
-        );
-      } else {
-        console.log("Email sending skipped during testing.");
+      // 1. Send to Railway Backend CRM (with lead source: event_form → Event)
+      try {
+        const leadData = {
+          name: formData.name,
+          email: formData.email,
+          company: formData.companyname,
+          phone: "", // Form doesn't collect phone
+          interest: `${formData.role} - ${formData.appcategory.join(", ")}`,
+          source: "event_form", // Maps to "Event" in Membrain CRM
+        };
+
+        const backendResponse = await chatApi.submitLeadCapture(leadData);
+
+        if (backendResponse.success) {
+          backendSuccess = true;
+          console.log("✅ Lead successfully sent to CRM:", backendResponse);
+        }
+      } catch (backendError) {
+        console.error("⚠️ Backend CRM submission failed:", backendError);
+        // Continue to EmailJS - don't fail the entire submission
       }
 
-      setSuccessMessage(
-        "Your form has been successfully sent to the PI admin team! Thank you so much"
-      );
-      setTimeout(() => {
-        setFormData({
-          role: "",
-          appcategory: [],
-          name: "",
-          companyname: "",
-          email: "",
-        });
-        // setSuccessMessage("");
-        // window.location.replace("/form");
-      }, 3000);
+      // 2. Send to EmailJS (always, not just as fallback)
+      if (SEND_EMAIL) {
+        try {
+          await emailjs.send(
+            "service_glye7pm",
+            "template_79hve7b",
+            formDataToSend,
+            "Q0syV6H_5pAHvwxU9"
+          );
+          emailSuccess = true;
+          console.log("✅ Email successfully sent via EmailJS");
+        } catch (emailError) {
+          console.error("⚠️ EmailJS submission failed:", emailError);
+        }
+      } else {
+        console.log("Email sending skipped during testing.");
+        emailSuccess = true; // Don't fail if email is disabled
+      }
+
+      // Show success message if at least one method succeeded
+      if (backendSuccess || emailSuccess) {
+        let successMsg = "Your form has been successfully submitted! Thank you so much";
+
+        if (backendSuccess && emailSuccess) {
+          successMsg = "Your form has been successfully sent to the PI admin team! Thank you so much";
+        } else if (backendSuccess && !emailSuccess) {
+          successMsg = "Your inquiry has been recorded in our CRM. Thank you so much!";
+        } else if (!backendSuccess && emailSuccess) {
+          successMsg = "Your form has been successfully sent to the PI admin team! Thank you so much";
+        }
+
+        setSuccessMessage(successMsg);
+
+        setTimeout(() => {
+          setFormData({
+            role: "",
+            appcategory: [],
+            name: "",
+            companyname: "",
+            email: "",
+          });
+        }, 3000);
+      } else {
+        throw new Error("Both submission methods failed");
+      }
     } catch (error) {
-      console.error("EmailJS error:", error);
-      setSuccessMessage("Something went wrong. Please try again.");
+      console.error("Form submission error:", error);
+      setSuccessMessage("Something went wrong. Please try again or contact us directly.");
     }
 
     setIsSubmitting(false);
