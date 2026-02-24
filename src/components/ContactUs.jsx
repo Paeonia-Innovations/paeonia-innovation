@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
 
-// ── EmailJS Config ─────────────────────────────────────────────────
+// ── EmailJS Config
 const EMAILJS_SERVICE_ID = "service_glye7pm";
 const EMAILJS_PUBLIC_KEY = "Q0syV6H_5pAHvwxU9";
 const CONTACT_TEMPLATE_ID = "template_dgm8t1d"; // your existing template
@@ -206,7 +206,7 @@ const newStyles = `
   }
 `;
 
-// ── Radio Group — stacked, one per line, left aligned ─────────────
+//  Radio Group — stacked, one per line, left aligned
 const RadioGroup = ({ name, options, value, onChange }) => (
   <div className="cf-option-group">
     {options.map((opt) => (
