@@ -33,7 +33,7 @@ export const Contact = (props) => {
   }, []);
 
   const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    props.data.address
+    props.data.address,
   )}`;
 
   //Function to detect mobile device
@@ -55,7 +55,7 @@ export const Contact = (props) => {
         "service_glye7pm", //service ID from EmailJS
         "template_dgm8t1d", //template ID from EmailJS
         e.target,
-        "Q0syV6H_5pAHvwxU9" //public key from EmailJS
+        "Q0syV6H_5pAHvwxU9", //public key from EmailJS
       )
       .then(
         (result) => {
@@ -68,7 +68,7 @@ export const Contact = (props) => {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
   };
   return (

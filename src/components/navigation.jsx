@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
+//import { ConsultationModal } from "./Consultation";
 
 export const Navigation = (props) => {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
@@ -13,7 +14,7 @@ export const Navigation = (props) => {
 
       // Show header if scrolled to top or scrolling up
       setVisible(
-        currentScrollPos <= headerHeight || currentScrollPos < prevScrollPos
+        currentScrollPos <= headerHeight || currentScrollPos < prevScrollPos,
       );
 
       // Update previous scroll position
@@ -110,6 +111,32 @@ export const Navigation = (props) => {
         <div className="navbar-right">
           {/* <ul className="nav navbar-nav navbar-right">
             <li> */}
+
+          {/* <Dropdown className="custom-dropdown">
+            <Dropdown.Toggle id="dropdown-usecases" className="custom-toggle">
+              <Link to="/ConsultationForm" className="dropdown-link">
+                &nbsp;&nbsp;&nbsp;Book a consultation
+              </Link>
+            </Dropdown.Toggle>
+          </Dropdown> */}
+
+          {/* <Link to="/consultation" className="custom-toggle">
+            Book a Consultation
+          </Link> */}
+
+          <Dropdown className="custom-dropdown">
+            <Dropdown.Toggle id="dropdown-usecases" className="custom-toggle">
+              Consultation
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className="custom-menu">
+              <Dropdown.Item className="custom-item">
+                <Link to="/consultation" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp; Book a Consultation
+                </Link>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <Dropdown className="custom-dropdown">
             <Dropdown.Toggle id="dropdown-usecases" className="custom-toggle">

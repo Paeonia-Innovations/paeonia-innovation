@@ -17,7 +17,9 @@ import { Mission } from "./components/mission";
 import { Vision } from "./components/vision";
 // import { Services } from "./components/services";
 //import { Gallery } from "./components/gallery";
-import { Contact } from "./components/contact";
+//import { Contact } from "./components/contact";
+import { ContactUs } from "./components/ContactUs";
+import { Consultation } from "./components/Consultation";
 import { BackgroundVideo } from "./components/backgroundVideo";
 
 import { NovelMidIRSpectrometer } from "./components/novelMidIRSpectrometer";
@@ -91,7 +93,7 @@ const App = () => {
   };
 
   const scrollToContact = () => {
-    const element = document.getElementById("contact");
+    const element = document.getElementById("contactus"); //contact
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -198,12 +200,23 @@ const App = () => {
                     <Purpose id="purpose" data={landingPageData.Purpose} />
                     <Mission id="mission" data={landingPageData.Mission} />
                     <Vision id="vision" data={landingPageData.Vision} />
-                    <Contact id="contact" data={landingPageData.Contact} />
+                    {/* <Contact id="contact" data={landingPageData.Contact} /> */}
+                    <ContactUs
+                      id="contactus"
+                      data={landingPageData.ContactUs}
+                    />
+                    {/* <Consultation
+                      id="consultation"
+                      data={landingPageData.Consultation}
+                    /> */}
                   </>
                 )}
               </>
             }
           />
+
+          {/* Book a consultation Route */}
+          <Route path="/consultation" element={<Consultation />} />
 
           {/* Product Page Route */}
           <Route

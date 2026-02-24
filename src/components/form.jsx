@@ -7,7 +7,7 @@ export const Form = () => {
     role: "",
     appcategory: [],
     name: "",
-    companyname: "",
+    company: "",
     email: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,7 +33,7 @@ export const Form = () => {
     "Concentration Monitoring",
     "Blending Verification",
     "Complex Component Mixtures Quantification",
-  ]; // Add more as needed
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,7 +53,7 @@ export const Form = () => {
     formData.role &&
     formData.appcategory.length > 0 &&
     formData.name &&
-    formData.companyname &&
+    formData.company &&
     formData.email;
 
   const handleSubmit = async (e) => {
@@ -63,45 +63,45 @@ export const Form = () => {
     setIsSubmitting(true);
     setSuccessMessage("");
 
+    // ── Use shared variable names so template_79hve7b works for both forms ──
     const formDataToSend = {
+      form_source: "Customer Interest Form",
+      enquiry_type: "—",
+      topic: formData.role, // role → topic
+      extra_info: formData.appcategory.join(", "), // categories → extra_info
+      description: "—",
+      schedule: "—",
       role: formData.role,
-      appcategory: formData.appcategory.join(", "),
       name: formData.name,
-      companyname: formData.companyname,
+      company: formData.company,
       email: formData.email,
+      country: "—",
+      phone: "—",
     };
 
     try {
-      //   await emailjs.send(
-      //     "service_glye7pm",
-      //     "template_79hve7b",
-      //     formDataToSend,
-      //     "Q0syV6H_5pAHvwxU9"
-      //   );
       if (SEND_EMAIL) {
         await emailjs.send(
           "service_glye7pm",
           "template_79hve7b",
           formDataToSend,
-          "Q0syV6H_5pAHvwxU9"
+          "Q0syV6H_5pAHvwxU9",
         );
       } else {
         console.log("Email sending skipped during testing.");
       }
 
       setSuccessMessage(
-        "Your form has been successfully sent to the PI admin team! Thank you so much"
+        "Your form has been successfully sent to the PI admin team! Thank you so much",
       );
       setTimeout(() => {
         setFormData({
           role: "",
           appcategory: [],
           name: "",
-          companyname: "",
+          company: "",
           email: "",
         });
-        // setSuccessMessage("");
-        // window.location.replace("/form");
       }, 3000);
     } catch (error) {
       console.error("EmailJS error:", error);
@@ -167,7 +167,8 @@ export const Form = () => {
           <div>
             <div className="my-12"></div>
           </div>
-          {/* Name and Email */}
+
+          {/* Name, Company, Email */}
           <div>
             <label className="block text-2xl font-medium text-gray-800 mb-8">
               What is your name, company name and official email address?{" "}
@@ -184,9 +185,9 @@ export const Form = () => {
             />
             <input
               type="text"
-              name="companyname"
+              name="company"
               placeholder="Your company name"
-              value={formData.companyname}
+              value={formData.company}
               onChange={handleChange}
               className="w-full mb-4 border border-gray-300 rounded-xl p-4 text-2xl font-normal text-gray-900 placeholder:text-gray-500 tracking-tight"
               required
@@ -210,9 +211,7 @@ export const Form = () => {
               <div className="text-green-700 font-semibold text-2xl mb-6">
                 {successMessage}
               </div>
-              {/* Buttons Wrapper with spacing */}
               <div className="flex flex-col items-center justify-center gap-5">
-                {/* Download button */}
                 <a
                   href="/pdf/Paeonia Novel Mid-IR Spectrometer.pdf"
                   download
@@ -220,26 +219,17 @@ export const Form = () => {
                 >
                   📄 Download Brochure
                 </a>
-
-                {/* LinkedIn follow/visit button */}
                 <a
                   href="https://www.linkedin.com/company/paeonia-innovations/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-8 py-4 border border-[#0a66c2] text-[#0a66c2] text-[18px] font-medium rounded-lg hover:bg-[#0a66c2] hover:text-white"
-                  aria-label="Open PAEONIA Innovations on LinkedIn in a new tab"
                 >
                   🔗 Connect on LinkedIn
                 </a>
               </div>
             </div>
           )}
-
-          {/* {successMessage && (
-            <div className="text-center text-green-700 font-semibold text-2xl">
-              {successMessage}
-            </div>
-          )} */}
 
           {/* Submit */}
           <div className="pt-6 text-right">
