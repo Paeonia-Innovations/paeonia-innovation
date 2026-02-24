@@ -75,7 +75,7 @@ export const Form = () => {
       name: formData.name,
       company: formData.company,
       email: formData.email,
-      country: "—",
+      //country: "—",
       phone: "—",
     };
 
