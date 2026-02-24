@@ -210,7 +210,7 @@ export const Navigation = (props) => {
             </Dropdown.Menu>
           </Dropdown>
           <Link
-            to="/#contact"
+            to="/#contactus"
             className="page-scroll"
             onClick={() => props.onNavClick("contactPage")}
           >
