@@ -88,7 +88,9 @@ hr {
 
   /* Initial visible state */
   transform: translateY(0);
-  transition: transform 0.3s ease-in-out, background-color 0.3s linear;
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s linear;
 
   /* Other styles */
   padding: 10px 20px; /* Example padding */
@@ -1249,6 +1251,284 @@ label {
 #contact .social i.fa:hover {
   color: #608dfd;
   background: #fff;
+}
+
+/* contactUs Section */
+#contactus {
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.75);
+  z-index: 2;
+  position: relative;
+}
+#contactus .section-title {
+  margin-bottom: 40px;
+}
+#contactus .section-title p {
+  font-size: 18px;
+}
+#contactus h2 {
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+#contactus .section-title h2::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  left: 30px;
+}
+#contactus h3 {
+  color: #fff;
+  margin-top: 80px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  font-weight: 400;
+}
+#contactus form {
+  padding-top: 20px;
+}
+#contactus .text-danger {
+  color: #cc0033;
+  text-align: left;
+}
+#contactus .btn-custom {
+  margin: 30px 0;
+  background: transparent;
+  border: 2px solid #fff;
+}
+#contactus .btn-custom:hover {
+  color: #1f386e;
+  background: #fff;
+}
+label {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  float: left;
+}
+#contactus .form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #444;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#contactus .form-control:focus {
+  border-color: #999;
+  outline: 0;
+  -webkit-box-shadow: transparent;
+  box-shadow: transparent;
+}
+.form-control::-webkit-input-placeholder {
+  color: #777;
+}
+.form-control:-moz-placeholder {
+  color: #777;
+}
+.form-control::-moz-placeholder {
+  color: #777;
+}
+.form-control:-ms-input-placeholder {
+  color: #777;
+}
+#contactus .contact-item {
+  margin: 20px 0;
+}
+
+#contactus .section-title h2 {
+  font-size: 30px;
+}
+
+#contactus .contact-item span {
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 10px;
+  display: block;
+}
+#contactus .contact-item i.fa {
+  margin-right: 10px;
+}
+#contactus .social {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+#contactus .social ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+#contactus .social i.fa {
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 0;
+  border: 2px solid #007bb5;
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #007bb5;
+}
+#contactus .social i.fa:hover {
+  color: #608dfd;
+  background: #fff;
+}
+
+/* Consultation Section */
+#consultation {
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+  background-color: #fff;
+  color: #1a1a1a;
+  z-index: 2;
+  position: relative;
+}
+#consultation .section-title {
+  margin-bottom: 40px;
+}
+#consultation .section-title p {
+  font-size: 18px;
+  color: #1a1a1a;
+}
+#consultation h2 {
+  color: #1a1a1a;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+#consultation .section-title h2::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  left: 30px;
+}
+#consultation h3 {
+  color: #1a1a1a;
+  margin-top: 80px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  font-weight: 400;
+}
+#consultation form {
+  padding-top: 20px;
+}
+#consultation .text-danger {
+  color: #cc0033;
+  text-align: left;
+}
+#consultation .btn-custom {
+  margin: 30px 0;
+  background: transparent;
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+}
+#consultation .btn-custom:hover {
+  color: #fff;
+  background: #1a1a1a;
+}
+label {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  float: left;
+}
+#consultation .form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #444;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#consultation .form-control:focus {
+  border-color: #999;
+  outline: 0;
+  -webkit-box-shadow: transparent;
+  box-shadow: transparent;
+}
+.form-control::-webkit-input-placeholder {
+  color: #777;
+}
+.form-control:-moz-placeholder {
+  color: #777;
+}
+.form-control::-moz-placeholder {
+  color: #777;
+}
+.form-control:-ms-input-placeholder {
+  color: #777;
+}
+#consultation .contact-item {
+  margin: 20px 0;
+}
+
+#consultation .section-title h2 {
+  font-size: 30px;
+}
+
+#consultation .contact-item span {
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 10px;
+  display: block;
+}
+#consultation .contact-item i.fa {
+  margin-right: 10px;
+}
+#consultation .social {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+#consultation .social ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+#consultation .social i.fa {
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 0;
+  border: 2px solid #007bb5;
+  color: #1a1a1a;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #007bb5;
+}
+#consultation .social i.fa:hover {
+  color: #608dfd;
+  background: #1a1a1a;
 }
 
 /* ContactProduct Section */
@@ -2865,6 +3145,13 @@ label {
     font-size: 22px;
   }
   #contact .section-title p {
+    font-size: 16px;
+  }
+
+  #contactus .section-title h2 {
+    font-size: 22px;
+  }
+  #contactus .section-title p {
     font-size: 16px;
   }
 
