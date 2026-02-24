@@ -860,7 +860,7 @@ export const Consultation = () => {
                       I agree that my information will be used to schedule and
                       respond to my consultation request. Submission does not
                       guarantee a confirmed booking until I receive confirmation
-                      from the Paeonia team.
+                      from the Paeonia team. Thank you so much.
                     </span>
                   </label>
                 </div>
