@@ -177,10 +177,22 @@ export const Navigation = (props) => {
                 }}
               /> */}
               <Dropdown.Item className="custom-item">
+                <Link to="/upcoming-events" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;Upcoming Events
+                </Link>
+              </Dropdown.Item>
+              {/* <hr
+                style={{
+                  margin: "4px 0",
+                  borderTop: "1px solid #ccc",
+                  width: "100%",
+                }}
+              />
+              <Dropdown.Item className="custom-item">
                 <Link to="/form" className="dropdown-link">
                   &nbsp;&nbsp;&nbsp;Form
                 </Link>
-              </Dropdown.Item>
+              </Dropdown.Item> */}
               {/* <Dropdown.Item
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
@@ -199,6 +211,18 @@ export const Navigation = (props) => {
               <Dropdown.Item className="custom-item">
                 <Link to="/novelMidIRSpectrometer" className="dropdown-link">
                   &nbsp;&nbsp;&nbsp;Novel Mid-IR Spectrometer
+                </Link>
+              </Dropdown.Item>
+              <hr
+                style={{
+                  margin: "4px 0",
+                  borderTop: "1px solid #ccc",
+                  width: "100%",
+                }}
+              />
+              <Dropdown.Item className="custom-item">
+                <Link to="/K2Photonics" className="dropdown-link">
+                  &nbsp;&nbsp;&nbsp;K2 Photonics
                 </Link>
               </Dropdown.Item>
               {/* <Dropdown.Item

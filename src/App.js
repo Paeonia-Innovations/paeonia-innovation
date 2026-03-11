@@ -29,6 +29,13 @@ import { AboutSpectrometer } from "./components/aboutSpectrometer";
 // import { KineticsThermoMolecular } from "./components/kineticsThermoMolecular";
 import { InlineMonitoring } from "./components/inlineMonitoring";
 import { ProductFeature } from "./components/productFeature";
+
+import { K21000 } from "./components/K2-1000";
+import { K2ASOPS } from "./components/K2-ASOPS";
+import { K21000Mini } from "./components/K2-1000-mini";
+import { K2OPO } from "./components/K2-OPO";
+import { PumpProbeSampling } from "./components/PumpProbeSampling";
+
 import { ReactionMonitoringP1 } from "./components/reactionMonitoringP1";
 import { ReactionMonitoringP2 } from "./components/reactionMonitoringP2";
 import { ReactionMonitoringP3 } from "./components/reactionMonitoringP3";
@@ -53,6 +60,9 @@ import { ContactProduct } from "./components/contactProduct";
 import ChatWidget from "./components/ChatWidget";
 
 //import { EventRegistration } from "./components/event_Registration";
+
+import { UpcomingEvents } from "./components/UpcomingEvents";
+import { LaserWorldEvent } from "./components/LaserWorldEvent";
 import { Form } from "./components/form";
 
 import JsonData from "./data/data.json";
@@ -259,6 +269,21 @@ const App = () => {
             }
           />
 
+          {/* K2 Photonics Page Route */}
+          <Route
+            path="/K2Photonics"
+            element={
+              <>
+                <K2ASOPS id="k2Asops" data={landingPageData.K2ASOPS} />
+                <K21000 id="k21000" data={landingPageData.K21000} />
+                <K21000Mini id="k21000Mini" data={landingPageData.K21000Mini} />
+                <K2OPO id="k2OPO" data={landingPageData.K2OPO} />
+              </>
+            }
+          />
+
+          <Route path="/pump-probe-sampling" element={<PumpProbeSampling />} />
+
           {/* Reaction Monitoring Pages */}
           <Route
             path="/reaction-monitoring"
@@ -336,6 +361,12 @@ const App = () => {
               </>
             }
           /> */}
+
+          {/*Upcoming events */}
+          <Route path="/upcoming-events" element={<UpcomingEvents />} />
+
+          {/*LaserWorldEvent */}
+          <Route path="/laser-world-event" element={<LaserWorldEvent />} />
 
           {/*Form */}
           <Route

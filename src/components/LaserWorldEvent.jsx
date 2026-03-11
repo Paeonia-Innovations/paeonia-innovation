@@ -1,8 +1,51 @@
-// src/components/Form.jsx
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
-export const Form = () => {
+const SEND_EMAIL = true;
+
+const roles = [
+  "Professor",
+  "Scientist",
+  "Engineer",
+  "Procurement",
+  "Manufacturing",
+  "Operations",
+  "Head of Department",
+  "Graduate Student",
+];
+
+const appCategories = [
+  {
+    group: "Spectroscopy & Metrology",
+    items: [
+      "Dual-comb spectroscopy / ASOPS",
+      "High-resolution absorption spectroscopy (gas/liquid/solid)",
+      "Terahertz time-domain spectroscopy",
+      "Optical frequency metrology / frequency standards",
+      "Mid-infrared spectroscopy",
+    ],
+  },
+  {
+    group: "Precision Measurement & Sensing",
+    items: [
+      "Absolute distance measurement / laser ranging",
+      "Thin film thickness / refractive index measurement",
+      "Trace gas detection",
+      "Pump-probe / ultrafast dynamics",
+    ],
+  },
+  {
+    group: "Nonlinear Optics & Laser Technology",
+    items: [
+      "Amplifier seed source",
+      "Nonlinear microscopy imaging",
+      "OPO pumping / wavelength extension",
+      "XUV generation",
+    ],
+  },
+];
+
+export const LaserWorldEvent = () => {
   const [formData, setFormData] = useState({
     role: "",
     appcategory: [],
@@ -13,29 +56,6 @@ export const Form = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const SEND_EMAIL = true;
-
-  const roles = [
-    "Professor",
-    "Scientist",
-    "Engineer",
-    "Procurement",
-    "Manufacturing",
-    "Operations",
-    "Head of Department",
-    "Graduate Student",
-  ];
-
-  const appCategories = [
-    "Continuous Flow Chemistry",
-    "Reactor Design and Development",
-    "Reaction/Process Monitoring",
-    "Purity Monitoring",
-    "Concentration Monitoring",
-    "Blending Verification",
-    "Complex Component Mixtures Quantification",
-    "Others",
-  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -72,12 +92,11 @@ export const Form = () => {
           .join(", ")
       : formData.appcategory.join(", ");
 
-    // ── Use shared variable names so template_79hve7b works for both forms ──
     const formDataToSend = {
-      form_source: "Customer Interest Form",
-      enquiry_type: "—",
-      topic: formData.role, // role → topic
-      //extra_info: formData.appcategory.join(", "), // categories → extra_info
+      form_source:
+        "Laser World of Photonics China 2026 — Customer Interest Form",
+      enquiry_type: "Event Interest",
+      topic: formData.role,
       extra_info: categoriesText,
       description: "—",
       schedule: "—",
@@ -85,7 +104,7 @@ export const Form = () => {
       name: formData.name,
       company: formData.company,
       email: formData.email,
-      //country: "—",
+      linkedin: "—",
       phone: "—",
     };
 
@@ -126,9 +145,9 @@ export const Form = () => {
     <div className="min-h-screen bg-gray-50 py-28 px-4">
       <div className="max-w-3xl mx-auto mt-40 p-12 bg-white shadow-2xl rounded-3xl">
         <h2 className="text-4xl font-bold mb-10 text-center text-gray-900">
-          Customer Interest Form
-          {/* For Flow Chemistry Asia 2026 */}
+          Customer Interest Form For Laser World of Photonics China 2026
         </h2>
+
         <form onSubmit={handleSubmit} className="space-y-10">
           {/* Role */}
           <div>
@@ -159,31 +178,51 @@ export const Form = () => {
             <br />
             <br />
             <div className="mt-0 flex flex-col gap-4 pl-0 ml-0">
-              {appCategories.map((category) => (
-                <div key={category}>
-                  <div className="flex items-center gap-4 rounded hover:bg-gray-50 pl-0 ml-0">
-                    <input
-                      type="checkbox"
-                      checked={formData.appcategory.includes(category)}
-                      onChange={() => handleCheckboxChange(category)}
-                      className="h-5 w-5 text-red-600"
-                    />
-                    <span className="text-2xl text-gray-800">{category}</span>
-                  </div>
-                  {/* ── Others text input — appears when checked ── */}
-                  {category === "Others" &&
-                    formData.appcategory.includes("Others") && (
+              {appCategories.map((group) => (
+                <div key={group.group}>
+                  {/* Group heading */}
+                  <p className="text-2xl font-medium text-gray-800 mt-4 mb-2 border-b border-gray-200 pb-1">
+                    {group.group}
+                  </p>
+                  {group.items.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-4 rounded hover:bg-gray-50 pl-0 ml-0 mb-2"
+                    >
                       <input
-                        type="text"
-                        name="others"
-                        placeholder="Please specify..."
-                        value={formData.others}
-                        onChange={handleChange}
-                        className="mt-2 ml-9 w-full border border-gray-300 rounded-xl p-3 text-xl font-normal text-gray-900 placeholder:text-gray-500"
+                        type="checkbox"
+                        checked={formData.appcategory.includes(item)}
+                        onChange={() => handleCheckboxChange(item)}
+                        className="h-5 w-5 text-red-600"
                       />
-                    )}
+                      <span className="text-2xl text-gray-800">{item}</span>
+                    </div>
+                  ))}
                 </div>
               ))}
+
+              {/* Others — standalone at bottom */}
+              <div>
+                <div className="flex items-center gap-4 rounded hover:bg-gray-50 pl-0 ml-0">
+                  <input
+                    type="checkbox"
+                    checked={formData.appcategory.includes("Others")}
+                    onChange={() => handleCheckboxChange("Others")}
+                    className="h-5 w-5 text-red-600"
+                  />
+                  <span className="text-2xl text-gray-800">Others</span>
+                </div>
+                {formData.appcategory.includes("Others") && (
+                  <input
+                    type="text"
+                    name="others"
+                    placeholder="Please specify..."
+                    value={formData.others}
+                    onChange={handleChange}
+                    className="mt-2 ml-9 w-full border border-gray-300 rounded-xl p-3 text-xl font-normal text-gray-900 placeholder:text-gray-500"
+                  />
+                )}
+              </div>
             </div>
           </div>
 
@@ -228,20 +267,13 @@ export const Form = () => {
             />
           </div>
 
-          {/* Success Message */}
+          {/* Success Message — LinkedIn only */}
           {successMessage && (
             <div className="text-center mt-10">
               <div className="text-green-700 font-semibold text-2xl mb-6">
                 {successMessage}
               </div>
               <div className="flex flex-col items-center justify-center gap-5">
-                <a
-                  href="/pdf/Paeonia Novel Mid-IR Spectrometer.pdf"
-                  download
-                  className="inline-block px-8 py-4 bg-[#7a1b1f] text-white text-[18px] font-medium rounded-lg hover:bg-[#5e1418]"
-                >
-                  📄 Download Brochure
-                </a>
                 <a
                   href="https://www.linkedin.com/company/paeonia-innovations/"
                   target="_blank"
@@ -270,4 +302,4 @@ export const Form = () => {
   );
 };
 
-export default Form;
+export default LaserWorldEvent;
