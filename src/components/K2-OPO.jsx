@@ -48,25 +48,25 @@ export const K2OPO = (props) => {
                   <div className="col-12 col-md-6">
                     <div className="spacer"></div>
                     <h4 className="k2-tagline">
-                      Turnkey Optical Parametric Oscillator for Broadband
-                      Dual-Comb Spectroscopy
+                      Compact, Tunable, and Ultralow-Noise Optical Parametric
+                      Oscillator1 GHz repetition rate
                     </h4>
                     <p>
-                      K2-OPO is a fully integrated optical parametric oscillator
-                      designed to extend the spectral coverage of K2 dual-comb
-                      laser systems into the mid-infrared. Pumped directly by
-                      the K2-1000 or K2-1000-mini, it generates two synchronised
-                      mid-IR comb outputs with a tunable repetition rate
-                      difference, enabling broadband dual-comb spectroscopy
-                      across molecular fingerprint regions without the need for
-                      external pump sources or complex alignment.
+                      K2-OPO is a compact, ultralow-noise, turn-key optical
+                      parametric oscillator (OPO) designed to deliver
+                      femtosecond pulses across customizable infrared
+                      wavelengths with a high repetition rate.
+                      Factory-configured wavelength output (from near IR to
+                      mid-IR) makes K2-OPO versatile for a broad range of
+                      scientific and industrial applications, from gas sensing
+                      and time-resolved spectroscopy to nonlinear microscopy and
+                      reaction kinetics studies.
                     </p>
                     <div className="spacer"></div>
                     <p>
-                      Designed for spectroscopy, sensing, and precision
-                      measurement, K2-OPO delivers broad mid-IR spectral
-                      coverage, passive noise correlation, and turn-key
-                      operation in a compact, laboratory-ready enclosure.
+                      K2-OPO combines high-power operation, excellent beam
+                      quality, and a dual-comb option—all in a fully integrated
+                      system ready for deployment.
                     </p>
                   </div>
 
@@ -90,15 +90,14 @@ export const K2OPO = (props) => {
                     <h4 className="k2-section-heading">Key Applications</h4>
                     <ul className="k2-list">
                       <li>
-                        Pump-probe sampling
+                        Multi-species gas sensing
                         {/* <Link to="/pump-probe-sampling" className="k2-link">
                           Pump-probe sampling
                         </Link> */}
                       </li>
-                      <li>Broadband mid-IR dual-comb spectroscopy</li>
-                      <li>Trace gas detection and molecular fingerprinting</li>
-                      <li>Industrial process monitoring</li>
-                      <li>Nonlinear optics and ultrafast research</li>
+                      <li>Time-resolved spectroscopy</li>
+                      <li>Nonlinear microscopy</li>
+                      <li>Reaction kinetics</li>
                     </ul>
                   </div>
                 </div>
@@ -110,21 +109,18 @@ export const K2OPO = (props) => {
                     <h4 className="k2-section-heading">Key Features</h4>
                     <ul className="k2-list">
                       <li>
-                        Mid-IR dual-comb output directly from K2-1000 pump
+                        High repetition rate (∼1 GHz) femtosecond pulse output
+                      </li>
+                      <li>Ultralow relative intensity noise (RIN)</li>
+                      <li>Dual-comb option for advanced measurement schemes</li>
+                      <li>
+                        Compact, turn-key system suitable for continuous
+                        operation
                       </li>
                       <li>
-                        Broad spectral coverage across molecular fingerprint
-                        regions
+                        Customizable wavelength range covering near to
+                        mid-infrared (∼1310–4800 nm)
                       </li>
-                      <li>
-                        Passive noise correlation between the two OPO outputs
-                      </li>
-                      <li>
-                        Tunable repetition rate difference for flexible
-                        acquisition rates
-                      </li>
-                      <li>Turn-key operation — no manual alignment required</li>
-                      <li>Compact, thermally stable enclosure</li>
                     </ul>
                   </div>
                 </div>
@@ -135,15 +131,14 @@ export const K2OPO = (props) => {
                     <div className="spacer"></div>
                     <h4 className="k2-section-heading">Technical Highlights</h4>
                     <p>
-                      K2-OPO leverages the inherent passive noise correlation of
-                      the K2 shared-cavity dual-comb architecture. Because both
-                      OPO outputs are derived from the same pump source, their
-                      relative intensity and timing fluctuations are highly
-                      correlated — enabling coherent dual-comb measurements in
-                      the mid-IR without active stabilisation. This approach
-                      significantly reduces system complexity compared to
-                      traditional mid-IR dual-comb setups based on two
-                      independent OPOs.
+                      K2-OPO is a factory-configured optical parametric
+                      oscillator that delivers powerful, ultrashort pulses with
+                      exceptional noise performance. A factory-fixed or tunable
+                      wavelength range provides flexibility for
+                      application-specific deployment, and an optional dual-comb
+                      mode enables asynchronous sampling and precision
+                      measurement workflows without complex synchronization
+                      hardware.
                     </p>
                   </div>
                 </div>
@@ -156,18 +151,10 @@ export const K2OPO = (props) => {
                       Configuration Options
                     </h4>
                     <ul className="k2-list">
-                      <li>
-                        Compatible with K2-1000 and K2-1000-mini pump platforms
-                      </li>
-                      <li>
-                        Selectable phase-matching crystals for different
-                        spectral ranges
-                      </li>
-                      <li>Passive air cooling</li>
-                      <li>
-                        Custom wavelength ranges and output powers (upon
-                        request)
-                      </li>
+                      <li>Optional fiber-coupled output</li>
+                      <li>Integrated pump laser output</li>
+                      <li>Signal & idler pair output</li>
+                      <li>Tunable configuration upon request</li>
                     </ul>
                   </div>
                 </div>
@@ -178,14 +165,15 @@ export const K2OPO = (props) => {
                     <div className="spacer"></div>
                     <h4 className="k2-tagline">Discover K2-OPO for Yourself</h4>
                     <p>
-                      Ready to extend your dual-comb system into the
-                      mid-infrared? Request a live demonstration to see K2-OPO
-                      in action, download our detailed datasheets for complete
-                      technical specifications, or contact our team to discuss
-                      how K2-OPO can be integrated with your existing K2
-                      platform. K2 Photonics is here to help you achieve
-                      exceptional results across the full infrared spectral
-                      range.
+                      Ready to experience the performance of K2-OPO? Request a
+                      live demonstration to see its capabilities firsthand,
+                      download our detailed datasheets for complete technical
+                      specifications, or contact our team to discuss how K2-OPO
+                      can be optimized for your application. Whether you are
+                      advancing research, scaling industrial systems, or
+                      developing next-generation photonic solutions, K2
+                      Photonics is here to help you achieve exceptional results
+                      with precision laser technology.
                     </p>
                     <div className="spacer"></div>
                     <p>

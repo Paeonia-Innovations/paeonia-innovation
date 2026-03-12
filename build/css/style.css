@@ -3365,3 +3365,1107 @@ label {
   align-items: center; /* Center vertically */
   width: 100%;
 }
+
+/* -- Upcoming Event -- */
+
+#upcomingEvents {
+  background: #f8f5f0;
+  min-height: 100vh;
+  font-family: "Poster", sans-serif;
+}
+
+.ue-hero {
+  background: #1a1a1a;
+  padding: 72px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ue-hero::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 40px solid rgba(122, 27, 31, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ue-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.ue-eyebrow {
+  font-size: 22px;
+  display: inline-block;
+  font-family: "Poster", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 14px;
+}
+
+.ue-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #f8f5f0;
+  margin: 0 0 16px;
+  line-height: 1.15;
+  font-family: "Poster", sans-serif;
+}
+
+.ue-desc {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.ue-hero-line {
+  width: 56px;
+  height: 3px;
+  background: #7a1b1f;
+  margin: 32px auto 0;
+  border-radius: 2px;
+}
+
+/* -- Grid  */
+.ue-grid-wrapper {
+  padding: 64px 24px 80px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.ue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* -- Card  */
+.ue-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ue-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  transform: translateY(-4px);
+}
+
+.ue-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ue-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.ue-card:hover .ue-card-img {
+  transform: scale(1.04);
+}
+
+.ue-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: "Poster", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+/* -- Card body -- */
+.ue-card-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ue-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #a80216;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  display: block;
+  font-family: "Poster", sans-serif;
+  transition: color 0.2s;
+}
+
+.ue-card-title:hover {
+  color: #7a1b1f;
+}
+
+.ue-card-subtitle {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.65;
+  margin: 0 0 22px;
+  text-align: left;
+}
+
+/* -- Meta rows -- */
+.ue-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.ue-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.ue-meta-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ue-meta-text {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.ue-booth {
+  font-weight: 700;
+  color: #7a1b1f;
+}
+
+/* -- Two buttons side by side -- */
+.ue-card-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.ue-card-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 3px;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Solid — "Learn More" */
+.ue-btn-solid {
+  background: #7a1b1f;
+  color: #fff;
+  border: 2px solid #7a1b1f;
+}
+
+.ue-btn-solid:hover {
+  background: #5a1015;
+  border-color: #5a1015;
+  color: #fff;
+  transform: translateX(2px);
+}
+
+/* Outline — "Register Interest" */
+.ue-btn-outline {
+  background: transparent;
+  color: #7a1b1f;
+  border: 2px solid #7a1b1f;
+}
+
+.ue-btn-outline:hover {
+  background: #7a1b1f;
+  color: #fff;
+  transform: translateX(2px);
+}
+
+/* -- Responsive -- */
+@media (max-width: 768px) {
+  .ue-hero {
+    padding: 52px 24px 40px;
+  }
+
+  .ue-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ue-grid-wrapper {
+    padding: 40px 16px 60px;
+  }
+
+  .ue-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ue-card-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ue-card-body {
+    padding: 20px 20px 24px;
+  }
+}
+
+#eventPage {
+  background: #f8f5f0;
+  min-height: 100vh;
+  padding: 100px 24px 80px;
+  font-family: "Poster", sans-serif;
+  color: #1a1a1a;
+}
+
+/* ── Two-column layout ──────────────────────────────────────── */
+.ep-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── LEFT column ────────────────────────────────────────────── */
+.ep-left {
+  position: sticky;
+  top: 100px;
+}
+
+.ep-tag {
+  display: inline-block;
+  font-family: "Poster", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+.ep-event-title {
+  font-family: "Poster", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #a80216;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+/* Image — contain so nothing is cropped */
+.ep-img-wrap {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.ep-img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain; /* ← prevent cropping */
+  display: block;
+}
+
+.ep-event-desc {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.ep-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.ep-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.ep-meta-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ep-booth {
+  font-weight: 700;
+  color: #7a1b1f;
+}
+
+.ep-ext-link {
+  display: inline-block;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #a80216;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.ep-ext-link:hover {
+  color: #7a1b1f;
+}
+
+/* ── RIGHT column — form card ───────────────────────────────── */
+.ep-form-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.09);
+  padding: 40px 36px 44px;
+}
+
+.ep-form-title {
+  font-family: "Poster", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 24px;
+}
+
+/* ── Form ───────────────────────────────────────────────────── */
+.ep-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ep-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* gap between label and inputs, and between stacked inputs */
+}
+
+.ep-label {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.ep-required {
+  color: #a80216;
+  margin-left: 2px;
+}
+
+/* Input & Select base */
+.ep-input,
+.ep-select {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ep-input:focus,
+.ep-select:focus {
+  border-color: #7a1b1f;
+}
+
+.ep-input::placeholder {
+  color: #999;
+}
+
+/* Select arrow colour */
+.ep-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a1b1f' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Checkbox list */
+.ep-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.ep-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.ep-checkbox {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: #7a1b1f;
+  cursor: pointer;
+}
+
+.ep-checkbox-label {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* Others text field — indented under checkbox */
+.ep-others-input {
+  margin-left: 27px;
+  margin-top: 0;
+}
+
+/* Success */
+.ep-success {
+  background: #f0faf0;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  padding: 14px 18px;
+}
+
+.ep-success p {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #2e7d32;
+  margin: 0;
+}
+
+/* Submit */
+.ep-submit-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.ep-submit-btn {
+  padding: 12px 32px;
+  background: #7a1b1f;
+  color: #fff;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.ep-submit-btn:hover:not(:disabled) {
+  background: #5a1015;
+  transform: translateY(-1px);
+}
+
+.ep-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .ep-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ep-left {
+    position: static;
+  }
+
+  #eventPage {
+    padding: 70px 16px 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ep-form-card {
+    padding: 28px 18px 32px;
+  }
+
+  .ep-event-title {
+    font-size: 22px;
+  }
+}
+
+/* ── Success actions (LinkedIn button) ──────────────────────── */
+.ep-success-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.ep-linkedin-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #0a66c2;
+  color: #0a66c2;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.ep-linkedin-btn:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+#k2Asops {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 100px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+#k21000 {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.k2AsopsPage,
+.k21000Page {
+  margin-bottom: 20px;
+  font-family: "Poster", sans-serif;
+  position: relative;
+  text-align: left;
+}
+
+/* ── Section block — left crimson border as divider ─────────── */
+/* Wrap each K2 product's full content in <div className="k2-section-block"> */
+.k2-section-block {
+  border-left: 4px solid #a80216;
+  padding-left: 24px;
+  margin-bottom: 60px; /* generous gap between the two products */
+  padding-top: 8px;
+}
+
+/* Thin rule above each section block for extra clarity */
+.k2-section-block + .k2-section-block {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 48px;
+  margin-top: 0;
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────────── */
+.k2-breadcrumb {
+  font-family: "Poster", sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+/* ── Main title headings ────────────────────────────────────── */
+.k2AsopsPage h3,
+.k21000Page h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ── Red sub-headings — 22px ────────────────────────────────── */
+.k2-section-heading {
+  color: #a80216;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ── Tagline ────────────────────────────────────────────────── */
+.k2-tagline {
+  color: #a80216;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ── Body text — 18px ───────────────────────────────────────── */
+.k2AsopsPage p,
+.k21000Page p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.75;
+  font-family: "Poster", sans-serif;
+}
+
+/* ── Lists — 18px ───────────────────────────────────────────── */
+.k2-list {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+  text-align: left;
+}
+
+.k2-list li {
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1.75;
+  margin-bottom: 4px;
+}
+
+/* ── Links ──────────────────────────────────────────────────── */
+.k2-link {
+  color: #a80216;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-family: "Poster", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.k2-link:hover {
+  color: #7a1b1f;
+}
+
+/* ── Spacer ─────────────────────────────────────────────────── */
+.k2AsopsPage .spacer,
+.k21000Page .spacer {
+  margin-bottom: 24px;
+}
+
+/* ── Row ────────────────────────────────────────────────────── */
+.k2AsopsPage .row,
+.k21000Page .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/* ── Image container ────────────────────────────────────────── */
+.k2AsopsPage .img-container,
+.k21000Page .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+
+.k2AsopsPage .img-responsive,
+.k21000Page .img-responsive {
+  width: 100%;
+  max-width: 420px;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .k2AsopsPage .img-container,
+  .k21000Page .img-container {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+
+  .k2AsopsPage .img-responsive,
+  .k21000Page .img-responsive {
+    max-width: 100%;
+    max-height: 260px;
+  }
+
+  .k2-section-block {
+    padding-left: 16px;
+  }
+}
+
+#k21000Mini {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.k21000MiniPage {
+  margin-bottom: 20px;
+  font-family: "Poster", sans-serif;
+  position: relative;
+  text-align: left;
+}
+
+.k21000MiniPage h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.k21000MiniPage p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.75;
+  font-family: "Poster", sans-serif;
+}
+
+.k21000MiniPage .spacer {
+  margin-bottom: 24px;
+}
+
+.k21000MiniPage .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.k21000MiniPage .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+
+.k21000MiniPage .img-responsive {
+  width: 100%;
+  max-width: 420px;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .k21000MiniPage .img-container {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+  .k21000MiniPage .img-responsive {
+    max-width: 100%;
+    max-height: 260px;
+  }
+}
+
+#k2OPO {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.k2OPOPage {
+  margin-bottom: 20px;
+  font-family: "Poster", sans-serif;
+  position: relative;
+  text-align: left;
+}
+
+.k2OPOPage h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.k2OPOPage p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.75;
+  font-family: "Poster", sans-serif;
+}
+
+.k2OPOPage .spacer {
+  margin-bottom: 24px;
+}
+
+.k2OPOPage .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.k2OPOPage .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+
+.k2OPOPage .img-responsive {
+  width: 100%;
+  max-width: 420px;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .k2OPOPage .img-container {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+  .k2OPOPage .img-responsive {
+    max-width: 100%;
+    max-height: 260px;
+  }
+}
+
+#pumpProbeSampling {
+  background: #fff;
+  z-index: 2;
+  position: relative;
+  padding-top: 100px;
+  padding-right: 0;
+  padding-bottom: 70px;
+  padding-left: 0;
+}
+
+.pumpProbePage {
+  margin-bottom: 20px;
+  font-family: "Poster", sans-serif;
+  position: relative;
+  text-align: left;
+}
+
+.pumpProbePage h3 {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.pumpProbePage p {
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.75;
+  font-family: "Poster", sans-serif;
+}
+
+.pumpProbePage .spacer {
+  margin-bottom: 24px;
+}
+
+.pumpProbePage .row {
+  align-items: center;
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.pumpProbePage .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+
+.pumpProbePage .img-responsive {
+  width: 100%;
+  max-width: 420px;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .pumpProbePage .img-container {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+  .pumpProbePage .img-responsive {
+    max-width: 100%;
+    max-height: 260px;
+  }
+}
+
+/* ── Large image variant — for ProbePic1 & ProbePic2 ────────── */
+.img-container--large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 20px;
+}
+
+.img-responsive--large {
+  width: 100%;
+  max-width: 620px; /* wider than standard 420px */
+  max-height: 480px; /* taller than standard 340px */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .img-container--large {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+  .img-responsive--large {
+    max-width: 100%;
+    max-height: 320px;
+  }
+}
+
+/* ── Pump-Probe: stretched image columns ────────────────────── */
+/* Image fills full row height, aligned with its text column    */
+.pp-row-stretch {
+  align-items: stretch !important; /* both columns same height */
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.pp-col-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pp-col-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 20px 20px;
+}
+
+/* Image fills its column width, no arbitrary max-height cap */
+.pp-img-full {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .pp-col-img {
+    padding: 20px 0 0 0;
+    justify-content: center;
+  }
+  .pp-img-full {
+    max-width: 100%;
+  }
+}
+
+/* ── Pump-Probe: full-width image block ─────────────────────── */
+.pp-fullwidth-img {
+  width: 100%;
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pp-img-fullwidth {
+  width: 100%;
+  max-width: 900px; /* wide but not edge-to-edge on very large screens */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .pp-img-fullwidth {
+    max-width: 100%;
+  }
+}

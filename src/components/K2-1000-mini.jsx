@@ -48,26 +48,24 @@ export const K21000Mini = (props) => {
                   <div className="col-12 col-md-6">
                     <div className="spacer"></div>
                     <h4 className="k2-tagline">
-                      Compact, Gigahertz Dual-Comb Laser for Portable and
-                      Integrated Applications
+                      Ultra-Compact, Ultralow-Noise Ultrafast Laser for OEM &
+                      Precision Applications
                     </h4>
                     <p>
-                      K2-1000-mini is a compact, lightweight version of the
-                      K2-1000 dual-comb laser platform, engineered for
-                      applications where size, weight, and power consumption are
-                      critical. Built on the same proven single-cavity
-                      architecture, it delivers two modelocked femtosecond pulse
-                      trains at gigahertz repetition rates with a tunable
-                      repetition rate difference—enabling asynchronous optical
-                      sampling in a miniaturised, field-deployable form factor.
+                      K2-1000-mini is a powerful, ultralow-noise, turn-key laser
+                      system designed for OEM integration and demanding
+                      precision applications. Available as either a femtosecond
+                      modelocked source or a dual-comb light source from a
+                      single cavity, it combines high power, ultrashort pulses,
+                      and exceptional stability in a compact all-in-one design.
                     </p>
                     <div className="spacer"></div>
                     <p>
-                      Designed for OEM integration, portable instrumentation,
-                      and space-constrained laboratory setups, K2-1000-mini
-                      maintains the passive stability and low-noise performance
-                      of the full K2-1000 platform while offering a
-                      significantly reduced footprint.
+                      Ideal for optical frequency combs, precision ranging,
+                      pump-probe spectroscopy, gas sensing, and nonlinear
+                      microscopy, K2-1000-mini delivers outstanding performance
+                      where space, reliability, and integration readiness are
+                      essential.
                     </p>
                   </div>
 
@@ -90,16 +88,10 @@ export const K21000Mini = (props) => {
                     <div className="spacer"></div>
                     <h4 className="k2-section-heading">Key Applications</h4>
                     <ul className="k2-list">
-                      <li>
-                        Pump-probe sampling
-                        {/* <Link to="/pump-probe-sampling" className="k2-link">
-                          Pump-probe sampling
-                        </Link> */}
-                      </li>
-                      <li>Thick-film inspection</li>
-                      <li>Gas sensing and process control</li>
+                      <li>Multi-species gas sensing</li>
+                      <li>Time-resolved spectroscopy</li>
+                      <li>Nonlinear microscopy</li>
                       <li>Precision ranging</li>
-                      <li>OEM and portable instrumentation</li>
                     </ul>
                   </div>
                 </div>
@@ -111,24 +103,18 @@ export const K21000Mini = (props) => {
                     <h4 className="k2-section-heading">Key Features</h4>
                     <ul className="k2-list">
                       <li>
-                        1 GHz single-cavity dual-comb in a miniaturised housing
+                        1 GHz repetition rate driving high-speed measurements
                       </li>
+                      <li>&lt;1.5 W power per beam</li>
                       <li>
-                        &lt;100 fs pulse duration for ultrafast measurements
+                        &lt;200 fs pulse duration (clean sech², with &gt;100 fs
+                        option)
                       </li>
+                      <li>Sub-cycle relative timing jitter</li>
+                      <li>Ultra-low relative intensity noise</li>
+                      <li>Compact, fully integrated turn-key form factor</li>
                       <li>
-                        Sub-cycle relative timing jitter and ultra-low relative
-                        intensity noise
-                      </li>
-                      <li>
-                        Tunable, long-term stable repetition rate difference
-                      </li>
-                      <li>
-                        Reduced size, weight, and power consumption vs. K2-1000
-                      </li>
-                      <li>
-                        Passive stability — no active locking electronics
-                        required
+                        Optional dual-comb modelocking from a single cavity
                       </li>
                     </ul>
                   </div>
@@ -140,13 +126,13 @@ export const K21000Mini = (props) => {
                     <div className="spacer"></div>
                     <h4 className="k2-section-heading">Technical Highlights</h4>
                     <p>
-                      K2-1000-mini retains the shared-cavity dual-comb
-                      architecture of the K2-1000, which passively correlates
-                      the intensity, timing, and phase noise of both pulse
-                      trains without amplification or active locking. The
-                      miniaturised design achieves this in a compact enclosure
-                      optimised for thermal stability, making it ideal for
-                      integration into portable systems and OEM platforms.
+                      K2-1000-mini’s design provides high-quality, ultrashort
+                      pulses with superior noise characteristics suitable for
+                      advanced frequency comb applications. Its shared-cavity
+                      dual-comb option enables two pulse trains with tunable
+                      repetition rate differences, allowing asynchronous optical
+                      sampling and precision measurement workflows without
+                      complex synchronization hardware.
                     </p>
                   </div>
                 </div>
@@ -159,12 +145,11 @@ export const K21000Mini = (props) => {
                       Configuration Options
                     </h4>
                     <ul className="k2-list">
+                      <li>Optional fiber-coupled output</li>
+                      <li>Lower power consumption configurations</li>
                       <li>
-                        Second harmonic generation and wavelength conversion
+                        Broadband or wavelength-specific versions (inquire)
                       </li>
-                      <li>Passive air cooling</li>
-                      <li>Fiber-coupled output configurations</li>
-                      <li>Custom repetition rates (upon request)</li>
                     </ul>
                   </div>
                 </div>
@@ -177,15 +162,15 @@ export const K21000Mini = (props) => {
                       Discover K2-1000-mini for Yourself
                     </h4>
                     <p>
-                      Ready to explore the K2-1000-mini? Request a live
-                      demonstration to see its capabilities firsthand, download
-                      our detailed datasheets for complete technical
-                      specifications, or contact our team to discuss how
-                      K2-1000-mini can be integrated into your system. Whether
-                      you are building portable instrumentation, scaling to OEM
-                      production, or developing next-generation compact photonic
-                      solutions, K2 Photonics is here to help you achieve
-                      exceptional results.
+                      Ready to experience the performance of K2-1000-mini?
+                      Request a live demonstration to see its capabilities
+                      firsthand, download our detailed datasheets for complete
+                      technical specifications, or contact our team to discuss
+                      how K2-1000-mini can be optimized for your application.
+                      Whether you are advancing research, scaling industrial
+                      systems, or developing next-generation photonic solutions,
+                      K2 Photonics is here to help you achieve exceptional
+                      results with precision laser technology.
                     </p>
                     <div className="spacer"></div>
                     <p>
