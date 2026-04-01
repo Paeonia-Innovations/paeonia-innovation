@@ -58,6 +58,7 @@ import { ProductSpecification } from "./components/productSpecification";
 import { WatchAndLearn } from "./components/watchAndLearn";
 import { ContactProduct } from "./components/contactProduct";
 import ChatWidget from "./components/ChatWidget";
+import { SurveyForm } from "./components/SurveyForm";
 
 //import { EventRegistration } from "./components/event_Registration";
 
@@ -227,6 +228,8 @@ const App = () => {
 
           {/* Book a consultation Route */}
           <Route path="/consultation" element={<Consultation />} />
+
+          <Route path="/survey-form" element={<SurveyForm />} />
 
           {/* Product Page Route */}
           <Route
