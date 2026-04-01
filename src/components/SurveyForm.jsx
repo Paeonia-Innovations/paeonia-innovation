@@ -215,7 +215,7 @@ export const SurveyForm = () => {
       topic: jobTitle || "—",
       extra_info: appList.join(", "), // Q1 — primary application
       description: challenge.trim() || "—", // Q2 — measurement challenge
-      schedule: "ARTC Demo — Thursday, 7 April 2026, 2 pm",
+      schedule: "ARTC Demo — Thursday, 9 April 2026, 2 pm",
       role: jobTitle || "—",
       name,
       company,
@@ -275,10 +275,10 @@ export const SurveyForm = () => {
               {/* Intro banner — brand crimson, larger text, exact date */}
               <div className="ds-intro-box">
                 🎉 We are excited to see you at our demo session held physically
-                at <strong>ARTC on Thursday, 7 April 2026 at 2 pm</strong>.
+                at <strong>ARTC on Thursday, 9 April 2026 at 2 pm</strong>.
                 Please fill in this short survey with your correct information
                 so that you can receive a <strong>personalised report</strong>{" "}
-                on how our technology platform can help you — and also to
+                on how our technology platform can help you - and also to
                 collect your <strong>Starbucks gift card</strong> from us on the
                 day. ☕
               </div>
