@@ -49,48 +49,6 @@ const surveyStyles = `
     margin-bottom: 10px; display: block; line-height: 1.6;
   }
 
-  /* Checkbox list */
-  .ds-option-group { display: block; width: 100%; margin-top: 6px; }
-  .ds-option-item {
-    display: flex !important; flex-direction: row !important;
-    align-items: flex-start !important; width: 100% !important;
-    float: none !important; padding: 6px 0; cursor: pointer;
-    color: #1a1a1a; font-size: 16px; font-family: "Open Sans", sans-serif;
-    line-height: 1.4; gap: 10px; box-sizing: border-box; margin: 0 !important;
-  }
-  .ds-option-item:hover { color: #000; }
-  .ds-option-item input[type="checkbox"] {
-    -webkit-appearance: auto !important; appearance: auto !important;
-    display: inline-block !important;
-    width: 16px !important; height: 16px !important;
-    min-width: 16px !important; max-width: 16px !important;
-    flex-shrink: 0 !important; margin: 2px 0 0 0 !important; padding: 0 !important;
-    float: none !important; position: static !important;
-    accent-color: #7a1b1f; cursor: pointer;
-  }
-  .ds-option-text {
-    display: inline; font-size: 16px;
-    font-family: "Open Sans", sans-serif; color: #1a1a1a; line-height: 1.4;
-  }
-
-  /* Counter badge — brand crimson */
-  .ds-counter {
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 13px;
-    font-family: "Open Sans", sans-serif;
-    color: #7a1b1f;
-    font-weight: 600;
-  }
-  .ds-counter.at-limit { color: #cc0033; }
-
-  /* Two-column row */
-  .ds-row {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 15px; margin-bottom: 0; float: none; clear: both;
-  }
-  @media (max-width: 768px) { .ds-row { grid-template-columns: 1fr; } }
-
   /* Consent */
   .ds-consent-row {
     display: flex !important; flex-direction: row !important;
@@ -104,6 +62,11 @@ const surveyStyles = `
     width: 16px !important; height: 16px !important;
     min-width: 16px !important; flex-shrink: 0;
     margin-top: 3px !important; accent-color: #7a1b1f; cursor: pointer;
+  }
+
+  .ds-option-text {
+    display: inline; font-size: 16px;
+    font-family: "Open Sans", sans-serif; color: #1a1a1a; line-height: 1.4;
   }
 
   /* Required note */
@@ -138,51 +101,19 @@ const surveyStyles = `
   }
 `;
 
-// ── Application options ─────────────────────────────────────────────
-const APPLICATION_OPTIONS = [
-  "Continuous Flow Chemistry",
-  "Reactor Design and Development",
-  "Reaction / Process Monitoring",
-  "Purity Monitoring",
-  "Concentration Monitoring",
-  "Blending Verification",
-  "Complex Component Mixtures Quantification",
-  "Emulsification Monitoring",
-  "Other",
-];
-
 // ── Page Component ──────────────────────────────────────────────────
 export const SurveyForm = () => {
-  const [applications, setApplications] = useState([]);
-  const [otherText, setOtherText] = useState("");
   const [challenge, setChallenge] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const toggleApplication = (opt) => {
-    if (applications.includes(opt)) {
-      setApplications(applications.filter((c) => c !== opt));
-      if (opt === "Other") setOtherText("");
-    } else {
-      setApplications([...applications, opt]);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (applications.length === 0) {
-      setStatus({
-        type: "error",
-        msg: "Please select at least 1 application or process.",
-      });
-      return;
-    }
     if (!challenge.trim()) {
       setStatus({
         type: "error",
@@ -205,18 +136,14 @@ export const SurveyForm = () => {
     setLoading(true);
     setStatus(null);
 
-    const appList = applications.map((c) =>
-      c === "Other" && otherText.trim() ? `Other: ${otherText.trim()}` : c,
-    );
-
     const templateParams = {
       form_source: "ARTC Demo Session Survey",
       enquiry_type: "Demo Session",
-      topic: jobTitle || "—",
-      extra_info: appList.join(", "), // Q1 — primary application
-      description: challenge.trim() || "—", // Q2 — measurement challenge
+      topic: "—",
+      extra_info: "—",
+      description: challenge.trim() || "—",
       schedule: "ARTC Demo — Thursday, 9 April 2026, 2 pm",
-      role: jobTitle || "—",
+      role: "—",
       name,
       company,
       email,
@@ -236,13 +163,10 @@ export const SurveyForm = () => {
         msg: "Thank you! Your response has been received. We'll prepare a personalised report for you and look forward to seeing you at the demo session. Please collect your Starbucks gift card from us on the day. ☕",
       });
       // Reset
-      setApplications([]);
-      setOtherText("");
       setChallenge("");
       setName("");
       setEmail("");
       setCompany("");
-      setJobTitle("");
       setConsent(false);
     } catch {
       setStatus({
@@ -272,7 +196,7 @@ export const SurveyForm = () => {
                 </p>
               </div>
 
-              {/* Intro banner — brand crimson, larger text, exact date */}
+              {/* Intro banner */}
               <div className="ds-intro-box">
                 🎉 We are excited to see you at our demo session held physically
                 at <strong>ARTC on Thursday, 9 April 2026 at 2 pm</strong>.
@@ -284,51 +208,10 @@ export const SurveyForm = () => {
               </div>
 
               <form onSubmit={handleSubmit} noValidate>
-                {/* Q1 — Primary application (checkbox, no cap) */}
+                {/* Q1 — Measurement challenge */}
                 <div className="ds-field">
                   <label className="ds-question">
-                    1. What is your primary application or process?{" "}
-                    <span className="ds-req">*</span>
-                  </label>
-
-                  <div className="ds-option-group">
-                    {APPLICATION_OPTIONS.map((opt) => {
-                      const checked = applications.includes(opt);
-                      return (
-                        <div key={opt}>
-                          <label className="ds-option-item">
-                            <input
-                              type="checkbox"
-                              value={opt}
-                              checked={checked}
-                              onChange={() => toggleApplication(opt)}
-                            />
-                            <span className="ds-option-text">{opt}</span>
-                          </label>
-                          {opt === "Other" && checked && (
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Please specify…"
-                              value={otherText}
-                              onChange={(e) => setOtherText(e.target.value)}
-                              style={{
-                                marginTop: "6px",
-                                marginLeft: "26px",
-                                width: "calc(100% - 26px)",
-                              }}
-                            />
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Q2 — Measurement challenge (required) */}
-                <div className="ds-field">
-                  <label className="ds-question">
-                    2. Briefly describe your current measurement challenge{" "}
+                    1. Briefly describe your current measurement challenge{" "}
                     <span className="ds-req">*</span>
                   </label>
                   <span className="ds-sublabel">
@@ -343,62 +226,49 @@ export const SurveyForm = () => {
                   />
                 </div>
 
-                {/* Q3 & Q4 — Name & Email */}
-                <div className="ds-row">
-                  <div className="ds-field">
-                    <label className="ds-question">
-                      3. Full Name <span className="ds-req">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Your full name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="ds-field">
-                    <label className="ds-question">
-                      4. Email Address <span className="ds-req">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
+                {/* Q2 — Full Name */}
+                <div className="ds-field">
+                  <label className="ds-question">
+                    2. Full Name <span className="ds-req">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your full name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
                 </div>
 
-                {/* Q5 & Q6 — Company & Job Title */}
-                <div className="ds-row">
-                  <div className="ds-field">
-                    <label className="ds-question">
-                      5. Company / Organisation{" "}
-                      <span className="ds-req">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Your company or organisation"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="ds-field">
-                    <label className="ds-question">6. Job Title</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="e.g. Research Scientist"
-                      value={jobTitle}
-                      onChange={(e) => setJobTitle(e.target.value)}
-                    />
-                  </div>
+                {/* Q3 — Email Address */}
+                <div className="ds-field">
+                  <label className="ds-question">
+                    3. Email Address <span className="ds-req">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                {/* Q4 — Company */}
+                <div className="ds-field">
+                  <label className="ds-question">
+                    4. Company / Organisation <span className="ds-req">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your company or organisation"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    required
+                  />
                 </div>
 
                 {/* Starbucks reminder */}
