@@ -69,6 +69,7 @@ import { Form } from "./components/form";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+import SurveyForm_HannoverMesse from "./components/SurveyForm_HannoverMesse";
 //import { Router } from "express";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -230,6 +231,11 @@ const App = () => {
           <Route path="/consultation" element={<Consultation />} />
 
           <Route path="/survey-form" element={<SurveyForm />} />
+
+          <Route
+            path="/survey-form-HannoverMesse"
+            element={<SurveyForm_HannoverMesse />}
+          />
 
           {/* Product Page Route */}
           <Route

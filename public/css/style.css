@@ -4609,3 +4609,143 @@ label {
   color: #608dfd;
   background: #1a1a1a;
 }
+
+/* Survey Form Section */
+#SurveyForm_HannoverMesse {
+  padding-top: 50px;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+  background-color: #fff;
+  color: #1a1a1a;
+  z-index: 2;
+  position: relative;
+}
+#SurveyForm_HannoverMesse .section-title {
+  margin-bottom: 40px;
+}
+#SurveyForm_HannoverMesse .section-title p {
+  font-size: 18px;
+  color: #1a1a1a;
+}
+#SurveyForm_HannoverMesse h2 {
+  color: #1a1a1a;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+#SurveyForm_HannoverMesse .section-title h2::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  left: 30px;
+}
+#SurveyForm_HannoverMesse h3 {
+  color: #1a1a1a;
+  margin-top: 80px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  font-weight: 400;
+}
+#SurveyForm_HannoverMesse form {
+  padding-top: 20px;
+}
+#SurveyForm_HannoverMesse .text-danger {
+  color: #cc0033;
+  text-align: left;
+}
+#SurveyForm_HannoverMesse .btn-custom {
+  margin: 30px 0;
+  background: transparent;
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+}
+#SurveyForm_HannoverMesse .btn-custom:hover {
+  color: #fff;
+  background: #1a1a1a;
+}
+label {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  float: left;
+}
+#SurveyForm_HannoverMesse .form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #444;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#SurveyForm_HannoverMesse .form-control:focus {
+  border-color: #999;
+  outline: 0;
+  -webkit-box-shadow: transparent;
+  box-shadow: transparent;
+}
+#SurveyForm_HannoverMesse .form-control::-webkit-input-placeholder {
+  color: #777;
+}
+#SurveyForm_HannoverMesse .form-control:-moz-placeholder {
+  color: #777;
+}
+#SurveyForm_HannoverMesse .form-control::-moz-placeholder {
+  color: #777;
+}
+#SurveyForm_HannoverMesse .form-control:-ms-input-placeholder {
+  color: #777;
+}
+#SurveyForm_HannoverMesse .contact-item {
+  margin: 20px 0;
+}
+
+#SurveyForm_HannoverMesse .section-title h2 {
+  font-size: 30px;
+}
+
+#SurveyForm_HannoverMesse .contact-item span {
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 10px;
+  display: block;
+}
+#SurveyForm_HannoverMesse .contact-item i.fa {
+  margin-right: 10px;
+}
+#SurveyForm_HannoverMesse .social {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 50px;
+  margin-top: 50px;
+  text-align: center;
+}
+#SurveyForm_HannoverMesse .social ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+#SurveyForm_HannoverMesse .social i.fa {
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 0;
+  border: 2px solid #007bb5;
+  color: #1a1a1a;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #007bb5;
+}
+#SurveySurveyForm_HannoverMesseForm .social i.fa:hover {
+  color: #608dfd;
+  background: #1a1a1a;
+}
