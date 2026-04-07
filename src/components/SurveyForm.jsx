@@ -9,7 +9,7 @@ const EMAILJS_PUBLIC_KEY = "Q0syV6H_5pAHvwxU9";
 
 // ── Styles
 const surveyStyles = `
-  #SurveyForm { padding-top: 100px; padding-bottom: 60px; }
+  #SurveyForm { padding-top: 120px; padding-bottom: 60px; }
   #SurveyForm .container { display: flex; justify-content: center; }
   #SurveyForm .col-md-8 {
     float: none !important;
