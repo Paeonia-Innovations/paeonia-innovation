@@ -90,7 +90,7 @@ const surveyStyles = `
 `;
 
 // ── Page Component ──────────────────────────────────────────────────
-export const SurveyForm_HannoverMesse = () => {
+export const SurveyFormHannoverMesse = () => {
   const [challenge, setChallenge] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -311,4 +311,4 @@ export const SurveyForm_HannoverMesse = () => {
   );
 };
 
-export default SurveyForm_HannoverMesse;
+export default SurveyFormHannoverMesse;
