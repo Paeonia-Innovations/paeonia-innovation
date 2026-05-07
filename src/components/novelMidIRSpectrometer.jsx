@@ -34,7 +34,7 @@ export const NovelMidIRSpectrometer = (props) => {
 
               <div className="col-12 col-md-6">
                 <div className="spacer"></div>
-                <h4>Miniaturized Spectrosopy</h4>
+                <h4>Miniaturized Spectroscopy</h4>
                 <p>
                   {" "}
                   Robust and easy-to-use infrared spectrometer that fits in the
