@@ -510,8 +510,8 @@ export const ContactUs = (props) => {
                           </span>
                           <CheckboxGroup
                             options={[
-                              "OrionIR Mid-IR Spectrometer (1800–900 cm⁻¹)",
-                              "OrionIR Mid-IR Spectrometer (3500–1800 cm⁻¹)",
+                              "OrionIR™ Mid-IR Spectrometer (1800–900 cm⁻¹)",
+                              "OrionIR™ Mid-IR Spectrometer (3500–1800 cm⁻¹)",
                               "Dual-Comb Ultrafast Laser K2-1000",
                               "Dual-Comb Ultrafast Laser K2-ASOSP",
                               "Cryogenic Flux / Drive / Signal / Read-out Lines",

@@ -65,7 +65,7 @@ class ChatApiService {
         process.env.NODE_ENV === "development"
       ) {
         console.warn(
-          "⚠️ Using mock responses. Set REACT_APP_API_URL to connect to Railway backend."
+          "⚠️ Using mock responses. Set REACT_APP_API_URL to connect to Railway backend.",
         );
         return this.getMockResponse(message);
       }
@@ -113,7 +113,7 @@ class ChatApiService {
       // Retry logic
       if (retryCount < API_CONFIG.RETRY_ATTEMPTS) {
         console.log(
-          `Retrying request (${retryCount + 1}/${API_CONFIG.RETRY_ATTEMPTS})...`
+          `Retrying request (${retryCount + 1}/${API_CONFIG.RETRY_ATTEMPTS})...`,
         );
         await this.delay(1000 * (retryCount + 1)); // Progressive delay
         return this.sendMessage(message, retryCount + 1);
@@ -121,7 +121,7 @@ class ChatApiService {
 
       throw new Error(
         error.message ||
-          "Failed to send message. Please check your connection and try again."
+          "Failed to send message. Please check your connection and try again.",
       );
     }
   }
@@ -131,10 +131,10 @@ class ChatApiService {
     return new Promise((resolve) => {
       setTimeout(() => {
         const responses = [
-          "Thank you for your interest in Paeonia's innovative spectroscopy solutions! Our Novel Mid-IR Spectrometer offers real-time reaction monitoring with unparalleled precision.",
+          "Thank you for your interest in Paeonia's innovative spectroscopy solutions! Our OrionIR™ Spectrometer offers real-time reaction monitoring with unparalleled precision.",
           "Paeonia's cutting-edge technology enables inline monitoring of chemical processes, helping researchers and industry professionals optimize their workflows.",
           "Our spectrometers are designed for robustness and ease of use, making advanced spectroscopy accessible for various applications in research and industry.",
-          "I'd be happy to help you learn more about our products. You can explore our Novel Mid-IR Spectrometer features or contact our team for detailed specifications.",
+          "I'd be happy to help you learn more about our products. You can explore our OrionIR™ Spectrometer features or contact our team for detailed specifications.",
           "Paeonia Innovation is at the forefront of spectroscopic technology, providing solutions that bridge the gap between research and practical application.",
         ];
 

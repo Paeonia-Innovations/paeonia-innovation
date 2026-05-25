@@ -51,7 +51,7 @@ export const Projects = (props) => {
                         style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
                       >
                         In a year, we soft-launched our next product, OrionIR™
-                        Novel Mid-IR Spectrometer, which has been successfully
+                        Mid-IR Spectrometer, which has been successfully
                         deployed in laboratories.
                       </li>
                       <div style={{ height: "0.5em" }}></div>

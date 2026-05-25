@@ -242,7 +242,7 @@ const App = () => {
 
           {/* Product Page Route */}
           <Route
-            path="/novelMidIRSpectrometer"
+            path="/OrionIRSpectrometer"
             element={
               <>
                 <NovelMidIRSpectrometer
