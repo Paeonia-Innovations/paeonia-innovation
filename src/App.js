@@ -57,7 +57,9 @@ import { ProductIntroVideo } from "./components/productIntroVideo";
 import { ProductSpecification } from "./components/productSpecification";
 import { WatchAndLearn } from "./components/watchAndLearn";
 import { ContactProduct } from "./components/contactProduct";
+import ReactGA from "react-ga4";
 import ChatWidget from "./components/ChatWidget";
+import { CookieConsent, getCookiePreferences } from "./components/CookieConsent";
 import { SurveyForm } from "./components/SurveyForm";
 
 //import { EventRegistration } from "./components/event_Registration";
@@ -137,13 +139,18 @@ const App = () => {
   const location = useLocation(); // To track the current route
 
   useEffect(() => {
-    const hash = window.location.hash; // Get the current hash (e.g., #contact)
-
+    const hash = window.location.hash;
     if (hash) {
-      const element = document.querySelector(hash); // Find the element with that ID
+      const element = document.querySelector(hash);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to that element
+        element.scrollIntoView({ behavior: "smooth" });
       }
+    }
+
+    // Send GA4 pageview on every route change if analytics is consented
+    const prefs = getCookiePreferences();
+    if (prefs?.analytics) {
+      ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
     }
   }, [location]);
 
@@ -394,6 +401,8 @@ const App = () => {
 
       {/* AI Chatbot Widget - Persistent across all pages */}
       <ChatWidget />
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
     </div>
     //</Router>
 
