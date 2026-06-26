@@ -66,6 +66,9 @@ import { SurveyForm } from "./components/SurveyForm";
 
 import { UpcomingEvents } from "./components/UpcomingEvents";
 import { LaserWorldEvent } from "./components/LaserWorldEvent";
+import { BioAsiaTaiwan } from "./components/BioAsiaTaiwan";
+import { Blog } from "./components/Blog";
+import { BlogPost } from "./components/BlogPost";
 import { Form } from "./components/form";
 
 import JsonData from "./data/data.json";
@@ -386,6 +389,13 @@ const App = () => {
 
           {/*LaserWorldEvent */}
           <Route path="/laser-world-event" element={<LaserWorldEvent />} />
+
+          {/*BIO Asia-Taiwan */}
+          <Route path="/BioAsia-Taiwan" element={<BioAsiaTaiwan />} />
+
+          {/* Blog */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           {/*Form */}
           <Route

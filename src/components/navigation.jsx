@@ -202,6 +202,10 @@ export const Navigation = (props) => {
             </Dropdown.Menu>
           </Dropdown>
 
+          <Link to="/blog" className="custom-toggle blog-nav-link">
+            Blog
+          </Link>
+
           <Dropdown className="custom-dropdown">
             <Dropdown.Toggle id="dropdown-basic" className="custom-toggle">
               Products
