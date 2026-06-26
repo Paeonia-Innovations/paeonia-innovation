@@ -1,5 +1,4 @@
-// Replace this with your wordpress.com site URL once you create the account
-// e.g. "https://paeoniatech.wordpress.com"
-export const WP_BASE_URL = "https://YOUR-SITE.wordpress.com";
+export const WP_SITE = "paeoniatechblog.wordpress.com";
 
-export const WP_API = `${WP_BASE_URL}/wp-json/wp/v2`;
+// wordpress.com free sites use the public API proxy (CORS-safe)
+export const WP_API = `https://public-api.wordpress.com/wp/v2/sites/${WP_SITE}`;

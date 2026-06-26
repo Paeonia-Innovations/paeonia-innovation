@@ -107,6 +107,14 @@ const bioStyles = `
     color: #7a1b1f;
     margin: 0 0 5px;
     line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .bat-meta-icon {
+    min-width: 24px;
+    text-align: center;
+    flex-shrink: 0;
   }
   .bat-tags {
     font-family: "Poster", sans-serif;
@@ -299,8 +307,18 @@ export const BioAsiaTaiwan = () => {
             </div>
 
             <div className="bat-meta">
-              <p>🎤 Talk: July 16 (Thur.) – 19 (Sun.) 2026</p>
-              <p>📍 Overseas Pavilion, Booth L326</p>
+              <p>
+                <span className="bat-meta-icon">🗓</span> July 16 (Thur.) - 19
+                (Sun.) 2026
+              </p>
+              <p>
+                <span className="bat-meta-icon">🎤</span> Talk by Dr. Lennon
+                Lee, CEO - 17 July 2026 (Fri.), 10.30am
+              </p>
+              <p>
+                <span className="bat-meta-icon">📍</span> Overseas Pavilion,
+                Booth L326
+              </p>
             </div>
 
             <hr className="bat-divider" />
