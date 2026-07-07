@@ -308,12 +308,12 @@ export const BioAsiaTaiwan = () => {
 
             <div className="bat-meta">
               <p>
-                <span className="bat-meta-icon">🗓</span> July 16 (Thur.) - 19
+                <span className="bat-meta-icon">🗓</span> July 16 (Thur.) -cmd 19
                 (Sun.) 2026
               </p>
               <p>
                 <span className="bat-meta-icon">🎤</span> Talk by Dr. Lennon
-                Lee, CEO - 17 July 2026 (Fri.), 10.30am
+                Lee, CEO - 18 July 2026 (Sat.), 10.30am
               </p>
               <p>
                 <span className="bat-meta-icon">📍</span> Overseas Pavilion,
