@@ -308,7 +308,7 @@ export const BioAsiaTaiwan = () => {
 
             <div className="bat-meta">
               <p>
-                <span className="bat-meta-icon">🗓</span> July 16 (Thur.) -cmd 19
+                <span className="bat-meta-icon">🗓</span> July 16 (Thur.) - 19
                 (Sun.) 2026
               </p>
               <p>
