@@ -264,7 +264,7 @@ export const BioAsiaTaiwan = () => {
 
             {/* Event image */}
             <img
-              src="img/portfolio/0.3SecondsToADecision.png"
+              src="img/portfolio/0.3 Seconds to a Decision.png"
               alt="0.3 Seconds to a Decision — Live Mid-IR Process Monitoring"
               className="bat-img"
             />

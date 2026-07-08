@@ -67,6 +67,9 @@ import { SurveyForm } from "./components/SurveyForm";
 import { UpcomingEvents } from "./components/UpcomingEvents";
 import { LaserWorldEvent } from "./components/LaserWorldEvent";
 import { BioAsiaTaiwan } from "./components/BioAsiaTaiwan";
+import { PATIndustryWebinar } from "./components/PATIndustryWebinar";
+import { JapanEvent } from "./components/JapanEvent";
+import { GramsSeminar } from "./components/GramsSeminar";
 import { Blog } from "./components/Blog";
 import { BlogPost } from "./components/BlogPost";
 import { Form } from "./components/form";
@@ -392,6 +395,18 @@ const App = () => {
 
           {/*BIO Asia-Taiwan */}
           <Route path="/BioAsia-Taiwan" element={<BioAsiaTaiwan />} />
+
+          {/*PAT-INDUSTRY Webinar */}
+          <Route
+            path="/PAT-INDUSTRY-Webinar"
+            element={<PATIndustryWebinar />}
+          />
+
+          {/*Japan Event - Advanced Seminar on Flow Synthesis */}
+          <Route path="/Japan-Event" element={<JapanEvent />} />
+
+          {/*GRAMS Seminar - 40th Public Lecture / 113th Research Meeting */}
+          <Route path="/GRAMS-Seminar" element={<GramsSeminar />} />
 
           {/* Blog */}
           <Route path="/blog" element={<Blog />} />

@@ -14,7 +14,55 @@ const upcomingEvents = [
     internalLink: "/BioAsia-Taiwan",
     externalLink: "https://www.bioasiataiwan.com",
     externalLinkLabel: "BIO Asia-Taiwan Exhibition 2026",
-    talkInfo: "🎤 Live Talk at the Booth\n\"0.3 Seconds to a Decision: Live Mid-IR Process Monitoring at the Booth\"\nDr. Lennon Lee, CEO, Paeonia Innovations",
+    talkInfo:
+      '🎤 Live Talk at the Booth\n"0.3 Seconds to a Decision: Live Mid-IR Process Monitoring at the Booth"\nDr. Lennon Lee, CEO, Paeonia Innovations',
+  },
+  {
+    id: 4,
+    title: "Do You Know When Your Batch Is Truly Done?",
+    subtitle:
+      "Real-Time Mid-IR for Chemistry-Driven Process Control — a live 45-minute webinar for chemical, pharma & cosmetics manufacturers, with live Q&A.",
+    visual: "pat-banner",
+    location: "Live Webinar (Livestorm)",
+    date: "Tuesday, 22 July 2026 | 9:00 AM CEST (Paris)",
+    booth: null,
+    internalLink: "/PAT-INDUSTRY-Webinar",
+    externalLink:
+      "https://app.livestorm.co/p/097fafea-82fb-4174-b925-7eae5163de53",
+    externalLinkLabel: "Register on Livestorm",
+    talkInfo:
+      '🎙 Live Webinar, hosted with PAT-INDUSTRY\n"Real-Time Mid-IR for Chemistry-Driven Process Control"\nDr. Lennon Lee, CEO, Paeonia Innovations · Thomas Ricour, Founder, PAT-INDUSTRY',
+  },
+  {
+    id: 5,
+    title: "Advanced Seminar on Flow Synthesis — Osaka, Japan",
+    subtitle:
+      "Explore AI chemometrics and palm-sized Mid-IR spectroscopy for real-time flow chemistry, organised by Horizo Inc and ALCOM.",
+    image: "img/portfolio/Alcom.png",
+    location: "Osaka Science and Technology Center, Osaka, Japan",
+    date: "Thursday, 30 July 2026 | 16:40 – 17:10 (JST)",
+    booth: null,
+    internalLink: "/Japan-Event",
+    externalLink:
+      "https://horizo.co.jp/ja/blog/flow-reaction-nmr_analysis-ai-seminar-2026",
+    externalLinkLabel: "Full Programme",
+    talkInfo:
+      '🎤 Talk\n"From Spectrum to Decision: AI Chemometrics and Palm-Sized Mid-IR for Real-Time Flow Chemistry"\nDr. Lennon Lee, CEO, Paeonia Innovations',
+  },
+  {
+    id: 6,
+    title: "GRAMS 40th Public Lecture — Osaka, Japan",
+    subtitle:
+      "Group for Research on Automated Flow and Microreactor Synthesis (Kinki Chemical Society) — lectures and exhibition, open to general participants.",
+    image: "img/portfolio/GRAM-card.png",
+    location: "Osaka Science and Technology Center, Osaka, Japan",
+    date: "Friday, 31 July 2026 | 10:00 – 17:45 (JST)",
+    booth: null,
+    internalLink: "/GRAMS-Seminar",
+    externalLink: "https://flowmicro.com/meeting/meeting113_40op.html",
+    externalLinkLabel: "Full Programme",
+    talkInfo:
+      '🎤 Lecture · 15:30–16:00\n"Palm-Sized, Mid-IR Spectroscopy at 0.3 Seconds: RTD, Opaque Matrices and Closed-Loop Optimisation in Continuous Flow"\nDr. Lennon Lee, CEO, Paeonia Innovations',
   },
 ];
 
@@ -84,6 +132,9 @@ const EventCard = ({ event, isPast }) => (
 export const UpcomingEvents = () => {
   return (
     <section id="upcomingEvents">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+      `}</style>
       <div className="ue-hero">
         <div className="ue-hero-inner">
           <span className="ue-eyebrow">Where We'll Be</span>
@@ -102,11 +153,31 @@ export const UpcomingEvents = () => {
           {upcomingEvents.map((event) => (
             <div className="ue-card" key={event.id}>
               <div className="ue-card-img-wrap">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="ue-card-img"
-                />
+                {event.visual === "pat-banner" ? (
+                  <div className="ue-pat-visual">
+                    <span className="ue-pat-eyebrow">
+                      PAT-INDUSTRY invites you to their event
+                    </span>
+                    <div className="ue-pat-logo-chip">
+                      <img
+                        src="/PI logo nows.svg"
+                        alt="Paeonia Innovations"
+                        className="ue-pat-logo"
+                      />
+                    </div>
+                    <span className="ue-pat-heading">
+                      Do You Know When Your Batch Is Truly Done?
+                      <br />
+                      Real-Time Mid-IR for Chemistry-Driven Process Control
+                    </span>
+                  </div>
+                ) : (
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="ue-card-img"
+                  />
+                )}
               </div>
 
               <div className="ue-card-body">
@@ -124,7 +195,15 @@ export const UpcomingEvents = () => {
                       {event.talkInfo.split("\n")[1]}
                     </span>
                     <span className="ue-card-talk-speaker">
-                      {event.talkInfo.split("\n")[2]}
+                      {event.talkInfo
+                        .split("\n")[2]
+                        .split(" · ")
+                        .map((speaker, i) => (
+                          <React.Fragment key={i}>
+                            {i > 0 && <br />}
+                            {speaker}
+                          </React.Fragment>
+                        ))}
                     </span>
                   </div>
                 )}

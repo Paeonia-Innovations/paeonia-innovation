@@ -3472,20 +3472,67 @@ label {
 .ue-card-img-wrap {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2.36 / 1;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .ue-card-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+}
+
+/* -- PAT-INDUSTRY card visual (CSS-built, no screenshot) -- */
+.ue-pat-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: #364a7d;
+  text-align: center;
+}
+
+.ue-pat-eyebrow {
+  font-family: "Inter", "Poster", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(246, 246, 246, 0.75);
+}
+
+.ue-pat-logo-chip {
+  background: #f6f6f6;
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ue-pat-logo {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.ue-pat-heading {
+  font-family: "Familjen Grotesk", "Poster", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #f6f6f6;
 }
 
 .ue-card:hover .ue-card-img {
@@ -3533,7 +3580,7 @@ label {
 
 .ue-card-subtitle {
   font-family: "Poster", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #1a1a1a;
   line-height: 1.65;
   margin: 0 0 14px;
@@ -3562,7 +3609,7 @@ label {
 
 .ue-meta-text {
   font-family: "Poster", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #1a1a1a;
   line-height: 1.5;
 }
@@ -3753,7 +3800,7 @@ label {
 
 .ue-card-talk-speaker {
   font-family: "Poster", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: #666;
   font-style: italic;
@@ -5009,16 +5056,18 @@ label {
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .blog-card:hover {
-  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
   transform: translateY(-4px);
 }
 
@@ -5132,7 +5181,7 @@ label {
 .blog-post-article {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
   padding: 48px 52px 60px;
 }
 
@@ -5190,8 +5239,12 @@ label {
   margin: 32px 0 16px;
 }
 
-.blog-post-content h2 { font-size: 24px; }
-.blog-post-content h3 { font-size: 20px; }
+.blog-post-content h2 {
+  font-size: 24px;
+}
+.blog-post-content h3 {
+  font-size: 20px;
+}
 
 .blog-post-content p {
   margin: 0 0 20px;
@@ -5250,4 +5303,3 @@ label {
     padding: 110px 16px 60px;
   }
 }
-
