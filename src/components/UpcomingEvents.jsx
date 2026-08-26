@@ -27,7 +27,7 @@ const upcomingEvents = [
     image: "img/portfolio/FlowChemistryIndia2026.jpeg",
     location: "Avasa Hotel, Madhapur, Hyderabad, India",
     date: "Thu 10 – Fri 11 September 2026",
-    booth: "Live Product Demo · With AmAr/Spectrasolve",
+    booth: "Live Product Demo · With AmAr & Spectrasolve",
     internalLink: "/Flow-Chemistry-India-2026",
     externalLink: "https://glostem.in/conference/fci-2026",
     externalLinkLabel: "Flow Chemistry India 2026",
