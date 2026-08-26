@@ -23,7 +23,7 @@ const upcomingEvents = [
     id: 8,
     title: "Live OrionIR™ Demo — RTD, Reaction Monitoring & Process Control",
     subtitle:
-      "Paeonia Innovations exhibits at Flow Chemistry India 2026, hosted by the Flow Chemistry Society in Hyderabad, with a live OrionIR™ product demo at our booth alongside our India partner AmAr/Spectrasolve.",
+      "Paeonia Innovations exhibits at Flow Chemistry India 2026, hosted by the Flow Chemistry Society in Hyderabad, with live OrionIR™ product demo with our India partners AmAr & Spectrasolve.",
     image: "img/portfolio/FlowChemistryIndia2026.jpeg",
     location: "Avasa Hotel, Madhapur, Hyderabad, India",
     date: "Thu 10 – Fri 11 September 2026",
