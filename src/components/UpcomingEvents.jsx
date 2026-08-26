@@ -3,66 +3,34 @@ import { Link } from "react-router-dom";
 
 const upcomingEvents = [
   {
-    id: 3,
-    title: "BIO Asia-Taiwan 2026",
+    id: 7,
+    title: "Flow-Compatible Mid-IR PAT for Biopharma Manufacturing",
     subtitle:
-      "Engage with cutting-edge developments in bioprocess analytics, molecular sensing, and photonics-driven life science applications.",
-    image: "img/portfolio/BIO Asai-Taiwan.jpg",
-    location: "Taipei Nangang Exhibition Center, Hall 1, 4F",
-    date: "July 16 (Thur.) – 19 (Sun.) 2026",
-    booth: "Overseas Pavilion, Booth L326",
-    internalLink: "/BioAsia-Taiwan",
-    externalLink: "https://www.bioasiataiwan.com",
-    externalLinkLabel: "BIO Asia-Taiwan Exhibition 2026",
-    talkInfo:
-      '🎤 Live Talk at the Booth\n"0.3 Seconds to a Decision: Live Mid-IR Process Monitoring at the Booth"\nDr. Lennon Lee, CEO, Paeonia Innovations',
-  },
-  {
-    id: 4,
-    title: "Do You Know When Your Batch Is Truly Done?",
-    subtitle:
-      "Real-Time Mid-IR for Chemistry-Driven Process Control — a live 45-minute webinar for chemical, pharma & cosmetics manufacturers, with live Q&A.",
-    visual: "pat-banner",
-    location: "Live Webinar (Livestorm)",
-    date: "Tuesday, 22 July 2026 | 9:00 AM CEST (Paris)",
-    booth: null,
-    internalLink: "/PAT-INDUSTRY-Webinar",
+      "Paeonia Innovations joins Mini-APACT 2026, hosted by CPACT at AstraZeneca's Macclesfield site, for two days covering advanced process analytics, modelling and control across pharma, biotech, chemicals and food.",
+    image: "img/portfolio/Mini_APACT_Logo.png",
+    imageFit: "contain",
+    location: "AstraZeneca, Charter Way, Macclesfield SK10 2NA, UK",
+    date: "Thu 24 – Fri 25 September 2026",
+    booth: "Talk: Fri 25 Sept, 3:40–4:05pm · Theme 4: Biopharma PACT",
+    internalLink: "/Mini-APACT-2026",
     externalLink:
-      "https://app.livestorm.co/p/097fafea-82fb-4174-b925-7eae5163de53",
-    externalLinkLabel: "Register on Livestorm",
+      "https://www.cpact.com/News/id/1429/apact-conference-mini-apact-programme-announced",
+    externalLinkLabel: "Mini-APACT 2026 Programme",
     talkInfo:
-      '🎙 Live Webinar, hosted with PAT-INDUSTRY\n"Real-Time Mid-IR for Chemistry-Driven Process Control"\nDr. Lennon Lee, CEO, Paeonia Innovations · Thomas Ricour, Founder, PAT-INDUSTRY',
+      '🎤 Live Talk at the Conference\n"Flow-Compatible Mid-IR PAT: From Optically Dense Process Streams to Biopharmaceutical Continuous Manufacturing"\nDr. Lennon Lee, CEO, Paeonia Innovations',
   },
   {
-    id: 5,
-    title: "Advanced Seminar on Flow Synthesis — Osaka, Japan",
+    id: 8,
+    title: "Live OrionIR™ Demo — RTD, Reaction Monitoring & Process Control",
     subtitle:
-      "Explore AI chemometrics and palm-sized Mid-IR spectroscopy for real-time flow chemistry, organised by Horizo Inc and ALCOM.",
-    image: "img/portfolio/Alcom.png",
-    location: "Osaka Science and Technology Center, Osaka, Japan",
-    date: "Thursday, 30 July 2026 | 16:40 – 17:10 (JST)",
-    booth: null,
-    internalLink: "/Japan-Event",
-    externalLink:
-      "https://horizo.co.jp/ja/blog/flow-reaction-nmr_analysis-ai-seminar-2026",
-    externalLinkLabel: "Full Programme",
-    talkInfo:
-      '🎤 Talk\n"From Spectrum to Decision: AI Chemometrics and Palm-Sized Mid-IR for Real-Time Flow Chemistry"\nDr. Lennon Lee, CEO, Paeonia Innovations',
-  },
-  {
-    id: 6,
-    title: "GRAMS 40th Public Lecture — Osaka, Japan",
-    subtitle:
-      "Group for Research on Automated Flow and Microreactor Synthesis (Kinki Chemical Society) — lectures and exhibition, open to general participants.",
-    image: "img/portfolio/GRAM-card.png",
-    location: "Osaka Science and Technology Center, Osaka, Japan",
-    date: "Friday, 31 July 2026 | 10:00 – 17:45 (JST)",
-    booth: null,
-    internalLink: "/GRAMS-Seminar",
-    externalLink: "https://flowmicro.com/meeting/meeting113_40op.html",
-    externalLinkLabel: "Full Programme",
-    talkInfo:
-      '🎤 Lecture · 15:30–16:00\n"Palm-Sized, Mid-IR Spectroscopy at 0.3 Seconds: RTD, Opaque Matrices and Closed-Loop Optimisation in Continuous Flow"\nDr. Lennon Lee, CEO, Paeonia Innovations',
+      "Paeonia Innovations exhibits at Flow Chemistry India 2026, hosted by the Flow Chemistry Society in Hyderabad, with a live OrionIR™ product demo at our booth alongside our India partner AmAr/Spectrasolve.",
+    image: "img/portfolio/FlowChemistryIndia2026.jpeg",
+    location: "Avasa Hotel, Madhapur, Hyderabad, India",
+    date: "Thu 10 – Fri 11 September 2026",
+    booth: "Live Product Demo · With AmAr/Spectrasolve",
+    internalLink: "/Flow-Chemistry-India-2026",
+    externalLink: "https://glostem.in/conference/fci-2026",
+    externalLinkLabel: "Flow Chemistry India 2026",
   },
 ];
 
@@ -89,6 +57,52 @@ const pastEvents = [
     date: "6–7 June 2026",
     booth: null,
     externalLink: "https://www.selectbioconferences.com/fcshenzhen2026",
+  },
+  {
+    id: 3,
+    title: "BIO Asia-Taiwan 2026",
+    subtitle:
+      "Engage with cutting-edge developments in bioprocess analytics, molecular sensing, and photonics-driven life science applications.",
+    image: "img/portfolio/BIO Asai-Taiwan.jpg",
+    location: "Taipei Nangang Exhibition Center, Hall 1, 4F",
+    date: "July 16 (Thur.) – 19 (Sun.) 2026",
+    booth: "Overseas Pavilion, Booth L326",
+    externalLink: "https://www.bioasiataiwan.com",
+  },
+  {
+    id: 4,
+    title: "Do You Know When Your Batch Is Truly Done?",
+    subtitle:
+      "Real-Time Mid-IR for Chemistry-Driven Process Control — a live 45-minute webinar for chemical, pharma & cosmetics manufacturers, with live Q&A.",
+    image: "img/portfolio/PAT_INDUSTRY.png",
+    location: "Live Webinar (Livestorm)",
+    date: "Tuesday, 22 July 2026 | 9:00 AM CEST (Paris)",
+    booth: null,
+    externalLink:
+      "https://app.livestorm.co/p/097fafea-82fb-4174-b925-7eae5163de53",
+  },
+  {
+    id: 5,
+    title: "Advanced Seminar on Flow Synthesis — Osaka, Japan",
+    subtitle:
+      "Explore AI chemometrics and palm-sized Mid-IR spectroscopy for real-time flow chemistry, organised by Horizo Inc and ALCOM.",
+    image: "img/portfolio/Alcom.png",
+    location: "Osaka Science and Technology Center, Osaka, Japan",
+    date: "Thursday, 30 July 2026 | 16:40 – 17:10 (JST)",
+    booth: null,
+    externalLink:
+      "https://horizo.co.jp/ja/blog/flow-reaction-nmr_analysis-ai-seminar-2026",
+  },
+  {
+    id: 6,
+    title: "GRAMS 40th Public Lecture — Osaka, Japan",
+    subtitle:
+      "Group for Research on Automated Flow and Microreactor Synthesis (Kinki Chemical Society) — lectures and exhibition, open to general participants.",
+    image: "img/portfolio/GRAM-card.png",
+    location: "Osaka Science and Technology Center, Osaka, Japan",
+    date: "Friday, 31 July 2026 | 10:00 – 17:45 (JST)",
+    booth: null,
+    externalLink: "https://flowmicro.com/meeting/meeting113_40op.html",
   },
 ];
 
@@ -152,7 +166,13 @@ export const UpcomingEvents = () => {
         <div className="ue-grid">
           {upcomingEvents.map((event) => (
             <div className="ue-card" key={event.id}>
-              <div className="ue-card-img-wrap">
+              <div
+                className={`ue-card-img-wrap${
+                  event.imageFit === "contain"
+                    ? " ue-card-img-wrap-contain"
+                    : ""
+                }`}
+              >
                 {event.visual === "pat-banner" ? (
                   <div className="ue-pat-visual">
                     <span className="ue-pat-eyebrow">
@@ -175,7 +195,9 @@ export const UpcomingEvents = () => {
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="ue-card-img"
+                    className={`ue-card-img${
+                      event.imageFit === "contain" ? " ue-card-img-contain" : ""
+                    }`}
                   />
                 )}
               </div>

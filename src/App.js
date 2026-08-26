@@ -70,6 +70,8 @@ import { BioAsiaTaiwan } from "./components/BioAsiaTaiwan";
 import { PATIndustryWebinar } from "./components/PATIndustryWebinar";
 import { JapanEvent } from "./components/JapanEvent";
 import { GramsSeminar } from "./components/GramsSeminar";
+import { MiniApact2026 } from "./components/MiniApact2026";
+import { FlowChemistryIndia2026 } from "./components/FlowChemistryIndia2026";
 import { Blog } from "./components/Blog";
 import { BlogPost } from "./components/BlogPost";
 import { Form } from "./components/form";
@@ -407,6 +409,15 @@ const App = () => {
 
           {/*GRAMS Seminar - 40th Public Lecture / 113th Research Meeting */}
           <Route path="/GRAMS-Seminar" element={<GramsSeminar />} />
+
+          {/*Mini-APACT 2026 - CPACT / AstraZeneca Macclesfield */}
+          <Route path="/Mini-APACT-2026" element={<MiniApact2026 />} />
+
+          {/*Flow Chemistry India 2026 - Flow Chemistry Society, Hyderabad */}
+          <Route
+            path="/Flow-Chemistry-India-2026"
+            element={<FlowChemistryIndia2026 />}
+          />
 
           {/* Blog */}
           <Route path="/blog" element={<Blog />} />
