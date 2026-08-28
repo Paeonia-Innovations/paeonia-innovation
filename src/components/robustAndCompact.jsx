@@ -33,7 +33,8 @@ export const RobustAndCompact = (props) => {
                 <h3>ROBUST AND COMPACT</h3>
                 <div className="spacer"></div>
                 <p>
-                  At a size of 5 * 5.5 * 6 cm, the OrionIR™ Mid-IR Spectrometer
+                  At a size of 5 * 5.5 * 6 cm, the OrionIR
+                  <sup className="reg-mark">®</sup> Mid-IR Spectrometer
                   is a fraction of the size of all traditional spectrometers. It
                   does not use any moving components or fragile optical fibers,
                   allowing you the freedom to decide where and how you want to

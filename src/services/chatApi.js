@@ -131,10 +131,10 @@ class ChatApiService {
     return new Promise((resolve) => {
       setTimeout(() => {
         const responses = [
-          "Thank you for your interest in Paeonia's innovative spectroscopy solutions! Our OrionIR™ Spectrometer offers real-time reaction monitoring with unparalleled precision.",
+          "Thank you for your interest in Paeonia's innovative spectroscopy solutions! Our OrionIR® Spectrometer offers real-time reaction monitoring with unparalleled precision.",
           "Paeonia's cutting-edge technology enables inline monitoring of chemical processes, helping researchers and industry professionals optimize their workflows.",
           "Our spectrometers are designed for robustness and ease of use, making advanced spectroscopy accessible for various applications in research and industry.",
-          "I'd be happy to help you learn more about our products. You can explore our OrionIR™ Spectrometer features or contact our team for detailed specifications.",
+          "I'd be happy to help you learn more about our products. You can explore our OrionIR® Spectrometer features or contact our team for detailed specifications.",
           "Paeonia Innovation is at the forefront of spectroscopic technology, providing solutions that bridge the gap between research and practical application.",
         ];
 

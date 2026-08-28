@@ -389,8 +389,8 @@ export const FlowChemistryIndia2026 = () => {
             <span className="fci-eyebrow">Exhibition</span>
 
             <h1 className="fci-title">
-              Live OrionIR™ Demo — RTD, Reaction Monitoring &amp; Process
-              Control
+              Live OrionIR<sup className="reg-mark-2">®</sup> Demo — RTD,
+              Reaction Monitoring &amp; Process Control
             </h1>
             <h2 className="fci-subtitle">
               Flow Chemistry India 2026 — 13th Edition, Flow Chemistry Society
@@ -434,9 +434,9 @@ export const FlowChemistryIndia2026 = () => {
                 Paeonia Innovations will be at Flow Chemistry India 2026, hosted
                 by the Flow Chemistry Society in Hyderabad, to demonstrate RTD
                 (residence time distribution) and reaction monitoring with
-                OrionIR™, our compact inline Mid-IR spectrometer — bringing
-                real-time visibility to flow chemistry and continuous
-                manufacturing.
+                OrionIR<sup className="reg-mark-2">®</sup>, our compact inline
+                Mid-IR spectrometer — bringing real-time visibility to flow
+                chemistry and continuous manufacturing.
               </p>
             </div>
 
@@ -467,15 +467,17 @@ export const FlowChemistryIndia2026 = () => {
                 2)
               </span>
               <span className="fci-demo-title">
-                OrionIR™ Mid-IR Spectrometer — Demo
+                OrionIR<sup className="reg-mark-2">®</sup> Mid-IR Spectrometer —
+                Demo
               </span>
               <span className="fci-demo-partner">
                 Presented with our India partner, AmAr & Spectrasolve
               </span>
               <p>
-                See the OrionIR™ platform live for real-time reaction monitoring
-                and residence-time-distribution (RTD) — helping make the
-                invisible visible inside your flow reactor.
+                See the OrionIR<sup className="reg-mark-2">®</sup> platform live
+                for real-time reaction monitoring and
+                residence-time-distribution (RTD) — helping make the invisible
+                visible inside your flow reactor.
               </p>
             </div>
 
@@ -505,8 +507,9 @@ export const FlowChemistryIndia2026 = () => {
             {/* Interest form */}
             <h2 className="fci-form-title">Connect With Paeonia Innovations</h2>
             <p className="fci-form-subtitle">
-              Interested in OrionIR™ or meeting our team at Flow Chemistry India
-              2026? Leave your details below and we'll get in touch.
+              Interested in OrionIR<sup className="reg-mark-2">®</sup> or
+              meeting our team at Flow Chemistry India 2026? Leave your details
+              below and we'll get in touch.
             </p>
 
             <form onSubmit={handleSubmit} className="ep-form">

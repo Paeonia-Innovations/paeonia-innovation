@@ -224,6 +224,21 @@ const RadioGroup = ({ name, options, value, onChange }) => (
   </div>
 );
 
+const renderWithRegMark = (text) => {
+  if (!text || !text.includes("OrionIR®")) return text;
+  return text.split("OrionIR®").reduce((acc, part, i, arr) => {
+    acc.push(part);
+    if (i < arr.length - 1) {
+      acc.push(
+        <React.Fragment key={i}>
+          OrionIR<sup className="reg-mark-3">®</sup>
+        </React.Fragment>
+      );
+    }
+    return acc;
+  }, []);
+};
+
 //  Checkbox Group — stacked, one per line, left aligned
 const CheckboxGroup = ({ options, values, onChange }) => (
   <div className="cf-option-group">
@@ -240,7 +255,7 @@ const CheckboxGroup = ({ options, values, onChange }) => (
             onChange(next);
           }}
         />
-        <span className="cf-option-text">{opt}</span>
+        <span className="cf-option-text">{renderWithRegMark(opt)}</span>
       </label>
     ))}
   </div>
@@ -510,8 +525,8 @@ export const ContactUs = (props) => {
                           </span>
                           <CheckboxGroup
                             options={[
-                              "OrionIR™ Mid-IR Spectrometer (1800–900 cm⁻¹)",
-                              "OrionIR™ Mid-IR Spectrometer (3500–1800 cm⁻¹)",
+                              "OrionIR® Mid-IR Spectrometer (1800–900 cm⁻¹)",
+                              "OrionIR® Mid-IR Spectrometer (3500–1800 cm⁻¹)",
                               "Dual-Comb Ultrafast Laser K2-1000",
                               "Dual-Comb Ultrafast Laser K2-ASOSP",
                               "Cryogenic Flux / Drive / Signal / Read-out Lines",

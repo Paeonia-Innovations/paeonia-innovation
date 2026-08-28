@@ -50,8 +50,9 @@ export const Projects = (props) => {
                         className={`${inView ? "fadeInRight" : ""}`}
                         style={{ animationDelay: `${i * 0.5 + 0.5}s` }}
                       >
-                        In a year, we soft-launched our next product, OrionIR™
-                        Mid-IR Spectrometer, which has been successfully
+                        In a year, we soft-launched our next product, OrionIR
+                        <sup className="reg-mark">®</sup> Mid-IR Spectrometer,
+                        which has been successfully
                         deployed in laboratories.
                       </li>
                       <div style={{ height: "0.5em" }}></div>
@@ -60,7 +61,8 @@ export const Projects = (props) => {
                         style={{ animationDelay: `${i * 0.5 + 1}s` }}
                       >
                         Building on our momentum, we created additional
-                        functionalities for OrionIR™ Mid-IR Spectrometer,
+                        functionalities for OrionIR
+                        <sup className="reg-mark">®</sup> Mid-IR Spectrometer,
                         enabling users.
                       </li>
                       <div style={{ height: "0.5em" }}></div>

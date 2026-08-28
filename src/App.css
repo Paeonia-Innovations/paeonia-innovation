@@ -29,6 +29,34 @@
   color: #61dafb;
 }
 
+.reg-mark {
+  font-size: 0.7em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.35em;
+}
+
+.reg-mark-1 {
+  font-size: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.25em;
+}
+
+.reg-mark-2 {
+  font-size: 1em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.15em;
+}
+
+.reg-mark-3 {
+  font-size: 0.7em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.15em;
+}
+
 .content {
   position: relative;
   z-index: 1;

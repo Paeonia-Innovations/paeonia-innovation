@@ -446,7 +446,8 @@ export const MiniApact2026 = () => {
             <div className="ma-abstract-summary">
               <span className="ma-abstract-label">Abstract Summary</span>
               <p>
-                OrionIR™ enables real-time Mid-IR monitoring of optically dense,
+                OrionIR<sup className="reg-mark">®</sup> enables real-time
+                Mid-IR monitoring of optically dense,
                 aqueous process streams, matching or exceeding GC accuracy for
                 multi-analyte quantitation.
               </p>
@@ -483,7 +484,8 @@ export const MiniApact2026 = () => {
             {/* Interest form */}
             <h2 className="ma-form-title">Connect With Paeonia Innovations</h2>
             <p className="ma-form-subtitle">
-              Interested in OrionIR™ or meeting our team at Mini-APACT 2026?
+              Interested in OrionIR<sup className="reg-mark">®</sup> or meeting
+              our team at Mini-APACT 2026?
               Leave your details below and we'll get in touch.
             </p>
 

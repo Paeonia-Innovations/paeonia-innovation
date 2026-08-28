@@ -30,7 +30,9 @@ export const NovelMidIRSpectrometer = (props) => {
         <div className="col-md-12" ref={ref}>
           <div className={`${inView ? "animated" : ""}`}>
             <div className="spectrometer">
-              <h3>OrionIR™ Spectrometer</h3>
+              <h3>
+                OrionIR<sup className="reg-mark">®</sup> Spectrometer
+              </h3>
 
               <div className="col-12 col-md-6">
                 <div className="spacer"></div>

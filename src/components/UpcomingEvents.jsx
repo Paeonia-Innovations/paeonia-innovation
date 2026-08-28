@@ -21,9 +21,9 @@ const upcomingEvents = [
   },
   {
     id: 8,
-    title: "Live OrionIR™ Demo — RTD, Reaction Monitoring & Process Control",
+    title: "Live OrionIR® Demo — RTD, Reaction Monitoring & Process Control",
     subtitle:
-      "Paeonia Innovations exhibits at Flow Chemistry India 2026, hosted by the Flow Chemistry Society in Hyderabad, with live OrionIR™ product demo with our India partners AmAr & Spectrasolve.",
+      "Paeonia Innovations exhibits at Flow Chemistry India 2026, hosted by the Flow Chemistry Society in Hyderabad, with live OrionIR® product demo with our India partners AmAr & Spectrasolve.",
     image: "img/portfolio/FlowChemistryIndia2026.jpeg",
     location: "Avasa Hotel, Madhapur, Hyderabad, India",
     date: "Thu 10 – Fri 11 September 2026",
@@ -105,6 +105,21 @@ const pastEvents = [
     externalLink: "https://flowmicro.com/meeting/meeting113_40op.html",
   },
 ];
+
+const renderWithRegMark = (text) => {
+  if (!text || !text.includes("OrionIR®")) return text;
+  return text.split("OrionIR®").reduce((acc, part, i, arr) => {
+    acc.push(part);
+    if (i < arr.length - 1) {
+      acc.push(
+        <React.Fragment key={i}>
+          OrionIR<sup className="reg-mark">®</sup>
+        </React.Fragment>
+      );
+    }
+    return acc;
+  }, []);
+};
 
 const EventCard = ({ event, isPast }) => (
   <div className={`ue-card${isPast ? " ue-card-past" : ""}`}>
@@ -204,9 +219,11 @@ export const UpcomingEvents = () => {
 
               <div className="ue-card-body">
                 <Link to={event.internalLink} className="ue-card-title">
-                  {event.title}
+                  {renderWithRegMark(event.title)}
                 </Link>
-                <p className="ue-card-subtitle">{event.subtitle}</p>
+                <p className="ue-card-subtitle">
+                  {renderWithRegMark(event.subtitle)}
+                </p>
 
                 {event.talkInfo && (
                   <div className="ue-card-talk-block">

@@ -100,7 +100,7 @@ export const Navigation = (props) => {
             href="#novelMidIRSpectrometer"
             onClick={() => props.onNavClick("productPage")}
           >
-            OrionIR™ Spectrometer
+            OrionIR® Spectrometer
           </a> */}
         </div>
 
@@ -197,7 +197,7 @@ export const Navigation = (props) => {
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
               >
-                &nbsp;&nbsp;&nbsp;OrionIR™ Spectrometer
+                &nbsp;&nbsp;&nbsp;OrionIR® Spectrometer
               </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
@@ -214,7 +214,8 @@ export const Navigation = (props) => {
             <Dropdown.Menu className="custom-menu">
               <Dropdown.Item className="custom-item">
                 <Link to="/OrionIRSpectrometer" className="dropdown-link">
-                  &nbsp;&nbsp;&nbsp;OrionIR™ Spectrometer
+                  &nbsp;&nbsp;&nbsp;OrionIR<sup className="reg-mark-1">®</sup>{" "}
+                  Spectrometer
                 </Link>
               </Dropdown.Item>
               <hr
@@ -233,7 +234,7 @@ export const Navigation = (props) => {
                 className="custom-item"
                 onClick={() => props.onNavClick("productPage")}
               >
-                &nbsp;&nbsp;&nbsp;OrionIR™ Spectrometer
+                &nbsp;&nbsp;&nbsp;OrionIR® Spectrometer
               </Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>

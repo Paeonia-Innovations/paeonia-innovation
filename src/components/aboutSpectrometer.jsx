@@ -37,7 +37,8 @@ export const AboutSpectrometer = (props) => {
                       >
                         <h3>Robust & Compact</h3>
                         <p>
-                          At a size of 5 * 5.5 * 6 cm, the OrionIR™ Mid-IR
+                          At a size of 5 * 5.5 * 6 cm, the OrionIR
+                          <sup className="reg-mark">®</sup> Mid-IR
                           Spectrometer is a fraction of the size of all
                           traditional spectrometers. It does not use any moving
                           components or fragile optical fibers, allowing you the
